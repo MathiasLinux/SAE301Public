@@ -36,6 +36,22 @@ font-style: normal;
 font-family: 'Montserrat', sans-serif;
 */
 
+/* Variables pour les couleurs */
+
+:root {
+    --gris-clair: #B2B2B2;
+    --gris-semi-clair: #646464;
+    --gris-fonce: #474545;
+    --vert: #0CB029;
+    --rouge: #A8201A;
+    --vert-clair: #55AC65;
+    --rouge-clair: #AB534F;
+    --jaune: #FED02F;
+    --violet: #420039;
+    --bleu: #007BFF;
+}
+
+
 html, body {
     height: 100%
 }
@@ -47,12 +63,24 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 header {
     display: grid;
     grid-template-columns: 1fr auto;
+    margin: 10px;
 }
 
 .header {
+    position: relative;
     display: flex;
     font-family: rockwell-nova, sans-serif;
     gap: 10px;
@@ -76,6 +104,58 @@ header {
     align-items: center;
 }
 
+.menuOpen {
+    position: absolute;
+    background-color: var(--gris-fonce);
+    color: white;
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.menuOpen a {
+    text-decoration: none;
+    color: white;
+}
+
+.contenuMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%
+}
+
+.menuConnexion {
+    display: flex;
+    gap: 5%;
+}
+
+.menuConnexion > svg {
+    max-width: 12%;
+}
+
+.footerMenu {
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-left: 10%;
+    padding: 5%;
+}
+
+.footerMenu > a {
+    text-decoration: none;
+    color: white;
+}
+
 footer {
     color: white;
     font-family: rockwell-nova, sans-serif;
@@ -84,8 +164,8 @@ footer {
     display: grid;
     grid-template-columns: 1fr auto;
     margin-left: 10%;
-    margin-bottom: 5%;
-    margin-right: 5%;
+    background-color: #00000082;
+    padding: 5%;
 }
 
 footer > a {
@@ -111,6 +191,7 @@ footer > a {
     font-style: normal;
     align-self: center;
     justify-self: center;
+    background-color: #00000082;
 }
 
 .decouvrezIndex {
@@ -124,4 +205,10 @@ footer > a {
     text-decoration: none;
     color: white;
     font-size: 40px;
+    background-color: #00000082;
+    padding-right: 7%;
+    padding-left: 7%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    border: 3px solid #FFFFFF;
 }

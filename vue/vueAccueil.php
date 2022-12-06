@@ -3,7 +3,7 @@ $title = "Château Bourbon";
 ob_start();
 ?>
     <video playsinline autoplay muted loop id="bgvid">
-        <source src="polina.mp4" type="video/mp4">
+        <source src="video/Chateau_mobile_1080p_Medium.mp4" type="video/mp4">
     </video>
     <div class="centerIndex">
         <h2>Vente de biens d'exeption</h2>
