@@ -1,8 +1,8 @@
 <header>
-    <div class="header">
+    <a class="header" href="index.php">
         <img src="img/logo.svg" alt="Logo de chateau">
         <h1>Château Bourbon</h1>
-    </div>
+    </a>
     <div class="menu" alt="Trois traits espacés">
         <img src="img/menu.svg">
     </div>
@@ -17,13 +17,13 @@
         </svg>
         <div class="contenuMenu">
             <div>
-                <a href="#">Accueil</a>
+                <a href="index.php">Accueil</a>
             </div>
             <div>
                 <a href="#">Nos châteaux</a>
             </div>
             <div>
-                <a href="#">Nous contacter</a>
+                <a href="index.php?action=contact">Nous contacter</a>
             </div>
             <div>
                 <a href="#" class="menuConnexion">

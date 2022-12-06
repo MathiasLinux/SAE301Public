@@ -4,4 +4,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once("controleur/controleur.php");
 
-accueil();
+if (isset($_GET["action"])) {
+    if ($_GET["action"] == "contact") {
+        contact();
+    }
+} else {
+    accueil();
+}

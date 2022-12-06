@@ -6,7 +6,7 @@ ob_start();
         <source src="video/Chateau_mobile_1080p_Medium.mp4" type="video/mp4">
     </video>
     <div class="centerIndex">
-        <h2>Vente de biens d'exeption</h2>
+        <h2>Vente de biens d'exception</h2>
         <div class="decouvrezIndex">
             <a href="#">Découvrez</a>
         </div>
@@ -15,4 +15,4 @@ ob_start();
 <?php
 $contenue = ob_get_clean();
 
-require "vue/gabarit/gabarit.php";
+require_once "vue/gabarit/gabarit.php";
