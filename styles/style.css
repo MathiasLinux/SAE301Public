@@ -227,4 +227,71 @@ footer > a {
 
 .centerContact {
     color: white;
+    justify-content: center;
+    margin: 10%;
+
+}
+
+.centerContact h2 {
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.autourBouton {
+    display: flex;
+    justify-content: center;
+    gap: 20%
+}
+
+.boutonContact {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    background-color: var(--gris-semi-clair);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#tel {
+    width: 20px;
+}
+
+#home {
+    width: 40px;
+}
+
+.coordoneesBas {
+    display: flex;
+    gap: 10px;
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.coordoneesBas a {
+    text-decoration: none;
+    color: white;
+}
+
+.autourBouton input {
+    display: none;
+}
+
+.autourBouton input:checked + label {
+    background-color: var(--jaune);
+    color: black;
+}
+
+.autourBouton input:checked :has(~.coordonees) {
+    display: none;
+}
+
+.autourBouton, .coordonees, .coordoneesBas {
+    margin-top: 10%;
 }
