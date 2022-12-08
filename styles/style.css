@@ -288,7 +288,7 @@ footer > a {
     color: black;
 }
 
-.autourBouton input:checked :has(~.coordonees) {
+.autourBouton input:checked :has(~.coordonees) { /* :has doit permettre d'atteindre la partie contact mais pour le moment ça ne fonctionne pas encore */
     display: none;
 }
 
