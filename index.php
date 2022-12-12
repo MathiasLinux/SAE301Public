@@ -7,6 +7,8 @@ require_once("controleur/controleur.php");
 if (isset($_GET["action"])) {
     if ($_GET["action"] == "chateau") {
         chateau();
+    } elseif ($_GET["action"] == "chateaux") {
+        chateaux();
     } elseif ($_GET["action"] == "contact") {
         contact();
     }

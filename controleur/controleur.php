@@ -10,6 +10,11 @@ function chateau()
     require "vue/vueChateau.php";
 }
 
+function chateaux()
+{
+    require "vue/vueChateaux.php";
+}
+
 function contact()
 {
     require "vue/vueContact.php";

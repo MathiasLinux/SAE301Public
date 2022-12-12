@@ -163,7 +163,7 @@ ob_start();
                         </div>
                     </div>
                     <div class="boutonJaune">
-                        <a href="#">En apprendre plus</a>
+                        <a href="index.php?action=chateaux">En apprendre plus</a>
                     </div>
                 </div>
             </div>
