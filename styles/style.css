@@ -63,6 +63,10 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+img {
+    width: 100%;
+}
+
 /* Index */
 
 video {
@@ -288,10 +292,72 @@ footer > a {
     color: black;
 }
 
-.autourBouton input:checked :has(~.coordonees) { /* :has doit permettre d'atteindre la partie contact mais pour le moment ça ne fonctionne pas encore */
+.autourBouton input:checked :has(>.coordonees) { /* :has doit permettre d'atteindre la partie contact mais pour le moment ça ne fonctionne pas encore */
     display: none;
 }
 
+/*:is(.coordonees) {
+    display: none;
+}*/
+
 .autourBouton, .coordonees, .coordoneesBas {
     margin-top: 10%;
+}
+
+/* Page chateau */
+
+.contourChateau {
+    margin: 5%
+}
+
+.menuFiltre {
+    display: flex;
+    color: white;
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--gris-semi-clair);
+    padding: 3%;
+}
+
+.contourBiens {
+    margin-top: 10%;
+    background-color: var(--gris-semi-clair);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+#location {
+    width: 30px
+}
+
+.iconeChateau {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    justify-items: center;
+}
+
+.iconeChateau svg {
+    width: 50px;
+}
+
+.ligneIcone {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: center;
+}
+
+.localisationChateau {
+    display: flex;
+    align-content: center;
+    gap: 15px;
 }

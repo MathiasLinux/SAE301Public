@@ -8,7 +8,7 @@ ob_start();
     <div class="centerIndex">
         <h2>Vente de biens d'exception</h2>
         <div class="decouvrezIndex">
-            <a href="#">Découvrez</a>
+            <a href="index.php?action=chateau">Découvrez</a>
         </div>
     </div>
 

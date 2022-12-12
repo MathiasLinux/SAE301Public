@@ -5,7 +5,9 @@ error_reporting(E_ALL);
 require_once("controleur/controleur.php");
 
 if (isset($_GET["action"])) {
-    if ($_GET["action"] == "contact") {
+    if ($_GET["action"] == "chateau") {
+        chateau();
+    } elseif ($_GET["action"] == "contact") {
         contact();
     }
 } else {

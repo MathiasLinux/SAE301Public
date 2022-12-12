@@ -20,7 +20,7 @@
                 <a href="index.php">Accueil</a>
             </div>
             <div>
-                <a href="#">Nos châteaux</a>
+                <a href="index.php?action=chateau">Nos châteaux</a>
             </div>
             <div>
                 <a href="index.php?action=contact">Nous contacter</a>

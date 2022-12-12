@@ -6,14 +6,13 @@ ob_start();
         <h2>Je cherche à</h2>
         <div class="autourBouton">
             <input type="radio" id="acheter" name="contact" value="acheter">
-            <label class="boutonContact"  for="acheter">Acheter</label>
+            <label class="boutonContact" for="acheter">Acheter</label>
             <input type="radio" id="vendre" name="contact" value="vendre">
-            <label class="boutonContact"for="vendre">Vendre</label>
+            <label class="boutonContact" for="vendre">Vendre</label>
         </div>
         <div class="coordonees">
             <h2>Nos coordonnées</h2>
             <div class="coordoneesBas">
-                <?xml version="1.0" encoding="UTF-8"?>
                 <svg id="tel" data-name="tel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.09 20.46">
                     <g id="Calque_1-2" data-name="Calque 1" fill="#FFF">
                         <path d="M4.42,0c.64,.19,1.07,.64,1.42,1.16,.5,.74,.97,1.5,1.4,2.27,.29,.53,.43,1.11,.3,1.73-.08,.38-.27,.71-.56,.97-.39,.35-.77,.7-1.19,1-.86,.59-1.02,1.33-.64,2.27,.22,.56,.52,1.1,.86,1.59,.8,1.17,1.74,2.23,2.82,3.14,.52,.44,1.07,.83,1.76,.99,.56,.13,1.05-.02,1.46-.42,.39-.37,.78-.75,1.18-1.1,.73-.63,1.55-.7,2.41-.26,.79,.4,1.43,.99,2.08,1.58,.37,.33,.72,.7,1.02,1.09,.53,.68,.47,1.37-.17,1.96-.65,.59-1.26,1.22-2.04,1.66-1.2,.67-2.47,.93-3.84,.8-1.65-.15-3.1-.82-4.45-1.73-1.89-1.27-3.43-2.9-4.85-4.66-1.01-1.27-1.9-2.61-2.55-4.11C.34,8.77,0,7.56,0,6.29,0,4.18,.75,2.42,2.43,1.08c.16-.12,.31-.26,.45-.39,.33-.29,.66-.57,1.1-.69h.44Z"/>
@@ -23,7 +22,6 @@ ob_start();
                 <a href="telto:0389898989">03 89 89 89 89</a>
             </div>
             <div class="coordoneesBas">
-                <?xml version="1.0" encoding="UTF-8"?>
                 <svg id="home" data-name="home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371.66 331.67">
                     <g id="Calque_1-2" data-name="Calque 2" fill="#FFF">
                         <g>
