@@ -324,6 +324,10 @@ footer > a {
     padding: 3%;
 }
 
+.menuFiltre > svg {
+    transition: transform 0.2s
+}
+
 .contourBiens {
     margin-top: 10%;
     background-color: var(--gris-semi-clair);
@@ -332,10 +336,22 @@ footer > a {
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
+    padding-bottom: 0.1%;
 }
 
 #location {
     width: 30px
+}
+
+.localisationChateau {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 4%;
+}
+
+.prixChateaux {
+    margin: 4%;
 }
 
 .iconeChateau {
@@ -346,18 +362,108 @@ footer > a {
     justify-items: center;
 }
 
+.iconeDroit {
+    grid-area: droite;
+}
+
+.iconeGauche {
+    grid-area: gauche;
+}
+
 .iconeChateau svg {
     width: 50px;
 }
 
 .ligneIcone {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 52.5% 5% 42.5%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "droite . gauche";
     align-content: center;
 }
 
-.localisationChateau {
+.contourIcone {
+    margin: 4%;
+}
+
+
+.boutonJaune {
+    background-color: var(--jaune);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    margin: 10%;
     display: flex;
-    align-content: center;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.boutonJaune > a {
+    text-decoration: none;
+    color: black;
+}
+
+.boutonRegion {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+}
+
+.contourFiltre {
+    display: none;
+    background-color: var(--gris-semi-clair);
+    padding: 5%;
+    margin-top: 5%;
+}
+
+.contourFiltreOpen {
+    display: block;
+}
+
+.menuFiltreOpen > svg {
+    transform: rotate(180deg);
+    transition: transform 0.2s
+}
+
+.contourFiltre form {
+    color: white;
+}
+
+.labelFiltre {
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.selecteurPrix {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+}
+
+.totalSelecteurCase .labelFiltre {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+
+.selecteurCase {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 3%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+}
+
+input[type="checkbox"] {
+    background-color: var(--gris-clair);
+    width: 20px;
 }
