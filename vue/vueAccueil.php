@@ -5,12 +5,12 @@ ob_start();
     <video playsinline="true" autoplay="true" muted="true" loop="true" id="bgvid">
         <source src="video/Chateau_mobile_1080p_Medium.mp4" type="video/mp4">
     </video>
-    <div class="centerIndex">
+    <main class="centerIndex">
         <h2>Vente de biens d'exception</h2>
         <div class="decouvrezIndex">
             <a href="index.php?action=chateau">Découvrez</a>
         </div>
-    </div>
+    </main>
 
 <?php
 $contenue = ob_get_clean();
