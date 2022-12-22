@@ -1,4 +1,4 @@
 <footer>
     <div>Copyright 2022 Château Bourbon</div>
-    <a href="#">Légal</a>
+    <a href="index.php?action=legal">Légal</a>
 </footer>

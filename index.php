@@ -13,6 +13,8 @@ if (isset($_GET["action"])) {
         contact();
     } elseif ($_GET["action"] == "login") {
         login();
+    } elseif ($_GET["action"] == "legal") {
+        legal();
     }
 } else {
     accueil();

@@ -24,3 +24,8 @@ function login()
 {
     require "vue/vueLogin.php";
 }
+
+function legal()
+{
+    require "vue/vueLegal.php";
+}
