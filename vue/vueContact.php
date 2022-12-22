@@ -48,11 +48,29 @@ ob_start();
                         <option value="chambord">Chambord</option>
                         <option value="chambord">Chambord</option>
                     </select>
+                    <div></div>
                     <label for="achatMessage">Message :</label>
 
                     <textarea id="achatMessage" name="achatMessage"
-                              rows="4" cols="33"></textarea>
-                    <input type="submit" value="Envoyer">
+                              rows="4" cols="25"></textarea>
+                    <div class="envoyerContact">
+                        <input type="submit" value="Envoyer">
+                    </div>
+                </form>
+            </div>
+            <div class="coordoneesFormulaireVente">
+                <form action="#">
+                    <label for="venteNom">Votre nom :</label>
+                    <input type="text" name="venteNom" id="venteNom">
+                    <label for="venteNom">Votre adresse e-mail :</label>
+                    <input type="text" name="venteNom" id="venteNom">
+                    <label for="venteDescription">Description de votre bien :</label>
+
+                    <textarea id="venteDescription" name="venteDescription"
+                              rows="4" cols="25"></textarea>
+                    <div class="envoyerContact">
+                        <input type="submit" value="Envoyer">
+                    </div>
                 </form>
             </div>
         </div>

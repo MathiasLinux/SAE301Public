@@ -11,6 +11,8 @@ if (isset($_GET["action"])) {
         chateaux();
     } elseif ($_GET["action"] == "contact") {
         contact();
+    } elseif ($_GET["action"] == "login") {
+        login();
     }
 } else {
     accueil();

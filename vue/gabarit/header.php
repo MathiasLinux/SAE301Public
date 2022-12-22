@@ -26,7 +26,7 @@
                 <a href="index.php?action=contact">Nous contacter</a>
             </div>
             <div>
-                <a href="#" class="menuConnexion">
+                <a href="index.php?action=login" class="menuConnexion">
                     <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470">
                         <g id="Calque_1-2" data-name="Calque 1">
                             <path d="M405.23,382.13c-41.25,47.69-102.21,77.87-170.23,77.87s-128.98-30.18-170.23-77.87c28.85-65.34,94.22-110.94,170.23-110.94s141.39,45.6,170.23,110.94Z"

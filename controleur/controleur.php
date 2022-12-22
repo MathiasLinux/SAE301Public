@@ -19,3 +19,8 @@ function contact()
 {
     require "vue/vueContact.php";
 }
+
+function login()
+{
+    require "vue/vueLogin.php";
+}
