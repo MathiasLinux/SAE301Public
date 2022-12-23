@@ -15,6 +15,14 @@ if (isset($_GET["action"])) {
         login();
     } elseif ($_GET["action"] == "legal") {
         legal();
+    } elseif ($_GET["action"] == "admin") {
+        admin();
+    } elseif ($_GET["action"] == "gestBien") {
+        gestBien();
+    } elseif ($_GET["action"] == "gestBiens") {
+        gestBiens();
+    } elseif ($_GET["action"] == "gestUti") {
+        gestUti();
     }
 } else {
     accueil();

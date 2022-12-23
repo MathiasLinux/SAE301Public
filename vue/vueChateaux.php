@@ -92,15 +92,15 @@ ob_start();
             </div>
         </div>
         <div class="boutonsChateaux">
-            <div class="boutonJaune">
-                <a href="#">Visite virtuelle</a>
-            </div>
-            <div class="boutonViolet">
-                <a href="#">Carte</a>
-            </div>
-            <div class="boutonGris">
-                <a href="#">Nous contacter</a>
-            </div>
+            <a class="boutonJaune" href="#">
+                <div>Visite virtuelle</div>
+            </a>
+            <a class="boutonViolet" href="#">
+                <div>Carte</div>
+            </a>
+            <a class="boutonGris" href="#">
+                <div>Nous contacter</div>
+            </a>
         </div>
     </main>
 <?php

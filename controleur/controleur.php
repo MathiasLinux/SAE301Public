@@ -29,3 +29,23 @@ function legal()
 {
     require "vue/vueLegal.php";
 }
+
+function admin()
+{
+    require "vue/vueAdmin.php";
+}
+
+function gestBien()
+{
+    require "vue/vueGestBien.php";
+}
+
+function gestBiens()
+{
+    require "vue/vueGestBiens.php";
+}
+
+function gestUti()
+{
+    require "vue/vueGestUti.php";
+}

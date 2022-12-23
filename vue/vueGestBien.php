@@ -4,6 +4,19 @@ ob_start();
 ?>
     <main>
         <div class="contourChateau">
+            <a class="boutonJaune" href="index.php?action=admin">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H6M12 5l-7 7 7 7"/>
+                    </svg>
+                    Revenir
+                </div>
+            </a>
+            <h2 class="adminH2">Gestion des biens</h2>
+            <a class="boutonJaune" href="index.php?action=gestBiens">
+                <div>Nouveau bien</div>
+            </a>
             <div class="menuFiltre">
                 <div>Filtrer</div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14.828" height="8.414" viewBox="0 0 14.828 8.414">

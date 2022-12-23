@@ -521,9 +521,6 @@ label[for="venteDescription"] {
     justify-content: center;
     align-items: center;
     padding: 15px;
-}
-
-.boutonJaune > a {
     text-decoration: none;
     color: black;
 }
@@ -681,9 +678,6 @@ input[type="checkbox"] {
     justify-content: center;
     align-items: center;
     padding: 15px;
-}
-
-.boutonViolet > a {
     text-decoration: none;
     color: white;
 }
@@ -699,9 +693,6 @@ input[type="checkbox"] {
     justify-content: center;
     align-items: center;
     padding: 15px;
-}
-
-.boutonGris > a {
     text-decoration: none;
     color: white;
 }
@@ -801,4 +792,249 @@ input[type="checkbox"] {
 
 .mainLegal p {
     font-weight: 400;
+}
+
+/* Page d'administration */
+
+.mainAdmin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.boutonAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--jaune);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    width: 90%;
+    height: 10%;
+    text-decoration: none;
+    color: black;
+}
+
+.boutonAdmin svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Page de gestion des biens */
+.adminH2 {
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    font-style: normal;
+    margin-top: 10%;
+    color: white;
+}
+
+/* Page de création de bien */
+
+.mainGestBiens {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.titreBiensAdmin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+
+.formBien input[type="text"], .formBien input[type="number"], .formBien input[type="url"] {
+    background-color: var(--gris-semi-clair);
+    border: none;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    margin-top: 10%;
+}
+
+.formBien input, .formBien label {
+    display: block;
+}
+
+.formBien label {
+    position: relative;
+}
+
+#titre {
+    margin-top: 0;
+}
+
+.formBien select {
+    background-color: var(--jaune);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    border: none;
+    padding: 15px;
+    margin-top: 10%;
+}
+
+.formBien textarea {
+    background-color: var(--gris-semi-clair);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+}
+
+.petitesImagesAdmin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    margin-top: 10%
+}
+
+.petitesImagesAdmin label {
+    border: 2px dashed var(--gris-clair);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.petitesImagesAdmin label svg {
+    width: 40px;
+}
+
+.formBien input[type="file"] {
+    display: none;
+}
+
+.affichageAdmin {
+    background-color: var(--gris-semi-clair);
+    padding: 5%;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+
+.adminH3 {
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    font-style: normal;
+    color: white;
+}
+
+.affichageAdmin > div:nth-child(2) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.affichageAdminBouton {
+    background-color: var(--gris-clair);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.formBien input[type="submit"] {
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: var(--jaune);
+    margin-top: 10%;
+}
+
+/* Page de gestion des utilisateurs */
+
+.mainUti {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.formUti {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainUti table {
+    background-color: var(--gris-semi-clair);
+    color: white;
+}
+
+.mainUti table th {
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.mainUti table td {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainUti table th, .mainUti table td {
+    padding: 40px;
+}
+
+.mainUti table td div {
+    display: flex;
+    justify-content: center;
+}
+
+.mainUti table tr {
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+.tableauFlex {
+    display: flex;
+}
+
+.formUti input[type="submit"] {
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: var(--jaune);
+    margin-top: 10%;
 }
