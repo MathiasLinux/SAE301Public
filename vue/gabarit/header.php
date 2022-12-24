@@ -26,6 +26,9 @@
                 <a href="index.php?action=contact">Nous contacter</a>
             </div>
             <div>
+                <a href="index.php?action=blog">Blog</a>
+            </div>
+            <div>
                 <a href="index.php?action=login" class="menuConnexion">
                     <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470">
                         <g id="Calque_1-2" data-name="Calque 1">

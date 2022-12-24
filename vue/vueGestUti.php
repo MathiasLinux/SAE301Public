@@ -3,7 +3,7 @@ $title = "Château Bourbon";
 ob_start();
 ?>
     <main class="mainUti">
-        <a class="boutonJaune" href="index.php?action=gestBien">
+        <a class="boutonJaune" href="index.php?action=admin">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -13,7 +13,7 @@ ob_start();
             </div>
         </a>
         <h2 class="adminH2">Gestion des utilisateurs</h2>
-        <a class="boutonJaune" href="index.php?action=gestBiens">
+        <a class="boutonJaune" href="index.php?action=gestUtis">
             <div>Nouvel utilisateur</div>
         </a>
         <form class="formUti" action="#">
@@ -61,7 +61,6 @@ ob_start();
             </div>
         </form>
     </main>
-    <script src="js/chateau.js"></script>
 <?php
 $contenue = ob_get_clean();
 

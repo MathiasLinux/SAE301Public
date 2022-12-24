@@ -20,6 +20,16 @@ function contact()
     require "vue/vueContact.php";
 }
 
+function blog()
+{
+    require "vue/vueBlog.php";
+}
+
+function blogs()
+{
+    require "vue/vueBlogs.php";
+}
+
 function login()
 {
     require "vue/vueLogin.php";
@@ -48,4 +58,19 @@ function gestBiens()
 function gestUti()
 {
     require "vue/vueGestUti.php";
+}
+
+function gestUtis()
+{
+    require "vue/vueGestUtis.php";
+}
+
+function formContact()
+{
+    require "vue/vueFormContact.php";
+}
+
+function gestBlog()
+{
+    require "vue/vueGestBlog.php";
 }

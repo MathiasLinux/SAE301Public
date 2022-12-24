@@ -427,6 +427,32 @@ label[for="venteDescription"] {
     justify-content: center;
 }
 
+/* Page Blog */
+
+.mainBlog {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.contourArticle h2 {
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    color: white;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.descArticle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    color: white;
+    margin-top: 10%;
+}
+
 /* Page chateau */
 .contourChateau {
     margin: 5%
@@ -728,7 +754,7 @@ input[type="checkbox"] {
     font-style: normal;
 }
 
-.formLogin input[type=text], input[type=password] {
+.formLogin input[type=text], .formLogin input[type=password] {
     border: none;
     border-bottom: 2px solid var(--gris-semi-clair);
     background: none;
@@ -1004,6 +1030,7 @@ input[type="checkbox"] {
     font-size: 15px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
@@ -1038,3 +1065,64 @@ input[type="checkbox"] {
     background-color: var(--jaune);
     margin-top: 10%;
 }
+
+/* Page de création d'un utilisateur */
+
+.formUtis input[type="submit"] {
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: var(--jaune);
+    margin-top: 10%;
+}
+
+.formUtis input[type="text"], .formUtis input[type="password"] {
+    background-color: var(--gris-semi-clair);
+    border: none;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    margin-top: 10%;
+}
+
+.rolesAdminUtis {
+    background-color: var(--gris-semi-clair);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+}
+
+.rolesAdminUtis div {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.rolesAdminUtisSelect {
+    display: flex;
+    gap: 20px;
+}
+
+#premierRole {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Page qui affiche les données entré dans le formulaire de contact */
+

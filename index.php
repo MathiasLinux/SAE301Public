@@ -11,6 +11,10 @@ if (isset($_GET["action"])) {
         chateaux();
     } elseif ($_GET["action"] == "contact") {
         contact();
+    } elseif ($_GET["action"] == "blog") {
+        blog();
+    } elseif ($_GET["action"] == "blogs") {
+        blogs();
     } elseif ($_GET["action"] == "login") {
         login();
     } elseif ($_GET["action"] == "legal") {
@@ -23,6 +27,12 @@ if (isset($_GET["action"])) {
         gestBiens();
     } elseif ($_GET["action"] == "gestUti") {
         gestUti();
+    } elseif ($_GET["action"] == "gestUtis") {
+        gestUtis();
+    } elseif ($_GET["action"] == "formContact") {
+        formContact();
+    } elseif ($_GET["action"] == "gestBlog") {
+        gestBlog();
     }
 } else {
     accueil();
