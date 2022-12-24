@@ -2,8 +2,8 @@
 $title = "Château Bourbon";
 ob_start();
 ?>
-    <main class="mainGestBiens">
-        <a class="boutonJaune" href="index.php?action=gestBien">
+    <main class="mainUti">
+        <a class="boutonJaune" href="index.php?action=gestBlog">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -14,7 +14,7 @@ ob_start();
         </a>
         <form class="formBien" action="#">
             <div class="titreBiensAdmin">
-                <input type="text" id="titre" name="titre" placeholder="Nom du bien" class="">
+                <input type="text" id="titre" name="titre" placeholder="Nom de l'article" class="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
                     <g id="Edit" transform="translate(-0.5 -0.5)">
                         <path id="Tracé_29" data-name="Tracé 29"
@@ -27,12 +27,9 @@ ob_start();
                 </svg>
             </div>
             <div class="imageAdmin">
-                <img src="img/biens/1-1.jpg">
-                <div class="petitesImagesAdmin">
-                    <img src="img/biens/1-2.jpg">
-                    <img src="img/biens/1-3.jpg">
-                    <img src="img/biens/1-4.jpg">
-                    <label for="imgChateau">
+                <img src="img/articles/1.jpg">
+                <div class="uploadImg">
+                    <label for="imgArticle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="74.419" height="74.419"
                              viewBox="0 0 74.419 74.419">
                             <path id="Tracé_27" data-name="Tracé 27"
@@ -41,15 +38,15 @@ ob_start();
                                   stroke-linejoin="round" stroke-width="3"/>
                         </svg>
                     </label>
-                    <input type="file"
-                           id="imgChateau" name="imgChateau"
-                           accept="image/png, image/jpeg">
-
                 </div>
+                <input type="file"
+                       id="imgArticle" name="imgArticle"
+                       accept="image/png, image/jpeg">
+
             </div>
             <div class="affichageAdmin">
                 <h3 class="adminH3">Affichage</h3>
-                <div>Afficher le bien pour les clients</div>
+                <div>Afficher l'article pour les clients</div>
                 <div class="affichageAdminBouton">
                     <svg xmlns="http://www.w3.org/2000/svg" width="41.3" height="30.854" viewBox="0 0 41.3 30.854">
                         <g id="Groupe_5" data-name="Groupe 5" transform="translate(0.5 -2.5)">
@@ -69,51 +66,13 @@ ob_start();
                 </div>
             </div>
             <h3 class="adminH3">Informations :</h3>
-            <label for="adresse">Adresse</label>
-            <input type="text" name="adresse" id="adresse">
-            <div>Coordonnées GPS</div>
-            <label for="x">X</label>
-            <input type="number" name="x" id="x">
-            <label for="y">Y</label>
-            <input type="number" name="y" id="y">
-            <label for="chambres">Chambres</label>
-            <input type="number" name="chambres" id="chambres">
-            <label for="sdb">Salles de bain</label>
-            <input type="number" name="sdb" id="sdb">
-            <label for="superficie">Superficie</label>
-            <input type="number" name="superficie" id="superficie">
-            <label for="pieces">Pièces</label>
-            <input type="number" name="pieces" id="pieces">
-            <select id="epoque" name="epoque">
-                <option value="">Choisir une epoque</option>
-                <option value="XV">XVème siècle</option>
-                <option value="XVI">XVIème siècle</option>
-                <option value="XVII">XVIIème siècle</option>
-                <option value="XVIII">XVIIIème siècle</option>
-                <option value="XIX">XIXème siècle</option>
-                <option value="XX">XXème siècle</option>
-            </select>
-            <select id="statut" name="statut">
-                <option value="">Choisir un statut</option>
-                <option value="classe">Le château est classé</option>
-                <option value="pasClasse">Le château n'est pas classé</option>
-            </select>
-            <select id="etat" name="etat">
-                <option value="">Choisir un etat</option>
-                <option value="restauration">Restauration nécessaire</option>
-                <option value="excellent">Excellent état</option>
-            </select>
-            <label for="desc">Description</label>
-            <textarea name="desc" id="desc" cols="25" rows="10"></textarea>
-            <h3 class="adminH3">Visite Virtuelle :</h3>
-            <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/Nlk9hoHP_kk"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            <label for="lienVisite">Liens vers la visite</label>
-            <input type="url" name="lienVisite" id="lienVisite"
-                   placeholder="https://example.com"
-                   pattern="https://.*" size="20">
+            <label for="auteur">Auteur</label>
+            <input type="text" name="auteur" id="auteur">
+            <label for="datePubli">Date de publication</label>
+            <input type="date" name="datePubli" id="datePubli">
+            <h3 class="adminH3">Article :</h3>
+            <textarea name="article" id="article" cols="25" rows="10"></textarea>
+
             <div class="envoyerContact">
                 <input type="submit" value="Valider">
             </div>

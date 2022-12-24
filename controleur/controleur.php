@@ -74,3 +74,8 @@ function gestBlog()
 {
     require "vue/vueGestBlog.php";
 }
+
+function gestBlogs()
+{
+    require "vue/vueGestBlogs.php";
+}

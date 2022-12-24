@@ -442,6 +442,8 @@ label[for="venteDescription"] {
     color: white;
     margin-top: 10%;
     margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
 }
 
 .descArticle {
@@ -451,6 +453,36 @@ label[for="venteDescription"] {
     font-size: 15px;
     color: white;
     margin-top: 10%;
+}
+
+.ligneBlog {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.partageBlog {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.texteBlog {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    color: white;
 }
 
 /* Page chateau */
@@ -877,7 +909,7 @@ input[type="checkbox"] {
     margin-bottom: 10%;
 }
 
-.formBien input[type="text"], .formBien input[type="number"], .formBien input[type="url"] {
+.formBien input[type="text"], .formBien input[type="number"], .formBien input[type="url"], .formBien input[type="date"] {
     background-color: var(--gris-semi-clair);
     border: none;
     padding: 15px;
@@ -1124,5 +1156,17 @@ input[type="checkbox"] {
     margin-bottom: 20px;
 }
 
-/* Page qui affiche les données entré dans le formulaire de contact */
+/* Page de création d'un article */
 
+.uploadImg {
+    border: 2px dashed var(--gris-clair);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20%;
+    margin-top: 5%;
+}
+
+.formBien input[type="date"] {
+    margin-bottom: 10%;
+}

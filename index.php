@@ -33,6 +33,8 @@ if (isset($_GET["action"])) {
         formContact();
     } elseif ($_GET["action"] == "gestBlog") {
         gestBlog();
+    } elseif ($_GET["action"] == "gestBlogs") {
+        gestBlogs();
     }
 } else {
     accueil();
