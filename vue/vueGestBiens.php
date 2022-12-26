@@ -103,6 +103,21 @@ ob_start();
                 <option value="restauration">Restauration nécessaire</option>
                 <option value="excellent">Excellent état</option>
             </select>
+            <select id="region" name="region">
+                <option value="">Choisir une région</option>
+                <option value="auverge-rhone-alpes">Auvergne-Rhône-Alpes</option>
+                <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
+                <option value="bretagne">Bretagne</option>
+                <option value="centre-val-de-loire">Centre-Val de Loire</option>
+                <option value="corse">Corse</option>
+                <option value="grand-est">Grand Est</option>
+                <option value="hauts-de-france">Hauts-de-France</option>
+                <option value="ile-de-france">Île-de-France</option>
+                <option value="normandie">Normandie</option>
+                <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+                <option value="occitanie">Occitanie</option>
+                <option value="paca">Provence-Alpes-Côte d'Azur</option>
+            </select>
             <label for="desc">Description</label>
             <textarea name="desc" id="desc" cols="25" rows="10"></textarea>
             <h3 class="adminH3">Visite Virtuelle :</h3>

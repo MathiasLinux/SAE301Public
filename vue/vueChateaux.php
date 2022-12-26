@@ -6,6 +6,7 @@ ob_start();
         <div class="boutonJaune">Revenir</div>
         <div class="contourAnnonceChateau">
             <h2>Château de chambord</h2>
+            <div class="prixBien">47 000 000 €</div>
             <!-- Carousel -->
             <div id="photoChateau" class="carousel slide" data-bs-ride="carousel">
 
