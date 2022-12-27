@@ -1,4 +1,6 @@
 <?php
+require_once "modele/bdd.php";
+require_once "modele/chateau.php";
 
 function accueil()
 {
@@ -7,12 +9,31 @@ function accueil()
 
 function chateau()
 {
+    $objCha = new chateau();
+    $chateaux = $objCha->getChateaux();
     require "vue/vueChateau.php";
 }
 
 function chateaux()
 {
+    $objCha = new chateau();
+    $chateauId = $objCha->getChateauId($_GET["id"]);
     require "vue/vueChateaux.php";
+}
+
+function visiteVirtuelle()
+{
+    $objCha = new chateau();
+    $chateauUrl = $objCha->getChateauUrl($_GET["id"]);
+    require "vue/vueVisiteVirtuelle.php";
+}
+
+function carte()
+{
+    $objCha = new chateau();
+    $chateauXY = $objCha->getChateauXY($_GET["id"]);
+    $chateauId = $objCha->getChateauId($_GET["id"]);
+    require "vue/vueCarte.php";
 }
 
 function contact()

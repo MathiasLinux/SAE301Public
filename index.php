@@ -2,13 +2,18 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once("controleur/controleur.php");
+require_once "config/config.php";
+require_once "controleur/controleur.php";
 
 if (isset($_GET["action"])) {
     if ($_GET["action"] == "chateau") {
         chateau();
-    } elseif ($_GET["action"] == "chateaux") {
+    } elseif ($_GET["action"] == "chateaux" and isset($_GET["id"])) {
         chateaux();
+    } elseif ($_GET["action"] == "visiteVirtuelle" and isset($_GET["id"])) {
+        visiteVirtuelle();
+    } elseif ($_GET["action"] == "carte" and isset($_GET["id"])) {
+        carte();
     } elseif ($_GET["action"] == "contact") {
         contact();
     } elseif ($_GET["action"] == "blog") {

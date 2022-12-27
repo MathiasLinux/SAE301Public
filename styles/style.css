@@ -1178,3 +1178,9 @@ input[type="checkbox"] {
 .formBien input[type="date"] {
     margin-bottom: 10%;
 }
+
+/* Page affichant la carte */
+
+#map {
+    height: 100%;
+}
