@@ -12,7 +12,7 @@ class chateau extends database
      *******************************************************/
     public function getChateaux()
     {
-        $req = "SELECT id, adresse, prix, chambres, sdb, superficie, pieces FROM biens"; // Envoie de la requête SQL
+        $req = "SELECT id, adresse, prix, chambres, sdb, superficie, pieces, epoque, statut, etat  FROM biens"; // Envoie de la requête SQL
 
         $chateaux = $this->execReq($req); //Execution de la requête SQL
 

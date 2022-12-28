@@ -62,4 +62,10 @@ abstract class database
 
         return $resultat;
     }
+
+    protected function execReqPrepModif($req, $data)
+    {
+        $reponse = $this->connexionBDD()->prepare($req);      // Connexion à la base de données
+        $reponse->execute($data);
+    }
 }

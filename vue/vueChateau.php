@@ -30,46 +30,46 @@ ob_start();
                         <div class="labelFiltre">Époque du château :</div>
                         <div class="selecteurCase">
                             <div>
-                                <input type="checkbox" name="XVsiecle" id="XVsiecle">
+                                <input type="checkbox" name="XV" id="XVsiecle">
                                 <label for="XVsiecle">XV<sup>ème</sup> siècle</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="XVIsiecle" id="XVIsiecle">
+                                <input type="checkbox" name="XVI" id="XVIsiecle">
                                 <label for="XVIsiecle">XVI<sup>ème</sup> siècle</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="XVIIsiecle" id="XVIIsiecle">
+                                <input type="checkbox" name="XVII" id="XVIIsiecle">
                                 <label for="XVIIsiecle">XVII<sup>ème</sup> siècle</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="XVIIIsiecle" id="XVIIIsiecle">
+                                <input type="checkbox" name="XVIII" id="XVIIIsiecle">
                                 <label for="XVIIIsiecle">XVIII<sup>ème</sup> siècle</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="XIXsiecle" id="XIXsiecle">
+                                <input type="checkbox" name="XIX" id="XIXsiecle">
                                 <label for="XIXsiecle">XIX<sup>ème</sup> siècle</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="XXsiecle" id="XXsiecle">
+                                <input type="checkbox" name="XX" id="XXsiecle">
                                 <label for="XXsiecle">XX<sup>ème</sup> siècle</label>
                             </div>
                         </div>
                     </div>
                     <div class="totalSelecteurCase">
-                        <div class="labelFiltre">Status du château :</div>
+                        <div class="labelFiltre">Statut du château :</div>
                         <div class="selecteurCase">
                             <input type="checkbox" name="classe" id="classe">
                             <label for="classe">Le château est classé</label>
-                            <input type="checkbox" name="nonClasse" id="nonClasse">
+                            <input type="checkbox" name="nonclasse" id="nonClasse">
                             <label for="nonClasse">Le château n'est classé</label>
                         </div>
                     </div>
                     <div class="totalSelecteurCase">
                         <div class="labelFiltre">État du château :</div>
                         <div class="selecteurCase">
-                            <input type="checkbox" name="restoNecessaire" id="restoNecessaire">
+                            <input type="checkbox" name="restauration" id="restoNecessaire">
                             <label for="restoNecessaire">Restauration nécessaire</label>
-                            <input type="checkbox" name="excellentEtat" id="excellentEtat">
+                            <input type="checkbox" name="excellent" id="excellentEtat">
                             <label for="excellentEtat">Excellent état</label>
                         </div>
                     </div>
@@ -78,7 +78,8 @@ ob_start();
             <?php
             foreach ($chateaux as $item) {
                 ?>
-                <div class="contourBiens">
+                <div class="contourBiens" data-epoque="<?= $item["epoque"] ?>" data-statut="<?= $item["statut"] ?>"
+                     data-etat="<?= $item["etat"] ?>">
                     <div class="bien">
                         <?php
                         if (is_file("img/biens/" . $item["id"] . "-1.jpg")) {
@@ -199,7 +200,7 @@ ob_start();
             }
             ?>
     </main>
-    <script src="js/chateau.js"></script>
+    <script defer src="js/chateau.js"></script>
 <?php
 $contenue = ob_get_clean();
 

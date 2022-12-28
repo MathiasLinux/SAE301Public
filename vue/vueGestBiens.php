@@ -12,7 +12,7 @@ ob_start();
                 Revenir
             </div>
         </a>
-        <form class="formBien" action="#">
+        <form class="formBien" action="index.php?action=ajoutBien" method="post">
             <div class="titreBiensAdmin">
                 <input type="text" id="titre" name="titre" placeholder="Nom du bien" class="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
@@ -63,12 +63,14 @@ ob_start();
                     </svg>
                     <label for="visible">Visible</label>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="visible" name="darkmode" value="yes"
+                        <input class="form-check-input" type="checkbox" id="visible" name="visible" value="yes"
                                checked>
                     </div>
                 </div>
             </div>
             <h3 class="adminH3">Informations :</h3>
+            <label for="prix">Prix</label>
+            <input type="number" name="prix" id="prix">
             <label for="adresse">Adresse</label>
             <input type="text" name="adresse" id="adresse">
             <div>Coordonnées GPS</div>
@@ -96,7 +98,7 @@ ob_start();
             <select id="statut" name="statut">
                 <option value="">Choisir un statut</option>
                 <option value="classe">Le château est classé</option>
-                <option value="pasClasse">Le château n'est pas classé</option>
+                <option value="nonclasse">Le château n'est pas classé</option>
             </select>
             <select id="etat" name="etat">
                 <option value="">Choisir un etat</option>

@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+session_start();
 require_once "config/config.php";
 require_once "controleur/controleur.php";
 
@@ -22,24 +23,70 @@ if (isset($_GET["action"])) {
         blogs();
     } elseif ($_GET["action"] == "login") {
         login();
+    } elseif ($_GET["action"] == "verifLogin") {
+        verifLogin();
     } elseif ($_GET["action"] == "legal") {
         legal();
     } elseif ($_GET["action"] == "admin") {
-        admin();
+        if (isset($_SESSION["login"])) {
+            admin();
+        } else {
+            header("Location: index.php?action=login");
+        }
     } elseif ($_GET["action"] == "gestBien") {
-        gestBien();
+        if (isset($_SESSION["login"])) {
+            gestBien();
+        } else {
+            header("Location: index.php?action=login");
+        }
     } elseif ($_GET["action"] == "gestBiens") {
-        gestBiens();
+        if (isset($_SESSION["login"])) {
+            gestBiens();
+        } else {
+            header("Location: index.php?action=login");
+        }
     } elseif ($_GET["action"] == "gestUti") {
-        gestUti();
+        if (isset($_SESSION["login"])) {
+            gestUti();
+        } else {
+            header("Location: index.php?action=login");
+        }
     } elseif ($_GET["action"] == "gestUtis") {
-        gestUtis();
+        if (isset($_SESSION["login"])) {
+            gestUtis();
+        } else {
+            header("Location: index.php?action=login");
+        }
     } elseif ($_GET["action"] == "formContact") {
-        formContact();
+        if (isset($_SESSION["login"])) {
+            formContact();
+        } else {
+            header("Location: index.php?action=login");
+        }
     } elseif ($_GET["action"] == "gestBlog") {
-        gestBlog();
+        if (isset($_SESSION["login"])) {
+            gestBlog();
+        } else {
+            header("Location: index.php?action=login");
+        }
     } elseif ($_GET["action"] == "gestBlogs") {
-        gestBlogs();
+        if (isset($_SESSION["login"])) {
+            gestBlogs();
+        } else {
+            header("Location: index.php?action=login");
+        }
+    } elseif ($_GET["action"] == "unLogin") {
+        if (isset($_SESSION["login"])) {
+            unLogin();
+        } else {
+            header("Location: index.php?action=login");
+        }
+    } elseif ($_GET["action"] == "ajoutBien") {
+        if (isset($_SESSION["login"])) {
+            ajoutBien();
+        } else {
+            header("Location: index.php?action=login");
+        }
     }
 } else {
     accueil();

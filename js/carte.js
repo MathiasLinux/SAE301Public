@@ -1,5 +1,7 @@
+// Référence à l'élément HTML qui contient les données de la carte
 let mapELement = document.querySelector("#mapData");
 
+//Récupération des données de la carte via l'attribut data-map
 const X = mapELement.getAttribute("data-coordonneX");
 const Y = mapELement.getAttribute("data-coordonneY");
 const ADRESSE = mapELement.getAttribute("data-adresse");

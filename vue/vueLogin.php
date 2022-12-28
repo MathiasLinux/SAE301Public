@@ -5,7 +5,7 @@ ob_start();
     <main class="mainLogin">
         <div class="contourLogin">
             <h2>Heureux de vous revoir</h2>
-            <form action="#" class="formLogin">
+            <form action="index.php?action=verifLogin" class="formLogin" method="post">
                 <label for="e-mail">E-mail :</label>
                 <input type="text" name="e-mail" id="e-mail">
                 <label for="password">Mot de passe :</label>

@@ -61,6 +61,7 @@ ob_start();
         </a>
     </main>
 <?php
+var_dump($_SESSION);
 $contenue = ob_get_clean();
 
 require_once "vue/gabarit/gabarit.php";

@@ -34,3 +34,7 @@ SELECT urlVisite WHERE id =
 -- Requête pour la carte d'un bien
 
 SELECT x, y WHERE id =
+
+-- Requête pour l'ajout d'un utilisateur
+
+INSERT INTO utilisateur (mail, mdp, roles) VALUES ('mail','************','biens,blog');

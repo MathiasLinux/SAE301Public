@@ -645,6 +645,10 @@ input[type="checkbox"] {
     width: 20px;
 }
 
+.bienHidden {
+    display: none !important;
+}
+
 /* Page de d'annonce du chateau */
 
 .mainChateaux {
@@ -1182,5 +1186,5 @@ input[type="checkbox"] {
 /* Page affichant la carte */
 
 #map {
-    height: 100%;
+    height: 80%;
 }
