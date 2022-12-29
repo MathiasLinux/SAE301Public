@@ -16,49 +16,53 @@ ob_start();
         <a class="boutonJaune" href="index.php?action=gestUtis">
             <div>Nouvel utilisateur</div>
         </a>
-        <form class="formUti" action="#">
+        <form class="formUti" action="#" method="post">
             <table>
                 <tr>
                     <th>Adresse Mail</th>
-                </tr>
-                <tr>
-                    <td>mathias.kliem@uha.fr</td>
-                </tr>
-                <tr>
                     <th>Mots de passe</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div>••••••••••••••••••</div>
-                        <a href="index.php?action=" class="boutonJaune">Changer</a>
-                    </td>
-                </tr>
-                <tr>
                     <th>Rôles</th>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="tableauFlex">
-                            <div>Gestion Bien</div>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode"
-                                       value="yes" checked>
+                <?php
+                foreach ($utilisateurs as $item) {
+                    ?>
+                    <tr>
+                        <td><?= $item["mail"] ?></td>
+                        <td>
+                            <div class="fakeMdp">••••••••••••••••••</div>
+                        </td>
+                        <td>
+                            <div class="tableauFlex">
+                                <div>Gestion Bien</div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="biens" name="biens"
+                                           value="yes"
+                                        <?php
+                                        if (str_contains($item["roles"], "biens")) {
+                                            echo "checked";
+                                        }
+                                        ?> disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tableauFlex">
-                            <div>Gestion Blog</div>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode"
-                                       value="yes" checked>
+                            <div class="tableauFlex">
+                                <div>Gestion Blog</div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="blog" name="blog"
+                                           value="yes" <?php
+                                    if (str_contains($item["roles"], "blog")) {
+                                        echo "checked";
+                                    }
+                                    ?> disabled>
+                                </div>
                             </div>
-                        </div>
-                        <div></div>
-                    </td>
-                </tr>
+                            <a class="boutonJaune" href="index.php?action=gestUtis&id=<?= $item["id"] ?>">Modifier
+                                l'utilisateur</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+                ?>
             </table>
-            <div class="envoyerContact">
-                <input type="submit" value="Valider">
-            </div>
         </form>
     </main>
 <?php

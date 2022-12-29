@@ -3,6 +3,7 @@ require_once "modele/bdd.php";
 require_once "modele/chateau.php";
 require_once "modele/login.php";
 require_once "modele/gestBien.php";
+require_once "modele/gestUti.php";
 
 function accueil()
 {
@@ -96,11 +97,18 @@ function gestBiens()
 
 function gestUti()
 {
+    $objGestUtis = new gestUti();
+    $utilisateurs = $objGestUtis->getUti();
     require "vue/vueGestUti.php";
 }
 
 function gestUtis()
 {
+    if (isset($_GET["id"])) {
+        $objUtis = new gestUti();
+        $utilisateur = $objUtis->getUtiId($_GET["id"]);
+    }
+
     require "vue/vueGestUtis.php";
 }
 
@@ -135,4 +143,53 @@ function ajoutBien()
     //$nom, $visible, $prix, $adresse, $region, $x, $y, $chambres, $sdb, $superficie, $pieces, $epoque, $statut, $etat, $description, $urlVisite
 
     //header("Location: index.php?action=gestBien");
+}
+
+function ajoutUti()
+{
+    $objGestUti = new gestUti();
+    $roles = "";
+    if ($_POST["biens"] == "yes") {
+        $roles .= "biens";
+    }
+    if ($_POST["blog"] == "yes") {
+        if ($roles != "") {
+            $roles .= ",blog";
+        } else {
+            $roles .= "blog";
+        }
+    }
+
+    $objGestUti->addUti($_POST["mail"], $_POST["password"], $roles);
+    header("Location: index.php?action=gestUti");
+}
+
+function modifUti()
+{
+    var_dump($_POST);
+    if (isset($_GET["id"])) {
+        $objUtis = new gestUti();
+        $utilisateur = $objUtis->getUtiId($_GET["id"]);
+        if (isset($_POST["mail"]) and str_contains($_POST["mail"], "@") and str_contains($_POST["mail"], ".")) {
+            if (isset($_POST["oldPassword"]) and password_verify($_POST["oldPassword"], $utilisateur["mdp"])) {
+                if (isset($_POST["newPassword"]) and $_POST["newPassword"] == $_POST["newPassword1"]) {
+                    if (isset($_POST["biens"]) and isset($_POST["blog"])) {
+                        $roles = "";
+                        if ($_POST["biens"] == "yes") {
+                            $roles .= "biens";
+                        }
+                        if ($_POST["blog"] == "yes") {
+                            if ($roles != "") {
+                                $roles .= ",blog";
+                            } else {
+                                $roles .= "blog";
+                            }
+                        }
+                        $objUtis->modifUti($_GET["id"], $_POST["mail"], $_POST["newPassword"], $roles);
+                        header("Location: index.php?action=gestUti");
+                    }
+                }
+            }
+        }
+    }
 }

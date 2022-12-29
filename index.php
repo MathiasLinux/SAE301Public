@@ -87,6 +87,18 @@ if (isset($_GET["action"])) {
         } else {
             header("Location: index.php?action=login");
         }
+    } elseif ($_GET["action"] == "ajoutUti") {
+        if (isset($_SESSION["login"])) {
+            ajoutUti();
+        } else {
+            header("Location: index.php?action=login");
+        }
+    } elseif ($_GET["action"] == "modifUti") {
+        if (isset($_SESSION["login"])) {
+            modifUti();
+        } else {
+            header("Location: index.php?action=login");
+        }
     }
 } else {
     accueil();
