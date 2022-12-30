@@ -203,8 +203,8 @@ ob_start();
                                     </div>
                                 </div>
                             </div>
-                            <a class="boutonJaune" href="index.php?action=chateaux&id=<?= $item["id"] ?>">
-                                <div>En apprendre plus</div>
+                            <a class="boutonJaune" href="index.php?action=gestBiens&id=<?= $item["id"] ?>">
+                                <div>Modifier ce bien</div>
                             </a>
                         </div>
                     </div>

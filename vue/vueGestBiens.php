@@ -12,7 +12,7 @@ ob_start();
                 Revenir
             </div>
         </a>
-        <form class="formBien" action="index.php?action=ajoutBien" method="post">
+        <form class="formBien" action="index.php?action=ajoutBien" method="post" enctype="multipart/form-data">
             <div class="titreBiensAdmin">
                 <input type="text" id="titre" name="titre" placeholder="Nom du bien" class="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
@@ -27,25 +27,19 @@ ob_start();
                 </svg>
             </div>
             <div class="imageAdmin">
-                <img src="img/biens/1-1.jpg">
-                <div class="petitesImagesAdmin">
-                    <img src="img/biens/1-2.jpg">
-                    <img src="img/biens/1-3.jpg">
-                    <img src="img/biens/1-4.jpg">
-                    <label for="imgChateau">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="74.419" height="74.419"
-                             viewBox="0 0 74.419 74.419">
-                            <path id="Tracé_27" data-name="Tracé 27"
-                                  d="M3,50.613V66.484a7.959,7.959,0,0,0,7.935,7.936H66.484a7.936,7.936,0,0,0,7.936-7.936V50.613M58.548,22.839,38.71,3,18.871,22.839M38.71,7.761V48.629"
-                                  transform="translate(-1.5 -1.5)" fill="none" stroke="#b2b2b2" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="3"/>
-                        </svg>
-                    </label>
-                    <input type="file"
-                           id="imgChateau" name="imgChateau"
-                           accept="image/png, image/jpeg">
-
-                </div>
+                <label for="imgChateau">
+                    <svg class="svgUploadAdmin" xmlns="http://www.w3.org/2000/svg" width="74.419" height="74.419"
+                         viewBox="0 0 74.419 74.419">
+                        <path id="Tracé_27" data-name="Tracé 27"
+                              d="M3,50.613V66.484a7.959,7.959,0,0,0,7.935,7.936H66.484a7.936,7.936,0,0,0,7.936-7.936V50.613M58.548,22.839,38.71,3,18.871,22.839M38.71,7.761V48.629"
+                              transform="translate(-1.5 -1.5)" fill="none" stroke="#b2b2b2" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="3"/>
+                    </svg>
+                </label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
+                <input type="file"
+                       id="imgChateau" name="imgChateau"
+                       accept="image/png, image/jpeg">
             </div>
             <div class="affichageAdmin">
                 <h3 class="adminH3">Affichage</h3>

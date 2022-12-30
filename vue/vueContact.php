@@ -36,18 +36,19 @@ ob_start();
                     </div>
                 </div>
                 <div class="coordoneesFormulaireAchat">
-                    <form action="#">
+                    <form action="index.php?action=formAchat" method="post">
                         <label for="achatNom">Votre nom :</label>
                         <input type="text" name="achatNom" id="achatNom">
                         <label for="achatNom">Votre adresse e-mail :</label>
-                        <input type="text" name="achatNom" id="achatNom">
+                        <input type="text" name="achatMail" id="achatMail">
                         <label for="achatBien">Le bien qui vous intéresse :</label>
                         <select id="achatBien" name="achatBien">
                             <option value="">Choisir un bien</option>
-                            <option value="chambord">Chambord</option>
-                            <option value="chambord">Chambord</option>
-                            <option value="chambord">Chambord</option>
-                            <option value="chambord">Chambord</option>
+                            <?php
+                            foreach ($chateaux as $item) {
+                                echo '<option value="' . $item['id'] . '">' . $item['nom'] . '</option>';
+                            }
+                            ?>
                         </select>
                         <div></div>
                         <label for="achatMessage">Message :</label>
@@ -60,11 +61,11 @@ ob_start();
                     </form>
                 </div>
                 <div class="coordoneesFormulaireVente">
-                    <form action="#">
+                    <form action="index.php?action=formVente" method="post">
                         <label for="venteNom">Votre nom :</label>
                         <input type="text" name="venteNom" id="venteNom">
                         <label for="venteNom">Votre adresse e-mail :</label>
-                        <input type="text" name="venteNom" id="venteNom">
+                        <input type="text" name="venteMail" id="venteNom">
                         <label for="venteDescription">Description de votre bien :</label>
 
                         <textarea id="venteDescription" name="venteDescription"

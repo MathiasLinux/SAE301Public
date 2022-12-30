@@ -981,6 +981,16 @@ input[type="checkbox"] {
     align-items: center;
 }
 
+.svgUploadAdmin {
+    width: 100%;
+    border: 2px dashed var(--gris-clair);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .petitesImagesAdmin label svg {
     width: 40px;
 }

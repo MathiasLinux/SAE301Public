@@ -17,6 +17,10 @@ if (isset($_GET["action"])) {
         carte();
     } elseif ($_GET["action"] == "contact") {
         contact();
+    } elseif ($_GET["action"] == "formAchat") {
+        formAchat();
+    } elseif ($_GET["action"] == "formVente") {
+        formVente();
     } elseif ($_GET["action"] == "blog") {
         blog();
     } elseif ($_GET["action"] == "blogs") {

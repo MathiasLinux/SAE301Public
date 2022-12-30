@@ -16,67 +16,54 @@ ob_start();
         <table>
             <tr>
                 <th>Nom</th>
-            </tr>
-            <tr>
-                <td>Mathias KLIEM</td>
-            </tr>
-            <tr>
                 <th>Adresse mail</th>
-            </tr>
-            <tr>
-                <td>
-                    mathias.kliem@uha.fr
-                </td>
-            </tr>
-            <tr>
                 <th>Intéressé par le bien</th>
-            </tr>
-            <tr>
-                <td>Château de Chambord</td>
-            </tr>
-            <tr>
                 <th>Message</th>
+                <th>Date</th>
             </tr>
-            <tr>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores atque deleniti dolor
-                    doloremque, ex fugiat illo iure laudantium libero magnam maiores odit provident, quas quis rem
-                    repellendus reprehenderit vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-                    cumque dicta doloribus impedit molestias odit sunt vel velit voluptas voluptatibus. At dolores eaque
-                    ex laborum molestias quo quos sunt! Sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Asperiores at consequuntur dignissimos error labore, nobis possimus quae quam. Ea facilis fugiat
-                    sapiente sed tempora. Animi aut delectus deserunt distinctio repudiandae!
-                </td>
-            </tr>
+            <?php
+            foreach ($contactsAchat as $item) {
+                ?>
+                <tr>
+                    <td><?= $item["nom"] ?></td>
+                    <td><?= $item["mail"] ?></td>
+                    <?php
+                    $nomBien = $objFormContact->getOnlyBienNom($item["bienId"])
+                    ?>
+                    <td><?= $nomBien["nom"] ?></td>
+                    <td><?= $item["message"] ?></td>
+                    <?php
+                    $dateContactAchat = $objFormContact->viewContactAchatDate($item["id"]);
+                    ?>
+                    <td><?= $dateContactAchat["date"] ?></td>
+                </tr>
+                <?php
+            }
+            ?>
         </table>
         <h2 class="adminH2">Vente</h2>
         <table>
             <tr>
                 <th>Nom</th>
-            </tr>
-            <tr>
-                <td>Mathias KLIEM</td>
-            </tr>
-            <tr>
                 <th>Adresse mail</th>
-            </tr>
-            <tr>
-                <td>
-                    mathias.kliem@uha.fr
-                </td>
-            </tr>
-            <tr>
                 <th>Description</th>
+                <th>Date</th>
             </tr>
-            <tr>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores atque deleniti dolor
-                    doloremque, ex fugiat illo iure laudantium libero magnam maiores odit provident, quas quis rem
-                    repellendus reprehenderit vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-                    cumque dicta doloribus impedit molestias odit sunt vel velit voluptas voluptatibus. At dolores eaque
-                    ex laborum molestias quo quos sunt! Sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Asperiores at consequuntur dignissimos error labore, nobis possimus quae quam. Ea facilis fugiat
-                    sapiente sed tempora. Animi aut delectus deserunt distinctio repudiandae!
-                </td>
-            </tr>
+            <?php
+            foreach ($contactsVente as $item) {
+                ?>
+                <tr>
+                    <td><?= $item["nom"] ?></td>
+                    <td><?= $item["mail"] ?></td>
+                    <td><?= $item["description"] ?></td>
+                    <?php
+                    $dateContactVente = $objFormContact->viewContactVenteDate($item["id"])
+                    ?>
+                    <td><?= $dateContactVente["date"] ?></td>
+                </tr>
+                <?php
+            }
+            ?>
         </table>
     </main>
 <?php

@@ -4,6 +4,7 @@ require_once "modele/chateau.php";
 require_once "modele/login.php";
 require_once "modele/gestBien.php";
 require_once "modele/gestUti.php";
+require_once "modele/formContact.php";
 
 function accueil()
 {
@@ -42,7 +43,23 @@ function carte()
 
 function contact()
 {
+    $objCha = new chateau();
+    $chateaux = $objCha->getChateaux();
     require "vue/vueContact.php";
+}
+
+function formAchat()
+{
+    $objFormContact = new formContact();
+    $objFormContact->addContactAchat($_POST["achatNom"], $_POST["achatMail"], $_POST["achatBien"], $_POST["achatMessage"]);
+    header("Location: index.php?action=contact");
+}
+
+function formVente()
+{
+    $objFormContact = new formContact();
+    $objFormContact->addContactVente($_POST["venteNom"], $_POST["venteMail"], $_POST["venteDescription"]);
+    header("Location: index.php?action=contact");
 }
 
 function blog()
@@ -114,6 +131,9 @@ function gestUtis()
 
 function formContact()
 {
+    $objFormContact = new formContact();
+    $contactsAchat = $objFormContact->viewContactAchat();
+    $contactsVente = $objFormContact->viewContactVente();
     require "vue/vueFormContact.php";
 }
 
@@ -137,11 +157,9 @@ function unLogin()
 function ajoutBien()
 {
     $objGestBien = new gestBien();
-    //$objGestBien->ajoutBien;
-
-    $objGestBien->addBien($_POST["titre"], $_POST["visible"], $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
-    //$nom, $visible, $prix, $adresse, $region, $x, $y, $chambres, $sdb, $superficie, $pieces, $epoque, $statut, $etat, $description, $urlVisite
-
+    //$objGestBien->addBien($_POST["titre"], $_POST["visible"], $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
+    var_dump($_FILES);
+    $objGestBien->addFiles("imgChateau", "biens", "4");
     //header("Location: index.php?action=gestBien");
 }
 
