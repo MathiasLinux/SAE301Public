@@ -45,4 +45,13 @@ class chateau extends database
 
         return $chateauXY[0]; // Retourne les coordonnées x et y d'un chateau
     }
+
+    public function getChateauIdFromName($name)
+    {
+        $req = "SELECT id FROM biens WHERE nom = ?"; // Envoie de la requête SQL
+
+        $chateauId = $this->execReqPrep($req, array($name));
+
+        return $chateauId[0]["id"]; // Retourne l'id du chateau
+    }
 }

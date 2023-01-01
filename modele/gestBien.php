@@ -5,7 +5,6 @@ class gestBien extends database
 {
     public function addBien($nom, $visible, $prix, $adresse, $region, $x, $y, $chambres, $sdb, $superficie, $pieces, $epoque, $statut, $etat, $description, $urlVisite)
     {
-        var_dump($_POST);
         if ($visible == "yes") {
             $visible = 1;
         } else {
@@ -19,6 +18,7 @@ class gestBien extends database
     {
         if (isset($path)) {
             $path = $path . "/";
+            echo "uyhgdfiysdkhjfhjsdfsdf".$path;
             if (isset($_FILES[$name])) {
                 // Test s'il n'y a pas d'erreur
                 if ($_FILES[$name]['error'] == 0) {
@@ -35,7 +35,7 @@ class gestBien extends database
                                     "img/" . $path . $_FILES[$name]['name']);
                                 echo "Transfert du fichier " . $_FILES[$name]['name'] . " effectué !";
                                 if (file_exists("img/" . $path . $id . "-1." . $extension_upload)) {
-                                    //Increment if file already exist
+                                    //Incrementation si le fichier existe déjà
                                     $i = 1;
                                     while (file_exists("img/" . $path . $id . "-" . $i . "." . $extension_upload)) {
                                         $i++;

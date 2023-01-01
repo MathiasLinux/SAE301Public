@@ -6,9 +6,6 @@ const X = mapELement.getAttribute("data-coordonneX");
 const Y = mapELement.getAttribute("data-coordonneY");
 const ADRESSE = mapELement.getAttribute("data-adresse");
 
-console.log(X);
-console.log(Y);
-
 var map = L.map('map').setView([X, Y], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

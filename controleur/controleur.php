@@ -157,10 +157,11 @@ function unLogin()
 function ajoutBien()
 {
     $objGestBien = new gestBien();
-    //$objGestBien->addBien($_POST["titre"], $_POST["visible"], $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
-    var_dump($_FILES);
-    $objGestBien->addFiles("imgChateau", "biens", "4");
-    //header("Location: index.php?action=gestBien");
+    $objChateau= new chateau();
+    $objGestBien->addBien($_POST["titre"], $_POST["visible"], $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
+    $id = $objChateau->getChateauIdFromName($_POST["titre"]);
+    $objGestBien->addFiles("imgChateau", "biens", $id);
+    header("Location: index.php?action=gestBien");
 }
 
 function ajoutUti()
