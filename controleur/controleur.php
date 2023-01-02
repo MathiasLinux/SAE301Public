@@ -109,6 +109,10 @@ function gestBien()
 
 function gestBiens()
 {
+    if (isset($_GET["id"])) {
+        $objBien = new gestBien();
+        $bien = $objBien->getBienID($_GET["id"]);
+    }
     require "vue/vueGestBiens.php";
 }
 
@@ -161,6 +165,79 @@ function ajoutBien()
     $objGestBien->addBien($_POST["titre"], $_POST["visible"], $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
     $id = $objChateau->getChateauIdFromName($_POST["titre"]);
     $objGestBien->addFiles("imgChateau", "biens", $id);
+    header("Location: index.php?action=gestBien");
+}
+
+function modifBien(){
+   // var_dump($_POST);
+    $objBien = new gestBien();
+    $bien = $objBien->getBienID($_GET["id"]);
+    if ($_POST["titre"] != $bien["nom"]) {
+        $objBien->updateBien("nom" ,$_POST["titre"], $bien["id"]);
+    }
+    $visible = "";
+    if (isset($_POST["visible"])) {
+
+    if ($_POST["visible"] == "yes") {
+        $visible = "1";
+    } else {
+        $visible = "0";
+    }
+    } else {
+        $visible = "0";
+    }
+    if ($visible != $bien["visible"]) {
+        $objBien->updateBien("visible" ,$visible, $bien["id"]);
+    }
+    if ($_POST["prix"] != $bien["prix"]) {
+        $objBien->updateBien("prix" ,$_POST["prix"], $bien["id"]);
+    }
+    if ($_POST["adresse"] != $bien["adresse"]) {
+        $objBien->updateBien("adresse" ,$_POST["adresse"], $bien["id"]);
+    }
+    if ($_POST["region"] != $bien["region"]) {
+        $objBien->updateBien("region" ,$_POST["region"], $bien["id"]);
+    }
+    if ($_POST["x"] != $bien["x"]) {
+        $objBien->updateBien("x" ,$_POST["x"], $bien["id"]);
+    }
+    if ($_POST["y"] != $bien["y"]) {
+        $objBien->updateBien("y" ,$_POST["y"], $bien["id"]);
+    }
+    if ($_POST["chambres"] != $bien["chambres"]) {
+        $objBien->updateBien("chambres" ,$_POST["chambres"], $bien["id"]);
+    }
+    if ($_POST["sdb"] != $bien["sdb"]) {
+        $objBien->updateBien("sdb" ,$_POST["sdb"], $bien["id"]);
+    }
+    if ($_POST["superficie"] != $bien["superficie"]) {
+        $objBien->updateBien("superficie" ,$_POST["superficie"], $bien["id"]);
+    }
+    if ($_POST["pieces"] != $bien["pieces"]) {
+        $objBien->updateBien("pieces" ,$_POST["pieces"], $bien["id"]);
+    }
+    if ($_POST["epoque"] != $bien["epoque"]) {
+        $objBien->updateBien("epoque" ,$_POST["epoque"], $bien["id"]);
+    }
+    if ($_POST["statut"] != $bien["statut"]) {
+        $objBien->updateBien("statut" ,$_POST["statut"], $bien["id"]);
+    }
+    if ($_POST["etat"] != $bien["etat"]) {
+        $objBien->updateBien("etat" ,$_POST["etat"], $bien["id"]);
+    }
+    if ($_POST["desc"] != $bien["description"]) {
+        $objBien->updateBien("description" ,$_POST["desc"], $bien["id"]);
+    }
+    if ($_POST["lienVisite"] != $bien["urlVisite"]) {
+        $objBien->updateBien("urlVisite" ,$_POST["lienVisite"], $bien["id"]);
+    }
+    header("Location: index.php?action=gestBien");
+
+}
+
+function delBien(){
+    $objBien = new gestBien();
+    $objBien->delBien($_GET["id"]);
     header("Location: index.php?action=gestBien");
 }
 

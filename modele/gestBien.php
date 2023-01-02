@@ -54,4 +54,21 @@ class gestBien extends database
             }
         }
     }
+
+    public function getBienID($id)
+    {
+        $req = "SELECT * FROM biens WHERE id = ?";
+        $bienId = $this->execReqPrep($req, array($id));
+        return $bienId[0];
+    }
+
+    public function updateBien($titre, $modif, $id){
+        $req = "UPDATE biens SET $titre = ? WHERE id = ?";
+        $this->execReqPrepModif($req, array($modif, $id));
+    }
+
+    public function delBien($id){
+        $req = "DELETE FROM biens WHERE id = ?";
+        $this->execReqPrepModif($req, array($id));
+    }
 }
