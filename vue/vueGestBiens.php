@@ -104,18 +104,24 @@ ob_start();
                 </div>
             </div>
             <h3 class="adminH3">Informations :</h3>
+                    <div class="gridAjoutBien">
+                        <div>
             <label for="prix">Prix</label>
             <input type="number" name="prix" id="prix" <?php
             if (isset($bien["prix"])) {
                 echo "value='" . $bien["prix"] . "'";
             }
             ?>>
+                        </div>
+                        <div>
             <label for="adresse">Adresse</label>
                     <input type="text" name="adresse" id="adresse"<?php
                     if (isset($bien["adresse"])) {
                         echo "value='" . $bien["adresse"] . "'";
                     }
                     ?>>
+                        </div>
+                        <div>
             <div>Coordonnées GPS</div>
             <label for="x">X</label>
             <input type="number" name="x" id="x" <?php
@@ -123,36 +129,48 @@ ob_start();
                 echo "value='" . $bien["x"] . "'";
             }
             ?>>
+                        </div>
+                        <div>
             <label for="y">Y</label>
             <input type="number" name="y" id="y"<?php
             if (isset($bien["y"])) {
                 echo "value='" . $bien["y"] . "'";
             }
             ?>>
+                        </div>
+                        <div>
             <label for="chambres">Chambres</label>
             <input type="number" name="chambres" id="chambres" <?php
             if (isset($bien["chambres"])) {
                 echo "value='" . $bien["chambres"] . "'";
             }
             ?>>
+                        </div>
+                        <div>
             <label for="sdb">Salles de bain</label>
             <input type="number" name="sdb" id="sdb"<?php
             if (isset($bien["sdb"])) {
                 echo "value='" . $bien["sdb"] . "'";
             }
             ?>>
+                        </div>
+                        <div>
             <label for="superficie">Superficie</label>
             <input type="number" name="superficie" id="superficie"<?php
             if (isset($bien["superficie"])) {
                 echo "value='" . $bien["superficie"] . "'";
             }
             ?>>
+                        </div>
+                        <div>
             <label for="pieces">Pièces</label>
             <input type="number" name="pieces" id="pieces"<?php
             if (isset($bien["pieces"])) {
                 echo "value='" . $bien["pieces"] . "'";
             }
             ?>>
+                        </div>
+                        <div>
             <select id="epoque" name="epoque">
                 <option value="">Choisir une epoque</option>
                 <?php
@@ -328,12 +346,16 @@ ob_start();
                 ?>
 
             </select>
+                        </div>
+                        <div>
             <label for="desc">Description</label>
             <textarea name="desc" id="desc" cols="25" rows="10"><?php
                 if (isset($bien['description'])) {
                     echo $bien['description'];
                 }
                 ?></textarea>
+                        </div>
+                        <div>
             <h3 class="adminH3">Visite Virtuelle :</h3>
                     <?php
                     $id = preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $bien["urlVisite"], $matches); //Récupère l'id de la vidéo youtube via une expression REGEX
@@ -350,6 +372,8 @@ ob_start();
                 echo "value='" . $bien['urlVisite'] . "'";
             }
             ?>>
+                        </div>
+                    </div>
             <div class="envoyerContact">
                 <input type="submit" value="Valider">
             </div>
@@ -390,8 +414,8 @@ ob_start();
                     </label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
                     <input type="file"
-                           id="imgChateau" name="imgChateau"
-                           accept="image/png, image/jpeg">
+                           id="imgChateau" name="imgChateau[]"
+                           accept="image/png, image/jpeg" multiple="multiple">
                 </div>
                 <div class="affichageAdmin">
                     <h3 class="adminH3">Affichage</h3>
@@ -415,23 +439,41 @@ ob_start();
                     </div>
                 </div>
                 <h3 class="adminH3">Informations :</h3>
+                    <div class="gridAjoutBien">
+                        <div>
                 <label for="prix">Prix</label>
                 <input type="number" name="prix" id="prix">
+                        </div>
+                        <div>
                 <label for="adresse">Adresse</label>
                 <input type="text" name="adresse" id="adresse">
+                        </div>
+                        <div>
                 <div>Coordonnées GPS</div>
                 <label for="x">X</label>
                 <input type="number" name="x" id="x">
+                        </div>
+                        <div>
                 <label for="y">Y</label>
                 <input type="number" name="y" id="y">
+                        </div>
+                       <div>
                 <label for="chambres">Chambres</label>
                 <input type="number" name="chambres" id="chambres">
+                          </div>
+                            <div>
                 <label for="sdb">Salles de bain</label>
                 <input type="number" name="sdb" id="sdb">
+                            </div>
+                            <div>
                 <label for="superficie">Superficie</label>
                 <input type="number" name="superficie" id="superficie">
+                            </div>
+                            <div>
                 <label for="pieces">Pièces</label>
                 <input type="number" name="pieces" id="pieces">
+                            </div>
+                            <div>
                 <select id="epoque" name="epoque">
                     <option value="">Choisir une epoque</option>
                     <option value="XV">XVème siècle</option>
@@ -466,13 +508,19 @@ ob_start();
                     <option value="occitanie">Occitanie</option>
                     <option value="paca">Provence-Alpes-Côte d'Azur</option>
                 </select>
+                            </div>
+                            <div>
                 <label for="desc">Description</label>
                 <textarea name="desc" id="desc" cols="25" rows="10"></textarea>
+                            </div>
+                            <div>
                 <h3 class="adminH3">Visite Virtuelle :</h3>
                 <label for="lienVisite">Liens vers la visite</label>
                 <input type="url" name="lienVisite" id="lienVisite"
                        placeholder="https://www.youtube.com/watch?v=Nlk9hoHP_kk"
                        pattern="https://.*" size="20">
+                    </div>
+                </div>
                 <div class="envoyerContact">
                     <input type="submit" value="Valider">
                 </div>

@@ -58,6 +58,10 @@ class formContact extends database
 
         $bienId = $this->execReqPrep($req, array($id));
 
-        return $bienId[0]; // Retourne le nom du bien
+        if (isset($bienId[0])){
+            return $bienId[0];
+        } else {
+            return false;
+        }
     }
 }

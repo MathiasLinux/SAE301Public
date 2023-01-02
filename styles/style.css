@@ -102,7 +102,7 @@ header {
 }
 
 .header > img {
-    width: 18%;
+    width: 80px;
 }
 
 .menu {
@@ -156,6 +156,11 @@ header {
     max-width: 12%;
 }
 
+.laBarre{
+    border-bottom: 4px solid white;
+    width: 80%;
+}
+
 .footerMenu {
     font-family: rockwell-nova, sans-serif;
     font-weight: 400;
@@ -198,14 +203,22 @@ footer > a {
     grid-template-rows: 1fr auto 1fr;
 }
 
-.centerIndex > h2 {
+.indexH2 > h2 {
     margin: 0;
     font-weight: 400;
     font-size: 40px;
     font-style: normal;
-    align-self: center;
-    justify-self: center;
+}
+
+.indexH2 {
     background-color: #00000082;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    margin-left : 8%;
+    margin-right : 8%;
 }
 
 .decouvrezIndex {

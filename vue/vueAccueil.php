@@ -6,7 +6,9 @@ ob_start();
         <source src="video/Chateau_mobile_1080p_Medium.mp4" type="video/mp4">
     </video>
     <main class="centerIndex">
-        <h2>Vente de biens d'exception</h2>
+        <div class="indexH2">
+            <h2>Vente de biens d'exception</h2>
+        </div>
         <div class="decouvrezIndex">
             <a href="index.php?action=chateau">Découvrez</a>
         </div>

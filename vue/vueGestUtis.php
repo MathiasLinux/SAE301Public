@@ -14,20 +14,27 @@ ob_start();
         </a>
         <?php
         if (isset($_GET["id"]) and isset($utilisateur)) {
-            /*echo "<div style='color: white'>";
-            var_dump($utilisateur);
-            echo "</div>";*/
             ?>
             <h2 class="adminH2">Modifier <?= $utilisateur["mail"] ?> :</h2>
             <form class="formUtis" action="index.php?action=modifUti&id=<?= $utilisateur["id"] ?>" method="post">
+                <div class="gridAjoutUti">
+                    <div>
                 <label for="mail">Adresse Mail</label>
                 <input type="text" name="mail" id="mail" value="<?= $utilisateur["mail"] ?>">
+                    </div>
+                    <div>
                 <label for="oldPassword">Ancien mot de passe</label>
                 <input type="password" name="oldPassword" id="oldPassword">
+                    </div>
+                    <div>
                 <label for="newPassword">Nouveau mot de passe</label>
                 <input type="password" name="newPassword" id="newPassword">
+                    </div>
+                    <div>
                 <label for="newPassword1">Confirmer votre nouveau mot de passe</label>
                 <input type="password" name="newPassword1" id="newPassword1">
+                    </div>
+                </div>
                 <div class="rolesAdminUtis">
                     <h3 class="adminH3">Rôles</h3>
                     <div class="rolesAdminUtisSelect" id="premierRole">
@@ -62,10 +69,16 @@ ob_start();
             ?>
             <h2 class="adminH2">Nouvel utilisateur :</h2>
             <form class="formUtis" action="index.php?action=ajoutUti" method="post">
+                <div class="gridAjoutUti">
+                    <div>
                 <label for="mail">Adresse Mail</label>
                 <input type="text" name="mail" id="mail">
+                    </div>
+                    <div>
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password" id="password">
+                    </div>
+                </div>
                 <div class="rolesAdminUtis">
                     <h3 class="adminH3">Rôles</h3>
                     <div class="rolesAdminUtisSelect" id="premierRole">

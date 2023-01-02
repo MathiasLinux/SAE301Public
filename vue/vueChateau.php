@@ -21,7 +21,7 @@ ob_start();
                               stroke-width="2"/>
                     </svg>
                 </div>
-                <form action="#">
+                <form action="#" class="gridFiltre">
                     <div class="selecteurPrix">
                         <label class="labelFiltre" for="prix">Prix :</label>
                         <input type="range" name="prix" id="prix">
@@ -75,6 +75,7 @@ ob_start();
                     </div>
                 </form>
             </div>
+            <div class="gridBiens">
             <?php
             foreach ($chateaux as $item) {
                 ?>
@@ -199,6 +200,7 @@ ob_start();
                 <?php
             }
             ?>
+            </div>
     </main>
     <script defer src="js/chateau.js"></script>
 <?php

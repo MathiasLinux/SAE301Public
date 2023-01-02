@@ -9,6 +9,8 @@
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel='stylesheet' media='screen and (min-width: 800px) and (max-width: 1439px)' href='styles/medium-style.css' />
+    <link rel="stylesheet" media="screen and (min-device-width: 1440px)" href="styles/desktop-style.css" />
 </head>
 <body>
 <?php require("vue/gabarit/header.php"); ?>

@@ -12,7 +12,8 @@ ob_start();
                 Revenir
             </div>
         </a>
-        <h2 class="adminH2">Achat</h2>
+        <h2 class="adminH2 formContactH2">Achat</h2>
+        <div class="gridFormContact">
         <table>
             <tr>
                 <th>Nom</th>
@@ -30,7 +31,17 @@ ob_start();
                     <?php
                     $nomBien = $objFormContact->getOnlyBienNom($item["bienId"])
                     ?>
+                    <?php
+                    if (isset($nomBien["nom"])){
+                    ?>
                     <td><?= $nomBien["nom"] ?></td>
+                        <?php
+                    } else {
+                        ?>
+                        <td><strong>Le bien a été supprimé</strong></td>
+                        <?php
+                    }
+                        ?>
                     <td><?= $item["message"] ?></td>
                     <?php
                     $dateContactAchat = $objFormContact->viewContactAchatDate($item["id"]);
@@ -41,7 +52,7 @@ ob_start();
             }
             ?>
         </table>
-        <h2 class="adminH2">Vente</h2>
+        <h2 class="adminH2 formContactH2">Vente</h2>
         <table>
             <tr>
                 <th>Nom</th>
@@ -65,6 +76,7 @@ ob_start();
             }
             ?>
         </table>
+        </div>
     </main>
 <?php
 $contenue = ob_get_clean();

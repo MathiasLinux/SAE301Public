@@ -36,7 +36,7 @@ ob_start();
                     </div>
                 </div>
                 <div class="coordoneesFormulaireAchat">
-                    <form action="index.php?action=formAchat" method="post">
+                    <form action="index.php?action=formAchat" class="gridContact" method="post">
                         <label for="achatNom">Votre nom :</label>
                         <input type="text" name="achatNom" id="achatNom">
                         <label for="achatNom">Votre adresse e-mail :</label>
@@ -61,7 +61,7 @@ ob_start();
                     </form>
                 </div>
                 <div class="coordoneesFormulaireVente">
-                    <form action="index.php?action=formVente" method="post">
+                    <form action="index.php?action=formVente" class="gridContact" method="post">
                         <label for="venteNom">Votre nom :</label>
                         <input type="text" name="venteNom" id="venteNom">
                         <label for="venteNom">Votre adresse e-mail :</label>

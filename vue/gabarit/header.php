@@ -16,6 +16,39 @@
             </g>
         </svg>
         <div class="contenuMenu">
+            <?php
+            if (isset($_SESSION["login"])) {
+            ?>
+                    <style>
+                        .contenuMenu {
+                            gap: 2%;
+                        }
+                        @media only screen and (min-width: 800px) and  (max-width: 1439px) {
+                            .contenuMenu {
+                                gap: 5%;
+                            }
+                        }
+                    </style>
+                    <div>
+                        <a href="index.php?action=admin">Administration</a>
+                    </div>
+                    <div>
+                        <a href="index.php?action=gestBien">Gestion des biens</a>
+                    </div>
+
+                    <div>
+                        <a href="index.php?action=gestUti">Gestion des utilisateurs</a>
+                    </div>
+                    <div>
+                        <a href="index.php?action=formContact">Formulaire de contact</a>
+                    </div>
+                    <div>
+                        <a href="index.php?action=gestBlog">Gestion du blog</a>
+                    </div>
+                    <div class="laBarre"></div>
+            <?php
+            }
+            ?>
             <div>
                 <a href="index.php">Accueil</a>
             </div>

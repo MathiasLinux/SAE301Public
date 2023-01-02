@@ -1,0 +1,84 @@
+/* Page d'acueil */
+
+footer {
+    margin-left: 40%;
+    padding: 30px;
+}
+
+.centerIndex {
+    justify-content: center;
+}
+
+.indexH2 {
+    margin: 0;
+}
+
+.indexH2 > h2 {
+    font-size: 50px;
+}
+
+/* Page avec les chateaux */
+
+.gridBiens{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.gridFiltre{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 20px;
+}
+
+/* Page d'annonce d'un chateau */
+
+.infoChateau{
+    grid-template-columns: repeat(4, auto);
+    margin-bottom: 8%;
+}
+
+/* Page de contact */
+
+.gridContact{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.gridContact > select {
+    margin-right: 30%;
+    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Page d'ajout d'un bien */
+
+.gridAjoutBien{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* Page d'ajout d'un utilisateur */
+
+.gridAjoutUti{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* Page d'affichage des formulaires de contacts remplies */
+
+.gridFormContact{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+.formContactH2 {
+    display: flex;
+    justify-content: center;
+}
