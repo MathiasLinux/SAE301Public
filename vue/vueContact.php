@@ -2,14 +2,18 @@
 $title = "Château Bourbon";
 ob_start();
 ?>
-    <main>
+    <video class="videoContact" playsinline="true" autoplay="true" muted="true" loop="true" id="bgvid">
+    </video>
+    <main class="mainContact">
         <div class="centerContact">
+            <div class="contourJeCherche">
             <h2>Je cherche à</h2>
             <div class="autourBouton">
                 <input type="radio" id="acheter" name="contact" value="acheter">
                 <label class="boutonContact" for="acheter">Acheter</label>
                 <input type="radio" id="vendre" name="contact" value="vendre">
                 <label class="boutonContact" for="vendre">Vendre</label>
+            </div>
             </div>
             <div class="coordonees">
                 <div class="coordonnesAncienne">
@@ -37,11 +41,18 @@ ob_start();
                 </div>
                 <div class="coordoneesFormulaireAchat">
                     <form action="index.php?action=formAchat" class="gridContact" method="post">
+                        <div class="labelEtInput">
                         <label for="achatNom">Votre nom :</label>
                         <input type="text" name="achatNom" id="achatNom">
+                        </div>
+                        <div class="labelEtInput">
                         <label for="achatNom">Votre adresse e-mail :</label>
                         <input type="text" name="achatMail" id="achatMail">
+                        </div>
+                        <div class="labelEtInput">
                         <label for="achatBien">Le bien qui vous intéresse :</label>
+                        </div>
+                        <div class="labelEtInput">
                         <select id="achatBien" name="achatBien">
                             <option value="">Choisir un bien</option>
                             <?php
@@ -50,11 +61,14 @@ ob_start();
                             }
                             ?>
                         </select>
+                        </div>
                         <div></div>
+                        <div class="labelEtInput">
                         <label for="achatMessage">Message :</label>
 
                         <textarea id="achatMessage" name="achatMessage"
                                   rows="4" cols="25"></textarea>
+                            </div>
                         <div class="envoyerContact">
                             <input type="submit" value="Envoyer">
                         </div>
@@ -62,14 +76,20 @@ ob_start();
                 </div>
                 <div class="coordoneesFormulaireVente">
                     <form action="index.php?action=formVente" class="gridContact" method="post">
+                        <div class="labelEtInput">
                         <label for="venteNom">Votre nom :</label>
                         <input type="text" name="venteNom" id="venteNom">
+                        </div>
+                        <div class="labelEtInput">
                         <label for="venteNom">Votre adresse e-mail :</label>
                         <input type="text" name="venteMail" id="venteNom">
+                        </div>
+                        <div class="labelEtInput">
                         <label for="venteDescription">Description de votre bien :</label>
 
                         <textarea id="venteDescription" name="venteDescription"
                                   rows="4" cols="25"></textarea>
+                        </div>
                         <div class="envoyerContact">
                             <input type="submit" value="Envoyer">
                         </div>

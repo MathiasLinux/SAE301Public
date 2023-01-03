@@ -105,6 +105,10 @@ header {
     width: 80px;
 }
 
+.headerPC{
+    display: none;
+}
+
 .menu {
     display: flex;
     align-items: center;
@@ -243,6 +247,10 @@ footer > a {
 /*----------------------------------------*/
 /* Nous contacter */
 
+.videoContact{
+    display: none;
+}
+
 .centerContact {
     color: white;
     justify-content: center;
@@ -306,15 +314,15 @@ footer > a {
     color: black;
 }
 
-.autourBouton:has(input:checked) + .coordonees > .coordonnesAncienne { /* :has permet d'acceder à la partie coordonnées depuis le selecteur */
+.contourJeCherche:has(input:checked) + .coordonees > .coordonnesAncienne { /* :has permet d'acceder à la partie coordonnées depuis le selecteur */
     display: none;
 }
 
-.autourBouton:has(#acheter:checked) + .coordonees > .coordoneesFormulaireAchat {
+.contourJeCherche:has(#acheter:checked) + .coordonees > .coordoneesFormulaireAchat {
     display: block;
 }
 
-.autourBouton:has(#vendre:checked) + .coordonees > .coordoneesFormulaireVente {
+.contourJeCherche:has(#vendre:checked) + .coordonees > .coordoneesFormulaireVente {
     display: block;
 }
 
@@ -447,7 +455,16 @@ label[for="venteDescription"] {
     margin-right: 10%;
 }
 
-.contourArticle h2 {
+.mainBlog h2{
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    font-style: normal;
+    margin-top: 10%;
+    color: white;
+}
+
+.contourArticle h3 {
     font-family: rockwell-nova, sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -707,6 +724,10 @@ input[type="checkbox"] {
     width: 10%;
 }
 
+.photosDesktop{
+    display: none;
+}
+
 .infoChateau {
     display: grid;
     grid-template-columns: auto auto;
@@ -879,8 +900,7 @@ input[type="checkbox"] {
 }
 
 /* Page d'administration */
-
-.mainAdmin {
+.adminMobile{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -888,6 +908,7 @@ input[type="checkbox"] {
     gap: 10%;
     margin-left: 5%;
     margin-right: 5%;
+    height: 100%;
 }
 
 .boutonAdmin {
@@ -937,6 +958,7 @@ input[type="checkbox"] {
     padding-right: 80px;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .boutonVert{

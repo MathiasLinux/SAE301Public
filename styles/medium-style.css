@@ -1,8 +1,15 @@
 /* Page d'acueil */
 
+.contourFooter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    ". footer";
+}
+
 footer {
-    margin-left: 40%;
-    padding: 30px;
+    padding: 20px;
+    grid-area: footer;
 }
 
 .centerIndex {

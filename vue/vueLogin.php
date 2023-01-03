@@ -2,6 +2,8 @@
 $title = "Château Bourbon";
 ob_start();
 ?>
+    <video playsinline="true" autoplay="true" muted="true" loop="true" id="bgvid">
+    </video>
     <main class="mainLogin">
         <div class="contourLogin">
             <h2>Heureux de vous revoir</h2>
@@ -18,6 +20,7 @@ ob_start();
             </form>
         </div>
     </main>
+    <script defer src="js/login.js"></script>
 <?php
 $contenue = ob_get_clean();
 

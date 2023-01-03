@@ -2,8 +2,11 @@
 $title = "Château Bourbon";
 ob_start();
 ?>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+          crossorigin=""/>
     <main class="mainChateaux">
-        <a class="boutonJaune" href="index.php?action=chateau">
+        <a class="boutonJaune retourChateaux" href="index.php?action=chateau">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -12,9 +15,12 @@ ob_start();
                 Revenir
             </div>
         </a>
+        <div class="contourTotalChateaux">
         <div class="contourAnnonceChateau">
+            <div class="topChateaux">
             <h2><?= $chateauId["nom"] ?></h2>
             <div class="prixBien"><?= number_format(intval($chateauId["prix"]), 0, ",", " ") ?> €</div>
+            </div>
             <!-- Carousel -->
             <div id="photoChateau" class="carousel slide" data-bs-ride="carousel">
 
@@ -96,6 +102,47 @@ ob_start();
                     <div><?= $chateauId["adresse"] ?></div>
                 </div>
             </div>
+            <div class="photosDesktop">
+                  <?php
+
+                    if (is_file("img/biens/" . $chateauId["id"] . "-1.jpg")) {
+                        ?>
+                        <div class="photoBienPrincipale">
+                            <img src="img/biens/<?= $chateauId["id"] ?>-1.jpg" class="d-block w-100">
+                        </div>
+                        <?php
+                    }
+                    if (is_file("img/biens/" . $chateauId["id"] . "-1.jpeg")) {
+                        ?>
+                        <div class="photoBienPrincipale">
+                            <img src="img/biens/<?= $chateauId["id"] ?>-1.jpeg" class="d-block w-100">
+                        </div>
+                        <?php
+                    }
+                    if (is_file("img/biens/" . $chateauId["id"] . "-1.png")) {
+                        ?>
+                        <div class="photoBienPrincipale">
+                            <img src="img/biens/<?= $chateauId["id"] ?>-1.png" class="d-block w-100">
+                        </div>
+                        <?php
+                    }
+                    ?>
+                <div class="photosBiensSecondaires">
+                    <?php
+                foreach ($scan as $file) {
+                        if (!is_dir("img/biens/$file") and stripos($file, $chateauId["id"] . "-") !== false) {
+                            if ($file !== $chateauId["id"] . "-1.jpg" and $file !== $chateauId["id"] . "-1.jpeg" and $file !== $chateauId["id"] . "-1.png") {
+                                ?>
+                                <div class="photoBienSecondaire">
+                                    <img src="img/biens/<?= $file ?>" class="d-block w-100">
+                                </div>
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
             <div class="infoChateau">
                 <div class="contourNombreImportant">
                     <div><?= $chateauId["chambres"] ?></div>
@@ -131,7 +178,19 @@ ob_start();
                     <div>Nous contacter</div>
                 </a>
             </div>
+        </div>
+            <div class="contourCarteChateau">
+                <!-- récupération des coordonnées du château en PHP-->
+                <div id="mapData" data-coordonneX="<?= $chateauXY["x"] ?>" data-coordonneY="<?= $chateauXY["y"] ?>"
+                     data-adresse="<?= $chateauId["adresse"] ?>"></div>
+                <div id="map"></div>
+            </div>
     </main>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""></script>
+    <script defer src="js/carte.js"></script>
+    <script defer src="js/chateaux.js"></script>
 <?php
 $contenue = ob_get_clean();
 

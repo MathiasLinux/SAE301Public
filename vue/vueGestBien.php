@@ -4,7 +4,7 @@ ob_start();
 ?>
     <main>
         <div class="contourChateau">
-            <a class="boutonJaune" href="index.php?action=admin">
+            <a class="boutonJaune retourChateaux" href="index.php?action=admin">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -14,7 +14,7 @@ ob_start();
                 </div>
             </a>
             <h2 class="adminH2">Gestion des biens</h2>
-            <a class="boutonJaune" href="index.php?action=gestBiens">
+            <a class="boutonJaune ajoutBien" href="index.php?action=gestBiens">
                 <div>Nouveau bien</div>
             </a>
             <div class="menuFiltre">

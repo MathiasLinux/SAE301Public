@@ -1,0 +1,483 @@
+/* Page d'accueil */
+
+.contourFooter{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . . footer";
+}
+
+footer{
+    padding: 10px;
+    grid-area: footer;
+}
+.centerIndex {
+    justify-content: center;
+}
+
+.indexH2 {
+    margin: 0;
+}
+
+.indexH2 > h2 {
+    font-size: 60px;
+}
+
+.decouvrezIndex > a {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.menu{
+    display : none;
+}
+
+header{
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.headerPC{
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.headerPCPartOne{
+    justify-self: center;
+    display: flex;
+    gap: 30px;
+    margin-right: 10%;
+}
+
+.loginSVG{
+    justify-self: end;
+}
+
+.headerPC a{
+    text-decoration: none;
+    color: white;
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.headerPC a svg{
+    width: 40px;
+}
+
+/* Page avec les annonces de chateaux */
+
+.gridBiens{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.menuFiltre{
+    display: none;
+}
+
+.contourFiltre{
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridFiltre{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.boutonRegion{
+    margin: 0;
+    height: min-content;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 10px;
+}
+
+.totalSelecteurCase{
+    width: max-content;
+    justify-self: center;
+}
+
+.labelEtInput{
+    display: flex;
+    gap: 10px;
+}
+
+.labelEtInput > label{
+    width: max-content;
+}
+
+/* Page d'annonce d'un bien */
+
+.retourChateaux{
+    margin-top: 2%;
+    margin-left: 0;
+    margin-bottom: 2%;
+    margin-right: 80%;
+}
+
+.contourTotalChateaux{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 80px;
+}
+
+.contourTotalChateaux .boutonViolet{
+    display: none;
+}
+
+.contourAnnonceChateau{
+    display: grid;
+    grid-template-areas:
+    "titre"
+    "image"
+    "info"
+    "boutons"
+    "description";
+}
+
+.topChateaux{
+    display: flex;
+    justify-content: space-between;
+    grid-area: titre;
+}
+
+.prixBien{
+    border-bottom: 3px solid white;
+}
+
+#photoChateau{
+    display: none;
+}
+
+.photosDesktop{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 20px;
+    grid-area: image;
+}
+
+.photoBienPrincipale {
+    height: 100%;
+}
+
+.photosBiensSecondaires{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.infoChateau{
+    grid-template-columns: repeat(4, auto);
+    margin-bottom: 4%;
+    grid-area: info;
+}
+
+.descChateaux{
+    grid-area: description;
+}
+
+.boutonsChateaux{
+    display: flex;
+    margin-bottom: 4%;
+    grid-area: boutons;
+}
+
+.boutonsChateaux .boutonJaune, .boutonsChateaux .boutonGris{
+    margin: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#map{
+    height: 100%;
+}
+
+/* Page de contact */
+
+.mainContact{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.videoContact{
+    display: block;
+}
+
+.centerContact{
+    display: grid;
+    grid-template-areas: "coordonnees contact";
+    justify-content: space-between;
+    margin: 0;
+}
+
+.contourJeCherche{
+    grid-area: contact;
+    background-color: var(--gris-fonce);
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.coordonnesAncienne{
+    grid-area: coordonnees;
+    background-color: var(--gris-fonce);
+    padding: 40px;
+}
+
+.coordonees{
+    margin: 0;
+}
+
+.coordoneesFormulaireAchat{
+    background-color: var(--gris-fonce);
+    padding: 40px;
+    margin: 20px;
+}
+
+#achatBien{
+    margin-bottom: 10%;
+}
+
+.coordoneesFormulaireVente{
+    background-color: var(--gris-fonce);
+    padding: 40px;
+    margin: 20px;
+}
+
+#venteDescription{
+    margin-top: 10%;
+}
+
+/* Page d'affichage des articles du blog */
+
+.mainBlog h2{
+    font-size: 35px;
+}
+
+.contourArticle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contourArticle h3{
+    font-size: 25px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.basBlog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    margin-left : 20%;
+    margin-right : 20%;
+}
+
+.descArticle{
+    margin-top: 0;
+}
+
+.contourArticle img{
+    width: 40%;
+}
+
+/* Page d'affichage d'un article du blog */
+
+/* Page de connection */
+
+.mainLogin{
+    justify-content: flex-start;
+}
+
+.contourLogin{
+    background-color: var(--gris-fonce);
+    padding: 40px;
+}
+
+/* Page d'administration */
+
+.adminMobile{
+    display: none;
+}
+
+.adminDesktop{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+    height: 100%;
+}
+
+.boutonAdminDesktop{
+    text-decoration: none;
+    color: white;
+    font-family: rockwell-nova, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.boutonAdminDesktop svg{
+    width: 40px;
+    height: 40px;
+}
+
+.blocAdminCote{
+    background-color: var(--gris-semi-clair);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Page de gestion des biens */
+
+.adminH2{
+    font-size: 35px;
+}
+
+.ajoutBien{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 70%;
+}
+
+/* Page d'ajout d'un bien */
+
+.formBien{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    grid-template-areas:
+    "titre titre ."
+    "images images affichage"
+    "info . ."
+    "input input ."
+    "input input ."
+    "input input ."
+    ". envoyer ." ;
+}
+
+.titreBiensAdmin{
+    grid-area: titre;
+}
+
+.affichageAdmin{
+    grid-area: affichage;
+}
+
+.imageAdmin{
+    grid-area: images;
+}
+
+.imageAdminDeux{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.petitesImagesAdmin{
+    margin-top: 0;
+}
+
+.infoGestBien{
+    grid-area: info;
+}
+
+.gridAjoutBien{
+    grid-area: input;
+    display: grid;
+    grid-template-areas:
+    "firstinput"
+    "coordonnees"
+    "secondinput"
+    "thirdinput"
+    "fourthinput"
+    "fiveinput"
+    "description"
+    "visiteVirtuelle";
+}
+
+.firstInputRow{
+    grid-area: firstinput;
+    display: flex;
+    gap: 40px;
+}
+
+.coordoneesInputRow{
+    grid-area: coordonnees;
+    display: flex;
+    gap: 40px;
+}
+
+.secondInputRow{
+    grid-area: secondinput;
+    display: flex;
+    gap: 40px;
+}
+
+.thirdInputRow{
+    grid-area: thirdinput;
+    display: flex;
+    gap: 40px;
+}
+
+.fourthInputRow{
+    grid-area: fourthinput;
+    display: flex;
+    gap: 40px;
+}
+
+.fourthInputRow{
+    grid-area: fiveinput;
+    display: flex;
+    gap: 40px;
+}
+
+.descGestBien{
+    grid-area: description;
+}
+
+.visiteVirtuelle{
+    grid-area: visiteVirtuelle;
+}
+
+.envoyerContact{
+    grid-area: envoyer;
+}
+
+/* Page contenant les réponses du formulaire de contact */
+
+.mainUti table{
+    table-layout: fixed;
+}
+
+.mainUti table th{
+    display: initial;
+}
+
+.mainUti table td{
+    display: initial;
+    border: 1px solid black;
+}
+
+.mainUti table tr{
+    display: flex;
+
+}

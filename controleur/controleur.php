@@ -22,6 +22,8 @@ function chateaux()
 {
     $objCha = new chateau();
     $chateauId = $objCha->getChateauId($_GET["id"]);
+    $chateauXY = $objCha->getChateauXY($_GET["id"]);
+    $chateauId = $objCha->getChateauId($_GET["id"]);
     require "vue/vueChateaux.php";
 }
 

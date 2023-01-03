@@ -29,27 +29,27 @@ ob_start();
                     <div class="totalSelecteurCase">
                         <div class="labelFiltre">Époque du château :</div>
                         <div class="selecteurCase">
-                            <div>
+                            <div class="labelEtInput">
                                 <input type="checkbox" name="XV" id="XVsiecle">
                                 <label for="XVsiecle">XV<sup>ème</sup> siècle</label>
                             </div>
-                            <div>
+                            <div class="labelEtInput">
                                 <input type="checkbox" name="XVI" id="XVIsiecle">
                                 <label for="XVIsiecle">XVI<sup>ème</sup> siècle</label>
                             </div>
-                            <div>
+                            <div class="labelEtInput">
                                 <input type="checkbox" name="XVII" id="XVIIsiecle">
                                 <label for="XVIIsiecle">XVII<sup>ème</sup> siècle</label>
                             </div>
-                            <div>
+                            <div class="labelEtInput">
                                 <input type="checkbox" name="XVIII" id="XVIIIsiecle">
                                 <label for="XVIIIsiecle">XVIII<sup>ème</sup> siècle</label>
                             </div>
-                            <div>
+                            <div class="labelEtInput">
                                 <input type="checkbox" name="XIX" id="XIXsiecle">
                                 <label for="XIXsiecle">XIX<sup>ème</sup> siècle</label>
                             </div>
-                            <div>
+                            <div class="labelEtInput">
                                 <input type="checkbox" name="XX" id="XXsiecle">
                                 <label for="XXsiecle">XX<sup>ème</sup> siècle</label>
                             </div>
@@ -61,7 +61,7 @@ ob_start();
                             <input type="checkbox" name="classe" id="classe">
                             <label for="classe">Le château est classé</label>
                             <input type="checkbox" name="nonclasse" id="nonClasse">
-                            <label for="nonClasse">Le château n'est classé</label>
+                            <label for="nonClasse">Le château n'est pas classé</label>
                         </div>
                     </div>
                     <div class="totalSelecteurCase">

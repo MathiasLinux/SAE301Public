@@ -3,7 +3,7 @@ $title = "Château Bourbon";
 ob_start();
 ?>
     <main class="mainGestBiens">
-        <a class="boutonJaune" href="index.php?action=gestBien">
+        <a class="boutonJaune retourChateaux" href="index.php?action=gestBien">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -34,7 +34,7 @@ ob_start();
                         </svg>
                     </div>
             <div class="imageAdmin">
-                <div class="imageAdmin">
+                <div class="imageAdminDeux">
                     <?php
                 $scan = scandir('img/biens');
                     $input = preg_quote($bien["id"].'-', '~');
@@ -43,12 +43,12 @@ ob_start();
                 foreach ($scan as $file) {
                     if (!is_dir("img/biens/$file") and stripos($file, $bien["id"] . "-") !== false) {
                         if ($file == $bien["id"] . "-1.jpg" or $file == $bien["id"] . "-1.jpeg" or $file == $bien["id"] . "-1.png") {
-                            echo "<img src='img/biens/$file' alt='image du bien'>";
+                            echo "<div class='firstImageBien'><img src='img/biens/$file' alt='image du bien'></div>";
                         }
                     }
                 }
                     } else {
-                    echo "<img src='img/no_image.png' alt=\"pas d'image disponible\">";
+                    echo "<div class='firstImageBien'><img src='img/no_image.png' alt=\"pas d'image disponible\"></div>";
                 }
 
                     ?>
@@ -103,9 +103,10 @@ ob_start();
                     </div>
                 </div>
             </div>
-            <h3 class="adminH3">Informations :</h3>
+            <h3 class="adminH3 infoGestBien">Informations :</h3>
                     <div class="gridAjoutBien">
-                        <div>
+                        <div class="firstInputRow">
+                        <div class="prixGestBien">
             <label for="prix">Prix</label>
             <input type="number" name="prix" id="prix" <?php
             if (isset($bien["prix"])) {
@@ -121,6 +122,8 @@ ob_start();
                     }
                     ?>>
                         </div>
+                        </div>
+                    <div class="coordoneesInputRow">
                         <div>
             <div>Coordonnées GPS</div>
             <label for="x">X</label>
@@ -138,6 +141,8 @@ ob_start();
             }
             ?>>
                         </div>
+                        </div>
+                        <div class="secondInputRow">
                         <div>
             <label for="chambres">Chambres</label>
             <input type="number" name="chambres" id="chambres" <?php
@@ -154,6 +159,8 @@ ob_start();
             }
             ?>>
                         </div>
+                        </div>
+                        <div class="thirdInputRow">
                         <div>
             <label for="superficie">Superficie</label>
             <input type="number" name="superficie" id="superficie"<?php
@@ -170,6 +177,8 @@ ob_start();
             }
             ?>>
                         </div>
+                        </div>
+                        <div class="fourthInputRow">
                         <div>
             <select id="epoque" name="epoque">
                 <option value="">Choisir une epoque</option>
@@ -237,6 +246,8 @@ ob_start();
                 }
                 ?>
             </select>
+                        </div>
+                            <div class="fiveInputRow">
             <select id="etat" name="etat">
                 <option value="">Choisir un etat</option>
                 <?php
@@ -347,7 +358,8 @@ ob_start();
 
             </select>
                         </div>
-                        <div>
+                        </div>
+                        <div class="descGestBien">
             <label for="desc">Description</label>
             <textarea name="desc" id="desc" cols="25" rows="10"><?php
                 if (isset($bien['description'])) {
@@ -355,7 +367,7 @@ ob_start();
                 }
                 ?></textarea>
                         </div>
-                        <div>
+                        <div class="visiteVirtuelle">
             <h3 class="adminH3">Visite Virtuelle :</h3>
                     <?php
                     $id = preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $bien["urlVisite"], $matches); //Récupère l'id de la vidéo youtube via une expression REGEX
@@ -438,9 +450,10 @@ ob_start();
                         </div>
                     </div>
                 </div>
-                <h3 class="adminH3">Informations :</h3>
+                <h3 class="adminH3 infoGestBien">Informations :</h3>
                     <div class="gridAjoutBien">
-                        <div>
+                        <div class="firstInputRow">
+                            <div class="prixGestBien">
                 <label for="prix">Prix</label>
                 <input type="number" name="prix" id="prix">
                         </div>
@@ -448,6 +461,8 @@ ob_start();
                 <label for="adresse">Adresse</label>
                 <input type="text" name="adresse" id="adresse">
                         </div>
+                        </div>
+                        <div class="coordoneesInputRow">
                         <div>
                 <div>Coordonnées GPS</div>
                 <label for="x">X</label>
@@ -457,6 +472,8 @@ ob_start();
                 <label for="y">Y</label>
                 <input type="number" name="y" id="y">
                         </div>
+                        </div>
+                        <div class="secondInputRow">
                        <div>
                 <label for="chambres">Chambres</label>
                 <input type="number" name="chambres" id="chambres">
@@ -465,6 +482,8 @@ ob_start();
                 <label for="sdb">Salles de bain</label>
                 <input type="number" name="sdb" id="sdb">
                             </div>
+                        </div>
+                        <div class="thirdInputRow">
                             <div>
                 <label for="superficie">Superficie</label>
                 <input type="number" name="superficie" id="superficie">
@@ -473,6 +492,8 @@ ob_start();
                 <label for="pieces">Pièces</label>
                 <input type="number" name="pieces" id="pieces">
                             </div>
+                        </div>
+                        <div class="fourthInputRow">
                             <div>
                 <select id="epoque" name="epoque">
                     <option value="">Choisir une epoque</option>
@@ -488,6 +509,8 @@ ob_start();
                     <option value="classe">Le château est classé</option>
                     <option value="nonclasse">Le château n'est pas classé</option>
                 </select>
+                            </div>
+                            <div class="fiveInputRow">
                 <select id="etat" name="etat">
                     <option value="">Choisir un etat</option>
                     <option value="restauration">Restauration nécessaire</option>
@@ -509,11 +532,12 @@ ob_start();
                     <option value="paca">Provence-Alpes-Côte d'Azur</option>
                 </select>
                             </div>
-                            <div>
+                        </div>
+                        <div class="descGestBien">
                 <label for="desc">Description</label>
                 <textarea name="desc" id="desc" cols="25" rows="10"></textarea>
                             </div>
-                            <div>
+                        <div class="visiteVirtuelle">
                 <h3 class="adminH3">Visite Virtuelle :</h3>
                 <label for="lienVisite">Liens vers la visite</label>
                 <input type="url" name="lienVisite" id="lienVisite"
