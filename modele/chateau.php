@@ -12,11 +12,20 @@ class chateau extends database
      *******************************************************/
     public function getChateaux()
     {
-        $req = "SELECT id, nom, adresse, prix, chambres, sdb, superficie, pieces, epoque, statut, etat  FROM biens"; // Envoie de la requête SQL
+        $req = "SELECT id, nom, adresse, prix, chambres, sdb, superficie, pieces, epoque, statut, etat FROM biens"; // Envoie de la requête SQL
 
         $chateaux = $this->execReq($req); //Execution de la requête SQL
 
         return $chateaux; // Retour de la liste des chateaux
+    }
+
+    public function getChateauxVisible()
+    {
+        $req = "SELECT id, nom, adresse, prix, chambres, sdb, superficie, pieces, epoque, statut, etat FROM biens WHERE visible = '1'"; // Envoie de la requête SQL
+
+        $chateauxVisi = $this->execReq($req); //Execution de la requête SQL
+
+        return $chateauxVisi; // Retour de la liste des chateaux
     }
 
     public function getChateauId($id)

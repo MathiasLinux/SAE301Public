@@ -14,7 +14,7 @@ function accueil()
 function chateau()
 {
     $objCha = new chateau();
-    $chateaux = $objCha->getChateaux();
+    $chateaux = $objCha->getChateauxVisible();
     require "vue/vueChateau.php";
 }
 

@@ -201,6 +201,12 @@ header {
     height: 100%;
 }
 
+/* Page de visite virtuelle */
+
+.mainVisiteVirtuelle {
+    margin: 40px;
+}
+
 /* Page de contact */
 
 .mainContact {
