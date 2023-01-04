@@ -9,18 +9,16 @@
         <a href="index.php?action=chateau">Nos Châteaux</a>
         <a href="index.php?action=contact">Nous Contacter</a>
         <a href="index.php?action=blog">Blog</a>
-        </div>
-        <?php
-        if (isset($_SESSION["login"])) {
-        ?>
-        <a class="loginSVG" href="index.php?action=admin">
             <?php
-            } else {
+            if (isset($_SESSION["login"])) {
             ?>
-            <a class="loginSVG" href="index.php?action=login">
+                <a href="index.php?action=admin">Admin</a>
+                <a href="index.php?action=unLogin">Déconnexion</a>
             <?php
             }
             ?>
+        </div>
+            <a class="loginSVG" href="index.php?action=login">
         <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470">
             <g id="Calque_1-2" data-name="Calque 1">
                 <path d="M405.23,382.13c-41.25,47.69-102.21,77.87-170.23,77.87s-128.98-30.18-170.23-77.87c28.85-65.34,94.22-110.94,170.23-110.94s141.39,45.6,170.23,110.94Z" style="fill: #ffffff;"/>
@@ -127,9 +125,11 @@
 
             </div>
         </div>
+        <div class="contourFooterMenu">
         <div class="footerMenu">
             <div>Copyright 2022 Château Bourbon</div>
-            <a href="#">Légal</a>
+            <a href="index.php?action=legal">A Propos</a>
+        </div>
         </div>
     </div>
 </header>

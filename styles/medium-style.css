@@ -12,6 +12,18 @@ footer {
     grid-area: footer;
 }
 
+.contourFooterMenu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    ". footer";
+}
+
+.footerMenu {
+    padding: 20px;
+    grid-area: footer;
+}
+
 .centerIndex {
     justify-content: center;
 }

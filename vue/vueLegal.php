@@ -3,7 +3,10 @@ $title = "Château Bourbon";
 ob_start();
 ?>
     <main class="mainLegal">
-        <h2>Légal</h2>
+        <h2>A Propos</h2>
+        <p>Château Bourbon est une agence immobilière créée en 1985. Nous sommes spécialisés dans la vente de châteaux. Au départ, nous ne possédions qu'une seule agence à Mulhouse, en Alsace. Au fil des années, nous nous sommes développés en ouvrant des agences dans la plupart des régions françaises. Nous avons toujours gardé une ambiance familiale au sein de nos équipes, nous privilégions un contact de qualité avec tous nos clients. L'excellence à toujours été et restera notre priorité.</p>
+        <div class="gridLegal">
+        <div>
         <!-- Mention légales -->
         <h3>Mentions légales</h3>
         <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie
@@ -29,6 +32,8 @@ ob_start();
         <p>Le traitement de vos données à caractère personnel est régi par notre Charte du respect de la vie privée,
             disponible depuis la section "Charte de Protection des Données Personnelles", conformément au Règlement
             Général sur la Protection des Données 2016/679 du 27 avril 2016 («RGPD»).</p>
+        </div>
+        <div>
         <!-- Politique de confidentialité -->
         <h3>Politique de confidentialité</h3>
         <h4>DONNÉES PERSONNELLES</h4>
@@ -200,6 +205,8 @@ ob_start();
             une meilleure maîtrise de ses données, et garde la possibilité de les réutiliser. Ces données devront être
             fournies dans un format ouvert et aisément réutilisable.
         </p>
+        </div>
+        </div>
     </main>
 <?php
 $contenue = ob_get_clean();

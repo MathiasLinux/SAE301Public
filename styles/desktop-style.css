@@ -1,16 +1,17 @@
 /* Page d'accueil */
 
-.contourFooter{
+.contourFooter {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
     ". . . footer";
 }
 
-footer{
+footer {
     padding: 10px;
     grid-area: footer;
 }
+
 .centerIndex {
     justify-content: center;
 }
@@ -30,32 +31,33 @@ footer{
     padding-bottom: 15px;
 }
 
-.menu{
-    display : none;
+.menu {
+    display: none;
 }
 
-header{
+header {
     grid-template-columns: auto 1fr;
     align-items: center;
 }
 
-.headerPC{
+.headerPC {
     display: grid;
     grid-template-columns: 1fr auto;
+    align-items: center;
 }
 
-.headerPCPartOne{
+.headerPCPartOne {
     justify-self: center;
     display: flex;
     gap: 30px;
     margin-right: 10%;
 }
 
-.loginSVG{
+.loginSVG {
     justify-self: end;
 }
 
-.headerPC a{
+.headerPC a {
     text-decoration: none;
     color: white;
     font-family: rockwell-nova, sans-serif;
@@ -63,35 +65,35 @@ header{
     font-size: 20px;
 }
 
-.headerPC a svg{
+.headerPC a svg {
     width: 40px;
 }
 
 /* Page avec les annonces de chateaux */
 
-.gridBiens{
+.gridBiens {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 }
 
-.menuFiltre{
+.menuFiltre {
     display: none;
 }
 
-.contourFiltre{
+.contourFiltre {
     display: flex;
     padding: 2%;
     justify-content: center;
     align-items: center;
 }
 
-.gridFiltre{
+.gridFiltre {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.boutonRegion{
+.boutonRegion {
     margin: 0;
     height: min-content;
     padding-left: 40px;
@@ -99,40 +101,40 @@ header{
     gap: 10px;
 }
 
-.totalSelecteurCase{
+.totalSelecteurCase {
     width: max-content;
     justify-self: center;
 }
 
-.labelEtInput{
+.labelEtInput {
     display: flex;
     gap: 10px;
 }
 
-.labelEtInput > label{
+.labelEtInput > label {
     width: max-content;
 }
 
 /* Page d'annonce d'un bien */
 
-.retourChateaux{
+.retourChateaux {
     margin-top: 2%;
     margin-left: 0;
     margin-bottom: 2%;
     margin-right: 80%;
 }
 
-.contourTotalChateaux{
+.contourTotalChateaux {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 80px;
 }
 
-.contourTotalChateaux .boutonViolet{
+.contourTotalChateaux .boutonViolet {
     display: none;
 }
 
-.contourAnnonceChateau{
+.contourAnnonceChateau {
     display: grid;
     grid-template-areas:
     "titre"
@@ -142,21 +144,21 @@ header{
     "description";
 }
 
-.topChateaux{
+.topChateaux {
     display: flex;
     justify-content: space-between;
     grid-area: titre;
 }
 
-.prixBien{
+.prixBien {
     border-bottom: 3px solid white;
 }
 
-#photoChateau{
+#photoChateau {
     display: none;
 }
 
-.photosDesktop{
+.photosDesktop {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 20px;
@@ -167,58 +169,58 @@ header{
     height: 100%;
 }
 
-.photosBiensSecondaires{
+.photosBiensSecondaires {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.infoChateau{
+.infoChateau {
     grid-template-columns: repeat(4, auto);
     margin-bottom: 4%;
     grid-area: info;
 }
 
-.descChateaux{
+.descChateaux {
     grid-area: description;
 }
 
-.boutonsChateaux{
+.boutonsChateaux {
     display: flex;
     margin-bottom: 4%;
     grid-area: boutons;
 }
 
-.boutonsChateaux .boutonJaune, .boutonsChateaux .boutonGris{
+.boutonsChateaux .boutonJaune, .boutonsChateaux .boutonGris {
     margin: 10px;
     padding-left: 40px;
     padding-right: 40px;
 }
 
-#map{
+#map {
     height: 100%;
 }
 
 /* Page de contact */
 
-.mainContact{
+.mainContact {
     margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
 }
 
-.videoContact{
+.videoContact {
     display: block;
 }
 
-.centerContact{
+.centerContact {
     display: grid;
     grid-template-areas: "coordonnees contact";
     justify-content: space-between;
     margin: 0;
 }
 
-.contourJeCherche{
+.contourJeCherche {
     grid-area: contact;
     background-color: var(--gris-fonce);
     padding-left: 80px;
@@ -231,68 +233,68 @@ header{
 
 }
 
-.coordonnesAncienne{
+.coordonnesAncienne {
     grid-area: coordonnees;
     background-color: var(--gris-fonce);
     padding: 40px;
 }
 
-.coordonees{
+.coordonees {
     margin: 0;
 }
 
-.coordoneesFormulaireAchat{
+.coordoneesFormulaireAchat {
     background-color: var(--gris-fonce);
     padding: 40px;
     margin: 20px;
 }
 
-#achatBien{
+#achatBien {
     margin-bottom: 10%;
 }
 
-.coordoneesFormulaireVente{
+.coordoneesFormulaireVente {
     background-color: var(--gris-fonce);
     padding: 40px;
     margin: 20px;
 }
 
-#venteDescription{
+#venteDescription {
     margin-top: 10%;
 }
 
 /* Page d'affichage des articles du blog */
 
-.mainBlog h2{
+.mainBlog h2 {
     font-size: 35px;
 }
 
-.contourArticle{
+.contourArticle {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.contourArticle h3{
+.contourArticle h3 {
     font-size: 25px;
     margin-top: 4%;
     margin-bottom: 4%;
 }
 
-.basBlog{
+.basBlog {
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
-    margin-left : 20%;
-    margin-right : 20%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-.descArticle{
+.descArticle {
     margin-top: 0;
 }
 
-.contourArticle img{
+.contourArticle img {
     width: 40%;
 }
 
@@ -300,29 +302,22 @@ header{
 
 /* Page de connection */
 
-.mainLogin{
+.mainLogin {
     justify-content: flex-start;
 }
 
-.contourLogin{
+.contourLogin {
     background-color: var(--gris-fonce);
     padding: 40px;
 }
 
 /* Page d'administration */
 
-.adminMobile{
+.adminMobile {
     display: none;
 }
 
-.adminDesktop{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 20px;
-    height: 100%;
-}
-
-.boutonAdminDesktop{
+.boutonAdminDesktop {
     text-decoration: none;
     color: white;
     font-family: rockwell-nova, sans-serif;
@@ -331,27 +326,74 @@ header{
     display: flex;
     align-items: center;
     gap: 20px;
+    margin-top: 5%;
 }
 
-.boutonAdminDesktop svg{
+.boutonAdminDesktop:hover {
+    color: white;
+}
+
+.boutonAdminDesktop svg {
     width: 40px;
     height: 40px;
+    margin-left: 5%;
 }
 
-.blocAdminCote{
+.blocAdminCoteBackground {
+    position: fixed;
     background-color: var(--gris-semi-clair);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 25%;
+    z-index: -1;
+}
+
+.blocAdminCote {
+    position: fixed;
+    background-color: var(--gris-semi-clair);
+    top: 10%;
+    left: 0;
+    height: 100%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
+.adminBienvenu {
+    margin-left: 30%;
+}
+
 /* Page de gestion des biens */
 
-.adminH2{
+.popOver {
+    display: block;
+    position: fixed;
+    top: 50%;
+    z-index: 1;
+}
+
+.blocAdminPage {
+    display: block;
+}
+
+.blocAdminPage .blocAdminCote {
+    top: 0;
+    left: -25%;
+    transition: left 0.2s;
+    z-index: 2;
+}
+
+.blocAdminPage .header {
+    margin: 10px;
+}
+
+.adminH2 {
     font-size: 35px;
 }
 
-.ajoutBien{
+.ajoutBien {
     margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 70%;
@@ -359,7 +401,7 @@ header{
 
 /* Page d'ajout d'un bien */
 
-.formBien{
+.formBien {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -371,36 +413,36 @@ header{
     "input input ."
     "input input ."
     "input input ."
-    ". envoyer ." ;
+    ". envoyer .";
 }
 
-.titreBiensAdmin{
+.titreBiensAdmin {
     grid-area: titre;
 }
 
-.affichageAdmin{
+.affichageAdmin {
     grid-area: affichage;
 }
 
-.imageAdmin{
+.imageAdmin {
     grid-area: images;
 }
 
-.imageAdminDeux{
+.imageAdminDeux {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
 
-.petitesImagesAdmin{
+.petitesImagesAdmin {
     margin-top: 0;
 }
 
-.infoGestBien{
+.infoGestBien {
     grid-area: info;
 }
 
-.gridAjoutBien{
+.gridAjoutBien {
     grid-area: input;
     display: grid;
     grid-template-areas:
@@ -414,70 +456,199 @@ header{
     "visiteVirtuelle";
 }
 
-.firstInputRow{
+.firstInputRow {
     grid-area: firstinput;
     display: flex;
     gap: 40px;
 }
 
-.coordoneesInputRow{
+.coordoneesInputRow {
     grid-area: coordonnees;
     display: flex;
     gap: 40px;
 }
 
-.secondInputRow{
+.secondInputRow {
     grid-area: secondinput;
     display: flex;
     gap: 40px;
 }
 
-.thirdInputRow{
+.thirdInputRow {
     grid-area: thirdinput;
     display: flex;
     gap: 40px;
 }
 
-.fourthInputRow{
+.fourthInputRow {
     grid-area: fourthinput;
     display: flex;
     gap: 40px;
 }
 
-.fourthInputRow{
+.fourthInputRow {
     grid-area: fiveinput;
     display: flex;
     gap: 40px;
 }
 
-.descGestBien{
+.descGestBien {
     grid-area: description;
 }
 
-.visiteVirtuelle{
+.visiteVirtuelle {
     grid-area: visiteVirtuelle;
 }
 
-.envoyerContact{
+.envoyerContact {
     grid-area: envoyer;
 }
 
 /* Page contenant les réponses du formulaire de contact */
 
-.mainUti table{
+.mainUti table {
     table-layout: fixed;
 }
 
-.mainUti table th{
+.mainUti table th {
     display: initial;
 }
 
-.mainUti table td{
+.mainUti table td {
     display: initial;
     border: 1px solid black;
 }
 
-.mainUti table tr{
+.mainUti table tr {
     display: flex;
 
+}
+
+/* Page légal */
+
+.mainLegal h2, .mainLegal h3 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.gridLegal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* Page d'un article du blog */
+
+.contourBlogs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "titre date"
+    "image image"
+    "auteur partage"
+    "article article"
+}
+
+.contourBlogs h2 {
+    grid-area: titre;
+}
+
+.contourBlogs .date {
+    grid-area: date;
+    justify-self: end;
+}
+
+.contourBlogs .imageArticle {
+    grid-area: image;
+    width: 50%;
+    justify-self: center;
+}
+
+.contourBlogs .auteur {
+    grid-area: auteur;
+}
+
+.partageBlog {
+    grid-area: partage;
+    justify-self: end;
+}
+
+.contourBlogs .texteBlog {
+    grid-area: article;
+}
+
+/* Page de gestion des utilisateurs */
+
+.adminH2 {
+    margin-top: 40px;
+}
+
+.gridAjoutUti {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+}
+
+.formUtis input[type="text"], .formUtis input[type="password"] {
+    margin-top: 40px;
+}
+
+.rolesAdminUtis {
+    margin-top: 40px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+/* Page de création d'un article pour le blog */
+
+.formBlog {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    grid-template-areas:
+    "titre . ."
+    "image image affichage"
+    "information information ."
+    "article article ."
+    "valider valider .";
+}
+
+.formBlog #titre {
+    grid-area: titre;
+}
+
+.formBlog .imageAdmin {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formBlog .imageAdmin img {
+    width: 50%;
+    height: 50%;
+}
+
+.formBlog .affichageAdmin {
+    grid-area: affichage;
+}
+
+.formBlog .infoBlog {
+    grid-area: information;
+}
+
+.infoBlogInput {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.formBlog .article {
+    grid-area: article;
+}
+
+.formBlog .envoyerContact {
+    grid-area: valider;
 }

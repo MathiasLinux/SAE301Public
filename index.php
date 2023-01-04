@@ -38,25 +38,25 @@ if (isset($_GET["action"])) {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "gestBien") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and  str_contains($_SESSION["login"][1], "biens")) {
             gestBien();
         } else {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "gestBiens") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens")) {
             gestBiens();
         } else {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "gestUti") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens") and str_contains($_SESSION["login"][1], "blog")) {
             gestUti();
         } else {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "gestUtis") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens") and str_contains($_SESSION["login"][1], "blog")) {
             gestUtis();
         } else {
             header("Location: index.php?action=login");
@@ -68,13 +68,13 @@ if (isset($_GET["action"])) {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "gestBlog") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "blog")) {
             gestBlog();
         } else {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "gestBlogs") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "blog")) {
             gestBlogs();
         } else {
             header("Location: index.php?action=login");
@@ -86,31 +86,31 @@ if (isset($_GET["action"])) {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "ajoutBien") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens")) {
             ajoutBien();
         } else {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "modifBien") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens")) {
             modifBien();
         } else {
             header("Location: index.php?action=login");
         }
     }elseif ($_GET["action"] == "delBien" and isset($_GET["id"])) {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens")) {
             delBien();
         } else {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "ajoutUti") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens") and str_contains($_SESSION["login"][1], "blog")) {
             ajoutUti();
         } else {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "modifUti") {
-        if (isset($_SESSION["login"])) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens") and str_contains($_SESSION["login"][1], "blog")) {
             modifUti();
         } else {
             header("Location: index.php?action=login");

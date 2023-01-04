@@ -105,7 +105,7 @@ header {
     width: 80px;
 }
 
-.headerPC{
+.headerPC {
     display: none;
 }
 
@@ -160,7 +160,7 @@ header {
     max-width: 12%;
 }
 
-.laBarre{
+.laBarre {
     border-bottom: 4px solid white;
     width: 80%;
 }
@@ -171,7 +171,6 @@ header {
     font-size: 15px;
     display: grid;
     grid-template-columns: 1fr auto;
-    margin-left: 10%;
     padding: 5%;
 }
 
@@ -187,7 +186,6 @@ footer {
     font-size: 15px;
     display: grid;
     grid-template-columns: 1fr auto;
-    margin-left: 10%;
     padding: 5%;
 }
 
@@ -221,8 +219,8 @@ footer > a {
     align-items: center;
     text-align: center;
     padding: 12px;
-    margin-left : 8%;
-    margin-right : 8%;
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
 .decouvrezIndex {
@@ -247,7 +245,7 @@ footer > a {
 /*----------------------------------------*/
 /* Nous contacter */
 
-.videoContact{
+.videoContact {
     display: none;
 }
 
@@ -455,7 +453,7 @@ label[for="venteDescription"] {
     margin-right: 10%;
 }
 
-.mainBlog h2{
+.mainBlog h2 {
     font-family: rockwell-nova, sans-serif;
     font-weight: 400;
     font-size: 30px;
@@ -724,7 +722,7 @@ input[type="checkbox"] {
     width: 10%;
 }
 
-.photosDesktop{
+.photosDesktop {
     display: none;
 }
 
@@ -873,12 +871,13 @@ input[type="checkbox"] {
     font-size: 25px;
     font-style: normal;
     margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .mainLegal h3 {
     font-family: rockwell-nova, sans-serif;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 25px;
     font-style: normal;
     display: flex;
     justify-content: center;
@@ -900,7 +899,7 @@ input[type="checkbox"] {
 }
 
 /* Page d'administration */
-.adminMobile{
+.adminMobile {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -933,6 +932,15 @@ input[type="checkbox"] {
 }
 
 /* Page de gestion des biens */
+
+.popOver {
+    display: none;
+}
+
+.blocAdminPage {
+    display: none;
+}
+
 .adminH2 {
     font-family: rockwell-nova, sans-serif;
     font-weight: 400;
@@ -942,7 +950,7 @@ input[type="checkbox"] {
     color: white;
 }
 
-.boutonRouge{
+.boutonRouge {
     background-color: var(--rouge);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -961,7 +969,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-.boutonVert{
+.boutonVert {
     background-color: var(--vert);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;

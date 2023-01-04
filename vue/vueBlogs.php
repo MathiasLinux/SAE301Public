@@ -3,7 +3,7 @@ $title = "Château Bourbon";
 ob_start();
 ?>
     <main class="mainBlog">
-        <a class="boutonJaune" href="index.php?action=blog">
+        <a class="boutonJaune retourChateaux" href="index.php?action=blog">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -12,10 +12,11 @@ ob_start();
                 Revenir
             </div>
         </a>
+        <div class="contourBlogs">
         <h2 class="adminH2">Comment gérer vos impots</h2>
-        <div class="ligneBlog">12 décembre 2022</div>
-        <img src="img/articles/1.jpg">
-        <div class="ligneBlog">Par Mathias KLIEM</div>
+        <div class="ligneBlog date">12 décembre 2022</div>
+        <img class="imageArticle" src="img/articles/1.jpg">
+        <div class="ligneBlog auteur">Par Mathias KLIEM</div>
         <div class="partageBlog">
             <div>Partagez :</div>
             <a href="#">
@@ -60,6 +61,7 @@ ob_start();
                 quae quasi quia repellendus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis,
                 optio veniam? Ab alias animi, aspernatur cumque deserunt dicta expedita in mollitia quidem rem rerum
                 sed sunt suscipit tenetur vero. Voluptatibus.</p>
+        </div>
         </div>
     </main>
 <?php

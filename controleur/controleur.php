@@ -81,11 +81,11 @@ function login()
 
 function verifLogin()
 {
-    var_dump($_POST);
     $objLog = new login();
     $verif = $objLog->compareLogin($_POST["e-mail"], $_POST["password"]);
     if ($verif == true) {
-        $_SESSION["login"] = $_POST["e-mail"];
+        $userInfo = $objLog->getInfoUserName($_POST["e-mail"]);
+        $_SESSION["login"] = [$_POST["e-mail"], $userInfo["roles"]];
         header("Location: index.php?action=admin");
     } else {
         header("Location: index.php?action=login");
@@ -163,81 +163,82 @@ function unLogin()
 function ajoutBien()
 {
     $objGestBien = new gestBien();
-    $objChateau= new chateau();
+    $objChateau = new chateau();
     //$objGestBien->addBien($_POST["titre"], $_POST["visible"], $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
     //$id = $objChateau->getChateauIdFromName($_POST["titre"]);
     $objGestBien->addFiles("imgChateau", "biens", "20");
     //header("Location: index.php?action=gestBien");
 }
 
-function modifBien(){
-   // var_dump($_POST);
+function modifBien()
+{
     $objBien = new gestBien();
     $bien = $objBien->getBienID($_GET["id"]);
     if ($_POST["titre"] != $bien["nom"]) {
-        $objBien->updateBien("nom" ,$_POST["titre"], $bien["id"]);
+        $objBien->updateBien("nom", $_POST["titre"], $bien["id"]);
     }
     $visible = "";
     if (isset($_POST["visible"])) {
 
-    if ($_POST["visible"] == "yes") {
-        $visible = "1";
-    } else {
-        $visible = "0";
-    }
+        if ($_POST["visible"] == "yes") {
+            $visible = "1";
+        } else {
+            $visible = "0";
+        }
     } else {
         $visible = "0";
     }
     if ($visible != $bien["visible"]) {
-        $objBien->updateBien("visible" ,$visible, $bien["id"]);
+        $objBien->updateBien("visible", $visible, $bien["id"]);
     }
     if ($_POST["prix"] != $bien["prix"]) {
-        $objBien->updateBien("prix" ,$_POST["prix"], $bien["id"]);
+        $objBien->updateBien("prix", $_POST["prix"], $bien["id"]);
     }
     if ($_POST["adresse"] != $bien["adresse"]) {
-        $objBien->updateBien("adresse" ,$_POST["adresse"], $bien["id"]);
+        $objBien->updateBien("adresse", $_POST["adresse"], $bien["id"]);
     }
     if ($_POST["region"] != $bien["region"]) {
-        $objBien->updateBien("region" ,$_POST["region"], $bien["id"]);
+        $objBien->updateBien("region", $_POST["region"], $bien["id"]);
     }
     if ($_POST["x"] != $bien["x"]) {
-        $objBien->updateBien("x" ,$_POST["x"], $bien["id"]);
+        $objBien->updateBien("x", $_POST["x"], $bien["id"]);
     }
     if ($_POST["y"] != $bien["y"]) {
-        $objBien->updateBien("y" ,$_POST["y"], $bien["id"]);
+        $objBien->updateBien("y", $_POST["y"], $bien["id"]);
     }
     if ($_POST["chambres"] != $bien["chambres"]) {
-        $objBien->updateBien("chambres" ,$_POST["chambres"], $bien["id"]);
+        $objBien->updateBien("chambres", $_POST["chambres"], $bien["id"]);
     }
     if ($_POST["sdb"] != $bien["sdb"]) {
-        $objBien->updateBien("sdb" ,$_POST["sdb"], $bien["id"]);
+        $objBien->updateBien("sdb", $_POST["sdb"], $bien["id"]);
     }
     if ($_POST["superficie"] != $bien["superficie"]) {
-        $objBien->updateBien("superficie" ,$_POST["superficie"], $bien["id"]);
+        $objBien->updateBien("superficie", $_POST["superficie"], $bien["id"]);
     }
     if ($_POST["pieces"] != $bien["pieces"]) {
-        $objBien->updateBien("pieces" ,$_POST["pieces"], $bien["id"]);
+        $objBien->updateBien("pieces", $_POST["pieces"], $bien["id"]);
     }
     if ($_POST["epoque"] != $bien["epoque"]) {
-        $objBien->updateBien("epoque" ,$_POST["epoque"], $bien["id"]);
+        $objBien->updateBien("epoque", $_POST["epoque"], $bien["id"]);
     }
     if ($_POST["statut"] != $bien["statut"]) {
-        $objBien->updateBien("statut" ,$_POST["statut"], $bien["id"]);
+        $objBien->updateBien("statut", $_POST["statut"], $bien["id"]);
     }
     if ($_POST["etat"] != $bien["etat"]) {
-        $objBien->updateBien("etat" ,$_POST["etat"], $bien["id"]);
+        $objBien->updateBien("etat", $_POST["etat"], $bien["id"]);
     }
     if ($_POST["desc"] != $bien["description"]) {
-        $objBien->updateBien("description" ,$_POST["desc"], $bien["id"]);
+        $objBien->updateBien("description", $_POST["desc"], $bien["id"]);
     }
     if ($_POST["lienVisite"] != $bien["urlVisite"]) {
-        $objBien->updateBien("urlVisite" ,$_POST["lienVisite"], $bien["id"]);
+        $objBien->updateBien("urlVisite", $_POST["lienVisite"], $bien["id"]);
     }
     header("Location: index.php?action=gestBien");
 
 }
 
-function delBien(){
+function delBien()
+{
     $objBien = new gestBien();
     $objBien->delBien($_GET["id"]);
     header("Location: index.php?action=gestBien");
@@ -264,30 +265,33 @@ function ajoutUti()
 
 function modifUti()
 {
-    var_dump($_POST);
     if (isset($_GET["id"])) {
         $objUtis = new gestUti();
         $utilisateur = $objUtis->getUtiId($_GET["id"]);
+        $mail = "";
+        $password = "";
+        $roles = "";
         if (isset($_POST["mail"]) and str_contains($_POST["mail"], "@") and str_contains($_POST["mail"], ".")) {
-            if (isset($_POST["oldPassword"]) and password_verify($_POST["oldPassword"], $utilisateur["mdp"])) {
-                if (isset($_POST["newPassword"]) and $_POST["newPassword"] == $_POST["newPassword1"]) {
-                    if (isset($_POST["biens"]) and isset($_POST["blog"])) {
-                        $roles = "";
-                        if ($_POST["biens"] == "yes") {
-                            $roles .= "biens";
-                        }
-                        if ($_POST["blog"] == "yes") {
-                            if ($roles != "") {
-                                $roles .= ",blog";
-                            } else {
-                                $roles .= "blog";
-                            }
-                        }
-                        $objUtis->modifUti($_GET["id"], $_POST["mail"], $_POST["newPassword"], $roles);
-                        header("Location: index.php?action=gestUti");
-                    }
+            $mail = $_POST["mail"];
+        }
+        if (isset($_POST["oldPassword"]) and password_verify($_POST["oldPassword"], $utilisateur["mdp"])) {
+            if (isset($_POST["newPassword"]) and $_POST["newPassword"] == $_POST["newPassword1"]) {
+                $password = $_POST["newPassword"];
+            }
+        }
+        if (isset($_POST["biens"]) and isset($_POST["blog"])) {
+            if ($_POST["biens"] == "yes") {
+                $roles .= "biens";
+            }
+            if ($_POST["blog"] == "yes") {
+                if ($roles != "") {
+                    $roles .= ",blog";
+                } else {
+                    $roles .= "blog";
                 }
             }
         }
+        $objUtis->modifUti($_GET["id"], $mail, $password, $roles);
+        header("Location: index.php?action=gestUti");
     }
 }

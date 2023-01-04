@@ -13,5 +13,3 @@ document.querySelector(".menuOpen>svg").addEventListener("click", menuclose);
 if (!window.location.search) {
     document.querySelector("footer").style.backgroundColor = "#00000082";
 }
-
-// Page des annnonces de chateaux

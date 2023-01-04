@@ -20,5 +20,12 @@ class login extends database
 
         }
     }
+
+    public function getInfoUserName($login){
+        $req = "SELECT * FROM utilisateur WHERE mail = ?"; // Envoie de la requête SQL
+
+        $userInfo = $this->execReqPrep($req, array($login));
+        return $userInfo[0];
+    }
 }
 //echo password_hash("rasmuslerdorf", PASSWORD_DEFAULT);

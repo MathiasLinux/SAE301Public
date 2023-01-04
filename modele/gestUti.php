@@ -33,9 +33,21 @@ class gestUti extends database
 
     public function modifUti($id, $mail, $password, $roles)
     {
-        if (isset($id) and isset($mail) and isset($password) and isset($roles)) {
-            $req = "UPDATE utilisateur SET mail = ?, mdp = ?, roles = ? WHERE id = ?";
-            $this->execReqPrepModif($req, array($mail, password_hash($password, PASSWORD_DEFAULT), $roles, $id));
+        if (isset($id)) {
+            if (!empty($mail)) {
+                $req = "UPDATE utilisateur SET mail = ? WHERE id = ?";
+                $this->execReqPrepModif($req, array($mail, $id));
+            }
+            if (!empty($password)) {
+                $req = "UPDATE utilisateur SET mdp = ? WHERE id = ?";
+                $this->execReqPrepModif($req, array(password_hash($password, PASSWORD_DEFAULT), $id));
+            }
+            if (isset($roles)) {
+                $req = "UPDATE utilisateur SET roles = ? WHERE id = ?";
+                $this->execReqPrepModif($req, array($roles, $id));
+            }
+        } else {
+            header("Location: index.php?action=gestUtis&id=" . $id);
         }
     }
 }
