@@ -99,20 +99,28 @@ ob_start();
             <form class="formUtis" action="index.php?action=modifUti&id=<?= $utilisateur["id"] ?>" method="post">
                 <div class="gridAjoutUti">
                     <div>
-                        <label for="mail">Adresse Mail</label>
-                        <input type="text" name="mail" id="mail" value="<?= $utilisateur["mail"] ?>">
+                        <label class="labelAdmin">
+                            <p>Adresse Mail</p>
+                            <input type="text" name="mail" id="mail" value="<?= $utilisateur["mail"] ?>">
+                        </label>
                     </div>
                     <div>
-                        <label for="oldPassword">Ancien mot de passe</label>
-                        <input type="password" name="oldPassword" id="oldPassword">
+                        <label class="labelAdmin">
+                            <p>Ancien mot de passe</p>
+                            <input type="password" name="oldPassword" id="oldPassword">
+                        </label>
                     </div>
                     <div>
-                        <label for="newPassword">Nouveau mot de passe</label>
-                        <input type="password" name="newPassword" id="newPassword">
+                        <label class="labelAdmin">
+                            <p>Nouveau mot de passe</p>
+                            <input type="password" name="newPassword" id="newPassword">
+                        </label>
                     </div>
                     <div>
-                        <label for="newPassword1">Confirmer votre nouveau mot de passe</label>
-                        <input type="password" name="newPassword1" id="newPassword1">
+                        <label class="labelAdmin">
+                            <p>Confirmer votre nouveau mot de passe</p>
+                            <input type="password" name="newPassword1" id="newPassword1">
+                        </label>
                     </div>
                 </div>
                 <div class="rolesAdminUtis">
@@ -151,12 +159,16 @@ ob_start();
             <form class="formUtis" action="index.php?action=ajoutUti" method="post">
                 <div class="gridAjoutUti">
                     <div>
-                        <label for="mail">Adresse Mail</label>
-                        <input type="text" name="mail" id="mail" required>
+                        <label class="labelAdmin">
+                            <p>Adresse Mail</p>
+                            <input type="text" name="mail" id="mail" required>
+                        </label>
                     </div>
                     <div>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password" id="password" required>
+                        <label class="labelAdmin">
+                            <p>Mot de passe</p>
+                            <input type="password" name="password" id="password" required>
+                        </label>
                     </div>
                 </div>
                 <div class="rolesAdminUtis">

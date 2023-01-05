@@ -149,12 +149,16 @@ ob_start();
                 <h3 class="adminH3">Informations :</h3>
                 <div class="infoBlogInput">
                     <div>
-                        <label for="auteur">Auteur</label>
-                        <input type="text" name="auteur" id="auteur">
+                        <label class="labelAdmin">
+                            <p>Auteur</p>
+                            <input type="text" name="auteur" id="auteur">
+                        </label>
                     </div>
                     <div>
-                        <label for="datePubli">Date de publication</label>
-                        <input type="date" name="datePubli" id="datePubli">
+                        <label class="labelAdmin">
+                            <p>Date de publication</p>
+                            <input type="date" name="datePubli" id="datePubli">
+                        </label>
                     </div>
                 </div>
             </div>

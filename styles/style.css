@@ -910,6 +910,10 @@ input[type="checkbox"] {
     height: 100%;
 }
 
+.adminDesktop {
+    display: none;
+}
+
 .boutonAdmin {
     display: flex;
     justify-content: center;
@@ -1039,12 +1043,23 @@ input[type="checkbox"] {
     margin-top: 10%;
 }
 
-.formBien input, .formBien label {
-    display: block;
+.labelAdmin p {
+    transform: translate(1%, 295%);
+    color: var(--gris-clair);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+
 }
 
-.formBien label {
-    position: relative;
+.coordonneesTitre {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    margin-top: 10%;
 }
 
 #titre {

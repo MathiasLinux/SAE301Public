@@ -189,75 +189,94 @@ ob_start();
                 <div class="gridAjoutBien">
                     <div class="firstInputRow">
                         <div class="prixGestBien">
-                            <label for="prix">Prix</label>
-                            <input type="number" name="prix" id="prix" <?php
-                            if (isset($bien["prix"])) {
-                                echo "value='" . $bien["prix"] . "'";
-                            }
-                            ?>>
+                            <label class="labelAdmin">
+                                <p>Prix</p>
+                                <input type="number" name="prix" id="prix" <?php
+                                if (isset($bien["prix"])) {
+                                    echo "value='" . $bien["prix"] . "'";
+                                }
+                                ?>>
+                            </label>
                         </div>
                         <div>
-                            <label for="adresse">Adresse</label>
-                            <input type="text" name="adresse" id="adresse"<?php
-                            if (isset($bien["adresse"])) {
-                                echo "value='" . $bien["adresse"] . "'";
-                            }
-                            ?>>
+                            <label class="labelAdmin">
+                                <p>Adresse</p>
+                                <input type="text" name="adresse" id="adresse"<?php
+                                if (isset($bien["adresse"])) {
+                                    echo "value='" . $bien["adresse"] . "'";
+                                }
+                                ?>></label>
                         </div>
                     </div>
                     <div class="coordoneesInputRow">
                         <div>
-                            <div>Coordonnées GPS</div>
-                            <label for="x">X</label>
-                            <input type="number" name="x" id="x" <?php
-                            if (isset($bien["x"])) {
-                                echo "value='" . $bien["x"] . "'";
-                            }
-                            ?>>
-                        </div>
-                        <div>
-                            <label for="y">Y</label>
-                            <input type="number" name="y" id="y"<?php
-                            if (isset($bien["y"])) {
-                                echo "value='" . $bien["y"] . "'";
-                            }
-                            ?>>
+                            <div class="coordonneesTitre">Coordonnées GPS</div>
+                            <div class="coordoneesFlex">
+                                <div>
+                                    <label class="labelAdmin">
+                                        <p>X</p>
+                                        <input type="text" name="x" id="x" <?php
+                                        if (isset($bien["x"])) {
+                                            echo "value='" . $bien["x"] . "'";
+                                        }
+                                        ?>>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="labelAdmin">
+                                        <p>Y</p>
+                                        <input type="text" name="y" id="y"<?php
+                                        if (isset($bien["y"])) {
+                                            echo "value='" . $bien["y"] . "'";
+                                        }
+                                        ?>>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="secondInputRow">
                         <div>
-                            <label for="chambres">Chambres</label>
-                            <input type="number" name="chambres" id="chambres" <?php
-                            if (isset($bien["chambres"])) {
-                                echo "value='" . $bien["chambres"] . "'";
-                            }
-                            ?>>
+                            <label class="labelAdmin">
+                                <p>Chambres</p>
+                                <input type="number" name="chambres" id="chambres" <?php
+                                if (isset($bien["chambres"])) {
+                                    echo "value='" . $bien["chambres"] . "'";
+                                }
+                                ?>>
+                            </label>
                         </div>
                         <div>
-                            <label for="sdb">Salles de bain</label>
-                            <input type="number" name="sdb" id="sdb"<?php
-                            if (isset($bien["sdb"])) {
-                                echo "value='" . $bien["sdb"] . "'";
-                            }
-                            ?>>
+                            <label class="labelAdmin">
+                                <p>Salle de bain</p>
+                                <input type="number" name="sdb" id="sdb"<?php
+                                if (isset($bien["sdb"])) {
+                                    echo "value='" . $bien["sdb"] . "'";
+                                }
+                                ?>>
+                            </label>
                         </div>
                     </div>
                     <div class="thirdInputRow">
                         <div>
-                            <label for="superficie">Superficie</label>
-                            <input type="number" name="superficie" id="superficie"<?php
-                            if (isset($bien["superficie"])) {
-                                echo "value='" . $bien["superficie"] . "'";
-                            }
-                            ?>>
+                            <label class="labelAdmin">
+                                <p>Superficie</p>
+                                <input type="number" name="superficie" id="superficie"<?php
+                                if (isset($bien["superficie"])) {
+                                    echo "value='" . $bien["superficie"] . "'";
+                                }
+                                ?>>
+                            </label>
                         </div>
                         <div>
-                            <label for="pieces">Pièces</label>
-                            <input type="number" name="pieces" id="pieces"<?php
-                            if (isset($bien["pieces"])) {
-                                echo "value='" . $bien["pieces"] . "'";
-                            }
-                            ?>>
+                            <label class="labelAdmin">
+                                <p>Pièces</p>
+                                <input type="number" name="pieces" id="pieces"<?php
+                                if (isset($bien["pieces"])) {
+                                    echo "value='" . $bien["pieces"] . "'";
+                                }
+                                ?>>
+                            </label>
                         </div>
                     </div>
                     <div class="fourthInputRow">
@@ -536,43 +555,63 @@ ob_start();
                 <div class="gridAjoutBien">
                     <div class="firstInputRow">
                         <div class="prixGestBien">
-                            <label for="prix">Prix</label>
-                            <input type="number" name="prix" id="prix">
+                            <label class="labelAdmin">
+                                <p>Prix</p>
+                                <input type="number" name="prix" id="prix">
+                            </label>
                         </div>
                         <div>
-                            <label for="adresse">Adresse</label>
-                            <input type="text" name="adresse" id="adresse">
+                            <label class="labelAdmin">
+                                <p>Prix</p>
+                                <input type="text" name="adresse" id="adresse">
+                            </label>
                         </div>
                     </div>
                     <div class="coordoneesInputRow">
                         <div>
-                            <div>Coordonnées GPS</div>
-                            <label for="x">X</label>
-                            <input type="number" name="x" id="x">
-                        </div>
-                        <div>
-                            <label for="y">Y</label>
-                            <input type="number" name="y" id="y">
+                            <div class="coordonneesTitre">Coordonnées GPS</div>
+                            <div class="coordoneesFlex">
+                                <div>
+                                    <label class="labelAdmin">
+                                        <p>X</p>
+                                        <input type="text" name="x" id="x">
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="labelAdmin">
+                                        <p>Y</p>
+                                        <input type="text" name="y" id="y">
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="secondInputRow">
                         <div>
-                            <label for="chambres">Chambres</label>
-                            <input type="number" name="chambres" id="chambres">
+                            <label class="labelAdmin">
+                                <p>Chambres</p>
+                                <input type="number" name="chambres" id="chambres">
+                            </label>
                         </div>
                         <div>
-                            <label for="sdb">Salles de bain</label>
-                            <input type="number" name="sdb" id="sdb">
+                            <label class="labelAdmin">
+                                <p>Salles de bain</p>
+                                <input type="number" name="sdb" id="sdb">
+                            </label>
                         </div>
                     </div>
                     <div class="thirdInputRow">
                         <div>
-                            <label for="superficie">Superficie</label>
-                            <input type="number" name="superficie" id="superficie">
+                            <label class="labelAdmin">
+                                <p>Superficie</p>
+                                <input type="number" name="superficie" id="superficie">
+                            </label>
                         </div>
                         <div>
-                            <label for="pieces">Pièces</label>
-                            <input type="number" name="pieces" id="pieces">
+                            <label class="labelAdmin">
+                                <p>Pieces</p>
+                                <input type="number" name="pieces" id="pieces">
+                            </label>
                         </div>
                     </div>
                     <div class="fourthInputRow">

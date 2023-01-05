@@ -323,6 +323,10 @@ header {
     display: none;
 }
 
+.adminDesktop {
+    display: block;
+}
+
 .boutonAdminDesktop {
     text-decoration: none;
     color: white;
@@ -406,6 +410,15 @@ header {
 }
 
 /* Page d'ajout d'un bien */
+
+.coordonneesTitre {
+    margin-top: 0;
+}
+
+.coordoneesFlex {
+    display: flex;
+    gap: 7%
+}
 
 .formBien {
     display: grid;
@@ -594,10 +607,6 @@ header {
     grid-template-columns: 1fr;
     grid-gap: 20px;
     justify-items: center;
-}
-
-.formUtis input[type="text"], .formUtis input[type="password"] {
-    margin-top: 40px;
 }
 
 .rolesAdminUtis {
