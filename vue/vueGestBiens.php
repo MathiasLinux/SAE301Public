@@ -461,7 +461,7 @@ ob_start();
                         </div>
                     </div>
                     <div class="descGestBien">
-                        <label for="desc">Description</label>
+                        <h3 class="adminH3 infoGestBien grosTitreH3">Description</h3>
                         <textarea name="desc" id="desc" cols="25" rows="10"><?php
                             if (isset($bien['description'])) {
                                 echo $bien['description'];
@@ -469,7 +469,7 @@ ob_start();
                             ?></textarea>
                     </div>
                     <div class="visiteVirtuelle">
-                        <h3 class="adminH3">Visite Virtuelle :</h3>
+                        <h3 class="adminH3 grosTitreH3">Visite Virtuelle :</h3>
                         <?php
                         $id = preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $bien["urlVisite"], $matches); //Récupère l'id de la vidéo youtube via une expression REGEX
                         ?>
@@ -477,14 +477,16 @@ ob_start();
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
-                        <label for="lienVisite">Liens vers la visite</label>
-                        <input type="url" name="lienVisite" id="lienVisite"
-                               placeholder="https://www.youtube.com/watch?v=Nlk9hoHP_kk"
-                               pattern="https://.*" size="20" <?php
-                        if (isset($bien['urlVisite'])) {
-                            echo "value='" . $bien['urlVisite'] . "'";
-                        }
-                        ?>>
+                        <label class="labelAdmin">
+                            <p>Liens vers la visite</p>
+                            <input type="url" name="lienVisite" id="lienVisite"
+                                   placeholder="https://www.youtube.com/watch?v=Nlk9hoHP_kk"
+                                   pattern="https://.*" size="20" <?php
+                            if (isset($bien['urlVisite'])) {
+                                echo "value='" . $bien['urlVisite'] . "'";
+                            }
+                            ?>>
+                        </label>
                     </div>
                 </div>
                 <div class="envoyerContact">
@@ -516,7 +518,7 @@ ob_start();
                     </svg>
                 </div>
                 <div class="imageAdmin">
-                    <label for="imgChateau">
+                    <label for="imgChateau" class="uploadLabel">
                         <svg class="svgUploadAdmin" xmlns="http://www.w3.org/2000/svg" width="74.419" height="74.419"
                              viewBox="0 0 74.419 74.419">
                             <path id="Tracé_27" data-name="Tracé 27"
@@ -655,15 +657,17 @@ ob_start();
                         </div>
                     </div>
                     <div class="descGestBien">
-                        <label for="desc">Description</label>
+                        <h3 class="adminH3 infoGestBien grosTitreH3">Description</h3>
                         <textarea name="desc" id="desc" cols="25" rows="10"></textarea>
                     </div>
-                    <div class="visiteVirtuelle">
+                    <div class="visiteVirtuelle grosTitreH3">
                         <h3 class="adminH3">Visite Virtuelle :</h3>
-                        <label for="lienVisite">Liens vers la visite</label>
-                        <input type="url" name="lienVisite" id="lienVisite"
-                               placeholder="https://www.youtube.com/watch?v=Nlk9hoHP_kk"
-                               pattern="https://.*" size="20">
+                        <label class="labelAdmin">
+                            <p>Liens vers la visite</p>
+                            <input type="url" name="lienVisite" id="lienVisite"
+                                   placeholder="https://www.youtube.com/watch?v=Nlk9hoHP_kk"
+                                   pattern="https://.*" size="20">
+                        </label>
                     </div>
                 </div>
                 <div class="envoyerContact">

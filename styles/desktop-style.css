@@ -461,6 +461,10 @@ header {
     grid-area: info;
 }
 
+.grosTitreH3 {
+    margin-top: 0;
+}
+
 .gridAjoutBien {
     grid-area: input;
     display: grid;

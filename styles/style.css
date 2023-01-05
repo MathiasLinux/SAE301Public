@@ -154,10 +154,13 @@ header {
 .menuConnexion {
     display: flex;
     gap: 5%;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .menuConnexion > svg {
-    max-width: 12%;
+    width: 12%;
 }
 
 .laBarre {
@@ -707,6 +710,11 @@ input[type="checkbox"] {
     margin-bottom: 5%;
 }
 
+.grosTitreH3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .emplacementChateau {
     position: absolute;
     display: grid;
@@ -1096,6 +1104,12 @@ input[type="checkbox"] {
 
 .petitesImagesAdmin label {
     border: 2px dashed var(--gris-clair);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadLabel {
     display: flex;
     justify-content: center;
     align-items: center;
