@@ -97,52 +97,56 @@ ob_start();
             <div>Nouvel utilisateur</div>
         </a>
         <form class="formUti" action="#" method="post">
-            <table>
-                <tr>
-                    <th>Adresse Mail</th>
-                    <th>Mots de passe</th>
-                    <th>Rôles</th>
-                </tr>
-                <?php
-                foreach ($utilisateurs as $item) {
-                    ?>
-                    <tr>
-                        <td><?= $item["mail"] ?></td>
-                        <td>
-                            <div class="fakeMdp">••••••••••••••••••</div>
-                        </td>
-                        <td>
-                            <div class="tableauFlex">
-                                <div>Gestion Bien</div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="biens" name="biens"
-                                           value="yes"
-                                        <?php
-                                        if (str_contains($item["roles"], "biens")) {
-                                            echo "checked";
-                                        }
-                                        ?> disabled>
-                                </div>
-                            </div>
-                            <div class="tableauFlex">
-                                <div>Gestion Blog</div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="blog" name="blog"
-                                           value="yes" <?php
-                                    if (str_contains($item["roles"], "blog")) {
-                                        echo "checked";
-                                    }
-                                    ?> disabled>
-                                </div>
-                            </div>
-                            <a class="boutonJaune" href="index.php?action=gestUtis&id=<?= $item["id"] ?>">Modifier
-                                l'utilisateur</a>
-                        </td>
-                    </tr>
-                    <?php
-                }
-                ?>
-            </table>
+            <div class="gridUti">
+                <div class="table-responsive-md">
+                    <table class="table tableau">
+                        <tr>
+                            <th>Adresse Mail</th>
+                            <th>Mots de passe</th>
+                            <th>Rôles</th>
+                        </tr>
+                        <?php
+                        foreach ($utilisateurs as $item) {
+                            ?>
+                            <tr>
+                                <td><?= $item["mail"] ?></td>
+                                <td>
+                                    <div class="fakeMdp">••••••••••••••••••</div>
+                                </td>
+                                <td>
+                                    <div class="tableauFlex">
+                                        <div>Gestion Bien</div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="biens" name="biens"
+                                                   value="yes"
+                                                <?php
+                                                if (str_contains($item["roles"], "biens")) {
+                                                    echo "checked";
+                                                }
+                                                ?> disabled>
+                                        </div>
+                                    </div>
+                                    <div class="tableauFlex">
+                                        <div>Gestion Blog</div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="blog" name="blog"
+                                                   value="yes" <?php
+                                            if (str_contains($item["roles"], "blog")) {
+                                                echo "checked";
+                                            }
+                                            ?> disabled>
+                                        </div>
+                                    </div>
+                                    <a class="boutonJaune" href="index.php?action=gestUtis&id=<?= $item["id"] ?>">Modifier
+                                        l'utilisateur</a>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+            </div>
         </form>
     </main>
     <script defer src="js/admin.js"></script>

@@ -94,68 +94,72 @@ ob_start();
         </a>
         <h2 class="adminH2 formContactH2">Achat</h2>
         <div class="gridFormContact">
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Adresse mail</th>
-                    <th>Intéressé par le bien</th>
-                    <th>Message</th>
-                    <th>Date</th>
-                </tr>
-                <?php
-                foreach ($contactsAchat as $item) {
-                    ?>
+            <div class="table-responsive-md">
+                <table class="table tableau">
                     <tr>
-                        <td><?= $item["nom"] ?></td>
-                        <td><?= $item["mail"] ?></td>
-                        <?php
-                        $nomBien = $objFormContact->getOnlyBienNom($item["bienId"])
-                        ?>
-                        <?php
-                        if (isset($nomBien["nom"])) {
-                            ?>
-                            <td><?= $nomBien["nom"] ?></td>
-                            <?php
-                        } else {
-                            ?>
-                            <td><strong>Le bien a été supprimé</strong></td>
-                            <?php
-                        }
-                        ?>
-                        <td><?= $item["message"] ?></td>
-                        <?php
-                        $dateContactAchat = $objFormContact->viewContactAchatDate($item["id"]);
-                        ?>
-                        <td><?= $dateContactAchat["date"] ?></td>
+                        <th>Nom</th>
+                        <th>Adresse mail</th>
+                        <th>Intéressé par le bien</th>
+                        <th>Message</th>
+                        <th>Date</th>
                     </tr>
                     <?php
-                }
-                ?>
-            </table>
+                    foreach ($contactsAchat as $item) {
+                        ?>
+                        <tr>
+                            <td><?= $item["nom"] ?></td>
+                            <td><?= $item["mail"] ?></td>
+                            <?php
+                            $nomBien = $objFormContact->getOnlyBienNom($item["bienId"])
+                            ?>
+                            <?php
+                            if (isset($nomBien["nom"])) {
+                                ?>
+                                <td><?= $nomBien["nom"] ?></td>
+                                <?php
+                            } else {
+                                ?>
+                                <td><strong>Le bien a été supprimé</strong></td>
+                                <?php
+                            }
+                            ?>
+                            <td><?= $item["message"] ?></td>
+                            <?php
+                            $dateContactAchat = $objFormContact->viewContactAchatDate($item["id"]);
+                            ?>
+                            <td><?= $dateContactAchat["date"] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </table>
+            </div>
             <h2 class="adminH2 formContactH2">Vente</h2>
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Adresse mail</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                </tr>
-                <?php
-                foreach ($contactsVente as $item) {
-                    ?>
+            <div class="table-responsive-md">
+                <table class="table tableau">
                     <tr>
-                        <td><?= $item["nom"] ?></td>
-                        <td><?= $item["mail"] ?></td>
-                        <td><?= $item["description"] ?></td>
-                        <?php
-                        $dateContactVente = $objFormContact->viewContactVenteDate($item["id"])
-                        ?>
-                        <td><?= $dateContactVente["date"] ?></td>
+                        <th>Nom</th>
+                        <th>Adresse mail</th>
+                        <th>Description</th>
+                        <th>Date</th>
                     </tr>
                     <?php
-                }
-                ?>
-            </table>
+                    foreach ($contactsVente as $item) {
+                        ?>
+                        <tr>
+                            <td><?= $item["nom"] ?></td>
+                            <td><?= $item["mail"] ?></td>
+                            <td><?= $item["description"] ?></td>
+                            <?php
+                            $dateContactVente = $objFormContact->viewContactVenteDate($item["id"])
+                            ?>
+                            <td><?= $dateContactVente["date"] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
     </main>
     <script defer src="js/admin.js"></script>

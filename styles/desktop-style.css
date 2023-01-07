@@ -536,6 +536,7 @@ header {
 
 /* Page contenant les réponses du formulaire de contact */
 
+/*
 .mainUti table {
     table-layout: fixed;
 }
@@ -551,8 +552,7 @@ header {
 
 .mainUti table tr {
     display: flex;
-
-}
+*/
 
 /* Page légal */
 
