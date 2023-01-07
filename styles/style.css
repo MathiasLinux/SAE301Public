@@ -628,8 +628,73 @@ label[for="venteDescription"] {
     margin-top: 5%;
 }
 
+.contourFiltre select {
+    background-color: var(--jaune);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    border: none;
+    padding: 15px;
+    margin-top: 10%;
+    margin-bottom: 4%;
+}
+
+.contourFiltre input[type="submit"] {
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: var(--jaune);
+    margin-top: 10%;
+}
+
+.filtrerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .contourFiltreOpen {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputGris {
+    background-color: var(--gris-clair);
+    border: none;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+}
+
+.labelTextFiltre p {
+    transform: translate(1%, 180%);
+    color: var(--gris-semi-clair);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.minMaxPrix {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.prixP {
+    margin-bottom: 0;
 }
 
 .menuFiltreOpen > svg {

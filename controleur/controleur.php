@@ -14,7 +14,41 @@ function accueil()
 function chateau()
 {
     $objCha = new chateau();
-    $chateaux = $objCha->getChateauxVisible();
+    if (isset($_GET['tri'])) {
+        if (isset($_POST['region'])) {
+            $region = $_POST['region'];
+        } else {
+            $region = "";
+        }
+        if (isset($_POST['prixMin'])) {
+            $prixMin = $_POST['prixMin'];
+        } else {
+            $prixMin = "";
+        }
+        if (isset($_POST['prixMax'])) {
+            $prixMax = $_POST['prixMax'];
+        } else {
+            $prixMax = "";
+        }
+        if (isset($_POST['epoque'])) {
+            $epoque = $_POST['epoque'];
+        } else {
+            $epoque = "";
+        }
+        if (isset($_POST['statut'])) {
+            $statut = $_POST['statut'];
+        } else {
+            $statut = "";
+        }
+        if (isset($_POST['etat'])) {
+            $etat = $_POST['etat'];
+        } else {
+            $etat = "";
+        }
+        $chateaux = $objCha->getChateauxTri($region, $prixMin, $prixMax, $epoque, $statut, $etat);
+    } else {
+        $chateaux = $objCha->getChateauxVisible();
+    }
     require "vue/vueChateau.php";
 }
 
@@ -105,7 +139,41 @@ function admin()
 function gestBien()
 {
     $objCha = new chateau();
-    $chateaux = $objCha->getChateaux();
+    if (isset($_GET['tri'])) {
+        if (isset($_POST['region'])) {
+            $region = $_POST['region'];
+        } else {
+            $region = "";
+        }
+        if (isset($_POST['prixMin'])) {
+            $prixMin = $_POST['prixMin'];
+        } else {
+            $prixMin = "";
+        }
+        if (isset($_POST['prixMax'])) {
+            $prixMax = $_POST['prixMax'];
+        } else {
+            $prixMax = "";
+        }
+        if (isset($_POST['epoque'])) {
+            $epoque = $_POST['epoque'];
+        } else {
+            $epoque = "";
+        }
+        if (isset($_POST['statut'])) {
+            $statut = $_POST['statut'];
+        } else {
+            $statut = "";
+        }
+        if (isset($_POST['etat'])) {
+            $etat = $_POST['etat'];
+        } else {
+            $etat = "";
+        }
+        $chateaux = $objCha->getChateauxTriGest($region, $prixMin, $prixMax, $epoque, $statut, $etat);
+    } else {
+        $chateaux = $objCha->getChateaux();
+    }
     require "vue/vueGestBien.php";
 }
 

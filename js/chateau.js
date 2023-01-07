@@ -5,13 +5,14 @@ function openFiltre() {
 
 document.querySelector(".menuFiltre").addEventListener("click", openFiltre);
 
-//Fonctionnement du filtre
+/*function updateTextInput() {
+    console.log(this.value);
+    //add space between thousands
+    let valueRange = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    document.querySelector(".valuePrix").innerText = valueRange + " €";
+}
 
-let input = document.querySelectorAll("form input");
-
-console.log(input);
-
-let biens = document.querySelectorAll(".contourBiens");
+document.querySelector("form input[type=range]").addEventListener("change", updateTextInput);*/
 
 /*
 input.forEach(e => {
@@ -40,17 +41,36 @@ document.querySelectorAll(".selecteurCase .labelEtInput input").forEach(e => {
     });
 });*/
 
+/*
 function filtreEpoque(epoque) {
     console.log(epoque);
     selector = "input[name=" + epoque + "]";
-    document.querySelector(selector).addEventListener("click", () => {
-        biens.forEach(bien => {
-            if ((document.querySelector(selector).checked == true)) {
+    console.log("First if");
+    biens.forEach(bien => {
+        if ((bien.classList.contains(epoque) && document.querySelector(selector).checked == true)) {
+            console.log("Second if");
+            bien.classList.remove("bienHidden");
+        } else if (document.querySelectorAll("input:checked").length > 1) {
+            console.log("Third if");
+            document.querySelectorAll("input:checked").forEach(e => {
+                console.log("restant = " + e.name);
+                document.querySelectorAll(".contourBiens." + e.name).forEach(bien2 => {
+                    console.log("bien2 = " + bien2);
+                    bien2.classList.remove("bienHidden");
+                });
+            });
+        } else if (document.querySelectorAll("input:checked").length == 0) {
+            console.log("Fourth if");
+            bien.classList.remove("bienHidden");
+        } else {
+            console.log("Second else");
+            if (document.querySelectorAll("input:checked").length >= 1 && bien.classList.contains(epoque) == false) {
+                console.log("Fourth if");
                 bien.classList.remove("bienHidden");
             } else {
                 bien.classList.add("bienHidden");
             }
-        });
+        }
     });
 }
 
@@ -60,6 +80,7 @@ input.forEach(e => {
         console.log(e.name);
     });
 });
+*/
 
 /*
 filtreEpoque("XV");

@@ -564,7 +564,7 @@ ob_start();
                         </div>
                         <div>
                             <label class="labelAdmin">
-                                <p>Prix</p>
+                                <p>Adresse</p>
                                 <input type="text" name="adresse" id="adresse">
                             </label>
                         </div>

@@ -106,74 +106,373 @@ ob_start();
                 </svg>
             </div>
             <div class="contourFiltre">
-                <div class="boutonJaune boutonRegion">
-                    <div>Régions</div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14.828" height="8.414" viewBox="0 0 14.828 8.414">
-                        <path id="Tracé_3" data-name="Tracé 3" d="M6,9l6,6,6-6" transform="translate(-4.586 -7.586)"
-                              fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2"/>
-                    </svg>
-                </div>
-                <form action="#" class="gridFiltre">
-                    <div class="selecteurPrix">
-                        <label class="labelFiltre" for="prix">Prix :</label>
-                        <input type="range" name="prix" id="prix">
-                    </div>
-                    <div class="totalSelecteurCase">
-                        <div class="labelFiltre">Époque du château :</div>
-                        <div class="selecteurCase">
-                            <div>
-                                <input type="checkbox" name="XV" id="XVsiecle">
-                                <label for="XVsiecle">XV<sup>ème</sup> siècle</label>
+                <?php
+                if (isset($_GET["tri"])) {
+                    ?>
+                    <form action="index.php?action=gestBien&tri=1" class="gridFiltre" method="post">
+                        <select id="region" name="region">
+                            <option value="">Choisir une région</option>
+                            <?php
+                            if (isset($_POST["region"])) {
+                                if ($_POST["region"] == "auvergne-rhone-alpes") {
+                                    ?>
+                                    <option value="auvergne-rhone-alpes" selected>Auvergne-Rhône-Alpes</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="auvergne-rhone-alpes">Auvergne-Rhône-Alpes</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "bourgogne-franche-comte") {
+                                    ?>
+                                    <option value="bourgogne-franche-comte" selected>Bourgogne-Franche-Comté</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "bretagne") {
+                                    ?>
+                                    <option value="bretagne" selected>Bretagne</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="bretagne">Bretagne</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "centre-val-de-loire") {
+                                    ?>
+                                    <option value="centre-val-de-loire" selected>Centre-Val de Loire</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="centre-val-de-loire">Centre-Val de Loire</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "corse") {
+                                    ?>
+                                    <option value="corse" selected>Corse</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="corse">Corse</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "grand-est") {
+                                    ?>
+                                    <option value="grand-est" selected>Grand Est</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="grand-est">Grand Est</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "hauts-de-france") {
+                                    ?>
+                                    <option value="hauts-de-france" selected>Hauts-de-France</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="hauts-de-france">Hauts-de-France</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "ile-de-france") {
+                                    ?>
+                                    <option value="ile-de-france" selected>Île-de-France</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="ile-de-france">Île-de-France</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "normandie") {
+                                    ?>
+                                    <option value="normandie" selected>Normandie</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="normandie">Normandie</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "nouvelle-aquitaine") {
+                                    ?>
+                                    <option value="nouvelle-aquitaine" selected>Nouvelle-Aquitaine</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "occitanie") {
+                                    ?>
+                                    <option value="occitanie" selected>Occitanie</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="occitanie">Occitanie</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "pays-de-la-loire") {
+                                    ?>
+                                    <option value="pays-de-la-loire" selected>Pays de la Loire</option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="pays-de-la-loire">Pays de la Loire</option>
+                                    <?php
+                                }
+                                if ($_POST["region"] == "paca") {
+                                    ?>
+                                    <option value="paca" selected>Provence-Alpes-Côte d'Azur
+                                    </option>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <option value="paca">Provence-Alpes-Côte d'Azur</option>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </select>
+                        <div class="selecteurPrix">
+                            <p class="labelFiltre prixP">Prix :</p>
+                            <div class="minMaxPrix">
+                                <label class="labelTextFiltre">
+                                    <p>Prix Minimun</p>
+                                    <input class="inputGris" type="number" name="prixMin" id="prixMin" <?php
+                                    if (isset($_POST["prixMin"])) {
+                                        echo "value='" . $_POST["prixMin"] . "'";
+                                    }
+                                    ?>
+                                    >
+                                </label>
+                                <label class="labelTextFiltre">
+                                    <p>Prix Maximal</p>
+                                    <input class="inputGris" type="number" name="prixMax" id="prixMax"
+                                        <?php
+                                        if (isset($_POST["prixMax"])) {
+                                            echo "value='" . $_POST["prixMax"] . "'";
+                                        }
+                                        ?>
+                                    >
+                                </label>
                             </div>
-                            <div>
-                                <input type="checkbox" name="XVI" id="XVIsiecle">
-                                <label for="XVIsiecle">XVI<sup>ème</sup> siècle</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="XVII" id="XVIIsiecle">
-                                <label for="XVIIsiecle">XVII<sup>ème</sup> siècle</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="XVIII" id="XVIIIsiecle">
-                                <label for="XVIIIsiecle">XVIII<sup>ème</sup> siècle</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="XIX" id="XIXsiecle">
-                                <label for="XIXsiecle">XIX<sup>ème</sup> siècle</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="XX" id="XXsiecle">
-                                <label for="XXsiecle">XX<sup>ème</sup> siècle</label>
+
+                        </div>
+                        <div class="totalSelecteurCase">
+                            <div class="labelFiltre">Époque du château :</div>
+                            <div class="selecteurCase">
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVsiecle" value="XV" <?php
+                                    if (isset($_POST["epoque"])) {
+                                        if (in_array("XV", $_POST["epoque"])) {
+                                            echo "checked";
+                                        }
+                                    }
+                                    ?>>
+                                    <label for="XVsiecle">XV<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVIsiecle" value="XVI"
+                                        <?php
+                                        if (isset($_POST["epoque"])) {
+                                            if (in_array("XVI", $_POST["epoque"])) {
+                                                echo "checked";
+                                            }
+                                        }
+                                        ?>>
+                                    <label for="XVIsiecle">XVI<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVIIsiecle" value="XVII"
+                                        <?php
+                                        if (isset($_POST["epoque"])) {
+                                            if (in_array("XVII", $_POST["epoque"])) {
+                                                echo "checked";
+                                            }
+                                        }
+                                        ?>>
+                                    <label for="XVIIsiecle">XVII<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVIIIsiecle" value="XVIII"
+                                        <?php
+                                        if (isset($_POST["epoque"])) {
+                                            if (in_array("XVIII", $_POST["epoque"])) {
+                                                echo "checked";
+                                            }
+                                        }
+                                        ?>>
+                                    <label for="XVIIIsiecle">XVIII<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XIXsiecle" value="XIX"
+                                        <?php
+                                        if (isset($_POST["epoque"])) {
+                                            if (in_array("XIX", $_POST["epoque"])) {
+                                                echo "checked";
+                                            }
+                                        }
+                                        ?>>
+                                    <label for="XIXsiecle">XIX<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XXsiecle" value="XX"
+                                        <?php
+                                        if (isset($_POST["epoque"])) {
+                                            if (in_array("XX", $_POST["epoque"])) {
+                                                echo "checked";
+                                            }
+                                        }
+                                        ?>>
+                                    <label for="XXsiecle">XX<sup>ème</sup> siècle</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="totalSelecteurCase">
-                        <div class="labelFiltre">Statut du château :</div>
-                        <div class="selecteurCase">
-                            <input type="checkbox" name="classe" id="classe">
-                            <label for="classe">Le château est classé</label>
-                            <input type="checkbox" name="nonclasse" id="nonClasse">
-                            <label for="nonClasse">Le château n'est classé</label>
+                        <div class="totalSelecteurCase">
+                            <div class="labelFiltre">Statut du château :</div>
+                            <div class="selecteurCase">
+                                <input type="checkbox" name="statut[]" id="classe" value="classe"
+                                    <?php
+                                    if (isset($_POST["statut"])) {
+                                        if (in_array("classe", $_POST["statut"])) {
+                                            echo "checked";
+                                        }
+                                    }
+                                    ?>>
+                                <label for="classe">Le château est classé</label>
+                                <input type="checkbox" name="statut[]" id="nonClasse" value="nonclasse"
+                                    <?php
+                                    if (isset($_POST["statut"])) {
+                                        if (in_array("nonclasse", $_POST["statut"])) {
+                                            echo "checked";
+                                        }
+                                    }
+                                    ?>>
+                                <label for="nonClasse">Le château n'est classé</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="totalSelecteurCase">
-                        <div class="labelFiltre">État du château :</div>
-                        <div class="selecteurCase">
-                            <input type="checkbox" name="restauration" id="restoNecessaire">
-                            <label for="restoNecessaire">Restauration nécessaire</label>
-                            <input type="checkbox" name="excellent" id="excellentEtat">
-                            <label for="excellentEtat">Excellent état</label>
+                        <div class="totalSelecteurCase">
+                            <div class="labelFiltre">État du château :</div>
+                            <div class="selecteurCase">
+                                <input type="checkbox" name="etat[]" id="restoNecessaire" value="restauration"
+                                    <?php
+                                    if (isset($_POST["etat"])) {
+                                        if (in_array("restauration", $_POST["etat"])) {
+                                            echo "checked";
+                                        }
+                                    }
+                                    ?>>
+                                <label for="restoNecessaire">Restauration nécessaire</label>
+                                <input type="checkbox" name="etat[]" id="excellentEtat" value="excellent"
+                                <?php
+                                if (isset($_POST["etat"])) {
+                                    if (in_array("excellent", $_POST["etat"])) {
+                                        echo "checked";
+                                    }
+                                }
+                                ?>
+                                <label for="excellentEtat">Excellent état</label>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                        <div class="filtrerFlex">
+                            <input class="envoyerFiltre" type="submit" value="Filtrer">
+                        </div>
+                    </form>
+                    <?php
+                } else {
+                    ?>
+                    <form action="index.php?action=gestBien&tri=1" class="gridFiltre" method="post">
+                        <select id="region" name="region">
+                            <option value="">Choisir une région</option>
+                            <option value="auverge-rhone-alpes">Auvergne-Rhône-Alpes</option>
+                            <option value="bourgogne-franche-comte">Bourgogne-Franche-Comté</option>
+                            <option value="bretagne">Bretagne</option>
+                            <option value="centre-val-de-loire">Centre-Val de Loire</option>
+                            <option value="corse">Corse</option>
+                            <option value="grand-est">Grand Est</option>
+                            <option value="hauts-de-france">Hauts-de-France</option>
+                            <option value="ile-de-france">Île-de-France</option>
+                            <option value="normandie">Normandie</option>
+                            <option value="nouvelle-aquitaine">Nouvelle-Aquitaine</option>
+                            <option value="occitanie">Occitanie</option>
+                            <option value="paca">Provence-Alpes-Côte d'Azur</option>
+                        </select>
+                        <div class="selecteurPrix">
+                            <p class="labelFiltre prixP">Prix :</p>
+                            <div class="minMaxPrix">
+                                <label class="labelTextFiltre">
+                                    <p>Prix Minimun</p>
+                                    <input class="inputGris" type="number" name="prixMin" id="prixMin">
+                                </label>
+                                <label class="labelTextFiltre">
+                                    <p>Prix Maximal</p>
+                                    <input class="inputGris" type="number" name="prixMax" id="prixMax">
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="totalSelecteurCase">
+                            <div class="labelFiltre">Époque du château :</div>
+                            <div class="selecteurCase">
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVsiecle" value="XV">
+                                    <label for="XVsiecle">XV<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVIsiecle" value="XVI">
+                                    <label for="XVIsiecle">XVI<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVIIsiecle" value="XVII">
+                                    <label for="XVIIsiecle">XVII<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XVIIIsiecle" value="XVIII">
+                                    <label for="XVIIIsiecle">XVIII<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XIXsiecle" value="XIX">
+                                    <label for="XIXsiecle">XIX<sup>ème</sup> siècle</label>
+                                </div>
+                                <div class="labelEtInput">
+                                    <input type="checkbox" name="epoque[]" id="XXsiecle" value="XX">
+                                    <label for="XXsiecle">XX<sup>ème</sup> siècle</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="totalSelecteurCase">
+                            <div class="labelFiltre">Statut du château :</div>
+                            <div class="selecteurCase">
+                                <input type="checkbox" name="statut[]" id="classe" value="classe">
+                                <label for="classe">Le château est classé</label>
+                                <input type="checkbox" name="statut[]" id="nonClasse" value="nonclasse">
+                                <label for="nonClasse">Le château n'est classé</label>
+                            </div>
+                        </div>
+                        <div class="totalSelecteurCase">
+                            <div class="labelFiltre">État du château :</div>
+                            <div class="selecteurCase">
+                                <input type="checkbox" name="etat[]" id="restoNecessaire" value="restauration">
+                                <label for="restoNecessaire">Restauration nécessaire</label>
+                                <input type="checkbox" name="etat[]" id="excellentEtat" value="excellent">
+                                <label for="excellentEtat">Excellent état</label>
+                            </div>
+                        </div>
+                        <div class="filtrerFlex">
+                            <input class="envoyerFiltre" type="submit" value="Filtrer">
+                        </div>
+                    </form>
+                    <?php
+                }
+                ?>
             </div>
             <div class="gridBiens">
                 <?php
                 foreach ($chateaux as $item) {
                     ?>
-                    <div class="contourBiens" data-epoque="<?= $item["epoque"] ?>" data-statut="<?= $item["statut"] ?>"
-                         data-etat="<?= $item["etat"] ?>">
+                    <div class="contourBiens <?= $item["epoque"] ?> <?= $item["statut"] ?> <?= $item["etat"] ?>">
                         <div class="bien">
                             <?php
                             if (is_file("img/biens/" . $item["id"] . "-1.jpg")) {

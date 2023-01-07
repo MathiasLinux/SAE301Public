@@ -90,7 +90,14 @@ header {
 
 .gridFiltre {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+
+
+.contourFiltre select {
+    height: 60px;
 }
 
 .boutonRegion {
