@@ -100,7 +100,7 @@ ob_start();
                 <div class="titreBiensAdmin">
                     <input type="text" id="titre" name="titre" placeholder="Nom du bien" class="" <?php
                     if (isset($bien["nom"])) {
-                        echo "value='" . $bien["nom"] . "'";
+                        echo "value=\"" . $bien["nom"] . "\"";
                     }
                     ?>>
                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
@@ -203,7 +203,7 @@ ob_start();
                                 <p>Adresse</p>
                                 <input type="text" name="adresse" id="adresse"<?php
                                 if (isset($bien["adresse"])) {
-                                    echo "value='" . $bien["adresse"] . "'";
+                                    echo "value=\"" . $bien["adresse"] . "\"";
                                 }
                                 ?>></label>
                         </div>

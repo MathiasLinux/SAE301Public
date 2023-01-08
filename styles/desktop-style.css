@@ -10,6 +10,7 @@
 footer {
     padding: 10px;
     grid-area: footer;
+    grid-gap: 10px;
 }
 
 .centerIndex {
