@@ -8,6 +8,16 @@ require_once "modele/formContact.php";
 
 function accueil()
 {
+    $objLog = new login();
+    if (isset($_COOKIE["login"])) {
+        $login = $objLog->getLoginRoleFromToken($_COOKIE["login"]);
+        if ($login !== false) {
+            $_SESSION["login"] = [$login["mail"], $login["roles"]];
+        } else {
+            setcookie("login", "", 1, null, null, false, true);
+            header("Location: index.php?action=login");
+        }
+    }
     require "vue/vueAccueil.php";
 }
 
@@ -116,13 +126,28 @@ function login()
 function verifLogin()
 {
     $objLog = new login();
-    $verif = $objLog->compareLogin($_POST["e-mail"], $_POST["password"]);
-    if ($verif == true) {
-        $userInfo = $objLog->getInfoUserName($_POST["e-mail"]);
-        $_SESSION["login"] = [$_POST["e-mail"], $userInfo["roles"]];
-        header("Location: index.php?action=admin");
+    if (isset($_COOKIE["login"])) {
+        $login = $objLog->getLoginRoleFromToken($_COOKIE["login"]);
+        if ($login !== false) {
+            $_SESSION["login"] = [$login["mail"], $login["roles"]];
+            header("Location: index.php?action=admin");
+        } else {
+            setcookie("login", "", 1);
+            header("Location: index.php?action=login");
+        }
     } else {
-        header("Location: index.php?action=login");
+        $verif = $objLog->compareLogin($_POST["e-mail"], $_POST["password"]);
+        if ($verif == true) {
+            $userInfo = $objLog->getInfoUserName($_POST["e-mail"]);
+            $_SESSION["login"] = [$_POST["e-mail"], $userInfo["roles"]];
+            if (isset($_POST["resterConnecte"])) {
+                $token = $objLog->getToken($_POST["e-mail"]);
+                setcookie("login", $token, time() + 365 * 24 * 3600, null, null, false, true);
+            }
+            header("Location: index.php?action=admin");
+        } else {
+            header("Location: index.php?action=login");
+        }
     }
 }
 
@@ -223,6 +248,9 @@ function gestBlogs()
 
 function unLogin()
 {
+    if (isset($_COOKIE["login"])) {
+        setcookie("login", "", 1, null, null, false, true);
+    }
     session_destroy();
     setcookie(session_name(), "", 1, "/");
     header("Location: index.php");
@@ -316,14 +344,16 @@ function ajoutUti()
 {
     $objGestUti = new gestUti();
     $roles = "";
-    if ($_POST["biens"] == "yes") {
-        $roles .= "biens";
-    }
-    if ($_POST["blog"] == "yes") {
-        if ($roles != "") {
-            $roles .= ",blog";
-        } else {
-            $roles .= "blog";
+    if (isset($_POST["biens"])) {
+        if ($_POST["biens"] == "yes") {
+            $roles .= "biens";
+        }
+        if ($_POST["blog"] == "yes") {
+            if ($roles != "") {
+                $roles .= ",blog";
+            } else {
+                $roles .= "blog";
+            }
         }
     }
 

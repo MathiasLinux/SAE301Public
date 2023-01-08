@@ -147,7 +147,7 @@ ob_start();
                             <div class="minMaxPrix">
                                 <label class="labelTextFiltre">
                                     <p>Prix Minimun</p>
-                                    <input class="inputGris" type="number" name="prixMin" id="prixMin" <?php
+                                    <input class="inputGris" type="number" name="prixMin" id="prixMin" min="1"<?php
                                     if (isset($_POST["prixMin"])) {
                                         echo "value='" . $_POST["prixMin"] . "'";
                                     }
@@ -156,7 +156,7 @@ ob_start();
                                 </label>
                                 <label class="labelTextFiltre">
                                     <p>Prix Maximal</p>
-                                    <input class="inputGris" type="number" name="prixMax" id="prixMax"
+                                    <input class="inputGris" type="number" name="prixMax" id="prixMax" min="2"
                                         <?php
                                         if (isset($_POST["prixMax"])) {
                                             echo "value='" . $_POST["prixMax"] . "'";
@@ -257,7 +257,7 @@ ob_start();
                                         }
                                     }
                                     ?>>
-                                <label for="nonClasse">Le château n'est classé</label>
+                                <label for="nonClasse">Le château n'est pas classé</label>
                             </div>
                         </div>
                         <div class="totalSelecteurCase">
@@ -311,11 +311,11 @@ ob_start();
                             <div class="minMaxPrix">
                                 <label class="labelTextFiltre">
                                     <p>Prix Minimun</p>
-                                    <input class="inputGris" type="number" name="prixMin" id="prixMin">
+                                    <input class="inputGris" type="number" name="prixMin" id="prixMin" min="1">
                                 </label>
                                 <label class="labelTextFiltre">
                                     <p>Prix Maximal</p>
-                                    <input class="inputGris" type="number" name="prixMax" id="prixMax">
+                                    <input class="inputGris" type="number" name="prixMax" id="prixMax" min="2">
                                 </label>
                             </div>
 
@@ -355,7 +355,7 @@ ob_start();
                                 <input type="checkbox" name="statut[]" id="classe" value="classe">
                                 <label for="classe">Le château est classé</label>
                                 <input type="checkbox" name="statut[]" id="nonClasse" value="nonclasse">
-                                <label for="nonClasse">Le château n'est classé</label>
+                                <label for="nonClasse">Le château n'est pas classé</label>
                             </div>
                         </div>
                         <div class="totalSelecteurCase">

@@ -33,7 +33,7 @@ ob_start();
                           d="M27.625,202.342H0a13.812,13.812,0,0,1,27.625,0Z"
                           transform="translate(0 -174.595)"/>
                 </svg>
-                <div>Gestions des utilisateurs</div>
+                <div>Gestion des utilisateurs</div>
             </a>
             <a class="boutonAdminDesktop" href="index.php?action=formContact">
                 <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg"
@@ -282,7 +282,7 @@ ob_start();
                     <div class="fourthInputRow">
                         <div>
                             <select id="epoque" name="epoque">
-                                <option value="">Choisir une epoque</option>
+                                <option value="">Choisir une époque</option>
                                 <?php
                                 if (isset($bien["epoque"])) {
                                     if ($bien["epoque"] == "XV") {
@@ -350,7 +350,7 @@ ob_start();
                         </div>
                         <div class="fiveInputRow">
                             <select id="etat" name="etat">
-                                <option value="">Choisir un etat</option>
+                                <option value="">Choisir un état</option>
                                 <?php
                                 if (isset($bien["etat"])) {
                                     if ($bien["etat"] == "restauration") {
@@ -619,7 +619,7 @@ ob_start();
                     <div class="fourthInputRow">
                         <div>
                             <select id="epoque" name="epoque">
-                                <option value="">Choisir une epoque</option>
+                                <option value="">Choisir une époque</option>
                                 <option value="XV">XVème siècle</option>
                                 <option value="XVI">XVIème siècle</option>
                                 <option value="XVII">XVIIème siècle</option>
@@ -635,7 +635,7 @@ ob_start();
                         </div>
                         <div class="fiveInputRow">
                             <select id="etat" name="etat">
-                                <option value="">Choisir un etat</option>
+                                <option value="">Choisir un état</option>
                                 <option value="restauration">Restauration nécessaire</option>
                                 <option value="excellent">Excellent état</option>
                             </select>

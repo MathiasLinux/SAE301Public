@@ -24,7 +24,7 @@ ob_start();
                     <path id="Tracé_26" data-name="Tracé 26" d="M27.625,202.342H0a13.812,13.812,0,0,1,27.625,0Z"
                           transform="translate(0 -174.595)"/>
                 </svg>
-                <div>Gestions des utilisateurs</div>
+                <div>Gestion des utilisateurs</div>
             </a>
             <a class="boutonAdmin" href="index.php?action=formContact">
                 <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 147.09 95.81">
@@ -89,7 +89,7 @@ ob_start();
                               d="M27.625,202.342H0a13.812,13.812,0,0,1,27.625,0Z"
                               transform="translate(0 -174.595)"/>
                     </svg>
-                    <div>Gestions des utilisateurs</div>
+                    <div>Gestion des utilisateurs</div>
                 </a>
                 <a class="boutonAdminDesktop" href="index.php?action=formContact">
                     <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg"

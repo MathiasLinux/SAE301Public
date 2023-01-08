@@ -16,8 +16,8 @@ class gestUti extends database
     {
         if (isset($mail) and isset($mdp) and isset($roles)) {
             if (str_contains($mail, "@") and str_contains($mail, ".")) {
-                $req = "INSERT INTO utilisateur (mail, mdp, roles) VALUES (?, ?, ?)";
-                $this->execReqPrepModif($req, array($mail, password_hash($mdp, PASSWORD_DEFAULT), $roles));
+                $req = "INSERT INTO utilisateur (mail, mdp, roles, id_connexion) VALUES (?, ?, ?, ?)";
+                $this->execReqPrepModif($req, array($mail, password_hash($mdp, PASSWORD_DEFAULT), $roles, base64_encode(random_bytes(120))));
             }
         }
     }

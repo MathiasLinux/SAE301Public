@@ -33,7 +33,7 @@ ob_start();
                           d="M27.625,202.342H0a13.812,13.812,0,0,1,27.625,0Z"
                           transform="translate(0 -174.595)"/>
                 </svg>
-                <div>Gestions des utilisateurs</div>
+                <div>Gestion des utilisateurs</div>
             </a>
             <a class="boutonAdminDesktop" href="index.php?action=formContact">
                 <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg"
@@ -97,14 +97,10 @@ ob_start();
             <div>Nouvel article</div>
         </a>
         <div class="contourArticle">
-            <h3>Comment gérer vos impots</h3>
+            <h3>Comment gérer vos impôts</h3>
             <img src="img/articles/1.jpg">
             <div class="basBlog">
-                <div class="descArticle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur
-                    cum
-                    distinctio doloremque,
-                    est eveniet ex expedita id ipsa, libero magni minima molestiae neque nulla perferendis repellendus
-                    tempora totam velit.
+                <div class="descArticle">Il y a plusieurs façons de gérer vos impôts. Voici quelques conseils généraux :
                 </div>
                 <a class="boutonJaune" href="index.php?action=blogs">Lire la suite</a>
             </div>

@@ -33,7 +33,7 @@ ob_start();
                           d="M27.625,202.342H0a13.812,13.812,0,0,1,27.625,0Z"
                           transform="translate(0 -174.595)"/>
                 </svg>
-                <div>Gestions des utilisateurs</div>
+                <div>Gestion des utilisateurs</div>
             </a>
             <a class="boutonAdminDesktop" href="index.php?action=formContact">
                 <svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg"
@@ -240,7 +240,7 @@ ob_start();
                             <div class="minMaxPrix">
                                 <label class="labelTextFiltre">
                                     <p>Prix Minimun</p>
-                                    <input class="inputGris" type="number" name="prixMin" id="prixMin" <?php
+                                    <input class="inputGris" type="number" name="prixMin" id="prixMin" min="1" <?php
                                     if (isset($_POST["prixMin"])) {
                                         echo "value='" . $_POST["prixMin"] . "'";
                                     }
@@ -249,7 +249,7 @@ ob_start();
                                 </label>
                                 <label class="labelTextFiltre">
                                     <p>Prix Maximal</p>
-                                    <input class="inputGris" type="number" name="prixMax" id="prixMax"
+                                    <input class="inputGris" type="number" name="prixMax" id="prixMax" min="2"
                                         <?php
                                         if (isset($_POST["prixMax"])) {
                                             echo "value='" . $_POST["prixMax"] . "'";
@@ -350,7 +350,7 @@ ob_start();
                                         }
                                     }
                                     ?>>
-                                <label for="nonClasse">Le château n'est classé</label>
+                                <label for="nonClasse">Le château n'est pas classé</label>
                             </div>
                         </div>
                         <div class="totalSelecteurCase">
@@ -404,11 +404,11 @@ ob_start();
                             <div class="minMaxPrix">
                                 <label class="labelTextFiltre">
                                     <p>Prix Minimun</p>
-                                    <input class="inputGris" type="number" name="prixMin" id="prixMin">
+                                    <input class="inputGris" type="number" name="prixMin" id="prixMin" min="1">
                                 </label>
                                 <label class="labelTextFiltre">
                                     <p>Prix Maximal</p>
-                                    <input class="inputGris" type="number" name="prixMax" id="prixMax">
+                                    <input class="inputGris" type="number" name="prixMax" id="prixMax" min="2">
                                 </label>
                             </div>
 
@@ -448,7 +448,7 @@ ob_start();
                                 <input type="checkbox" name="statut[]" id="classe" value="classe">
                                 <label for="classe">Le château est classé</label>
                                 <input type="checkbox" name="statut[]" id="nonClasse" value="nonclasse">
-                                <label for="nonClasse">Le château n'est classé</label>
+                                <label for="nonClasse">Le château n'est pas classé</label>
                             </div>
                         </div>
                         <div class="totalSelecteurCase">

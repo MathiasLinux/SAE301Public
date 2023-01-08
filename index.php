@@ -38,7 +38,7 @@ if (isset($_GET["action"])) {
             header("Location: index.php?action=login");
         }
     } elseif ($_GET["action"] == "gestBien") {
-        if (isset($_SESSION["login"]) and  str_contains($_SESSION["login"][1], "biens")) {
+        if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens")) {
             gestBien();
         } else {
             header("Location: index.php?action=login");
@@ -97,7 +97,7 @@ if (isset($_GET["action"])) {
         } else {
             header("Location: index.php?action=login");
         }
-    }elseif ($_GET["action"] == "delBien" and isset($_GET["id"])) {
+    } elseif ($_GET["action"] == "delBien" and isset($_GET["id"])) {
         if (isset($_SESSION["login"]) and str_contains($_SESSION["login"][1], "biens")) {
             delBien();
         } else {
