@@ -52,7 +52,7 @@ ob_start();
                                 <input type="text" name="achatNom" id="achatNom">
                             </div>
                             <div class="labelEtInput">
-                                <label for="achatNom">Votre adresse e-mail :</label>
+                                <label for="achatMail">Votre adresse e-mail :</label>
                                 <input type="text" name="achatMail" id="achatMail">
                             </div>
                             <div class="labelEtInput">
@@ -84,27 +84,6 @@ ob_start();
                             </div>
                         </form>
                     </div>
-                    <div class="coordoneesFormulaireVente">
-                        <form action="index.php?action=formVente" class="gridContact" method="post">
-                            <div class="labelEtInput">
-                                <label for="venteNom">Votre nom :</label>
-                                <input type="text" name="venteNom" id="venteNom">
-                            </div>
-                            <div class="labelEtInput">
-                                <label for="venteNom">Votre adresse e-mail :</label>
-                                <input type="text" name="venteMail" id="venteNom">
-                            </div>
-                            <div class="labelEtInput">
-                                <label for="venteDescription">Description de votre bien :</label>
-
-                                <textarea id="venteDescription" name="venteDescription"
-                                          rows="4" cols="25"></textarea>
-                            </div>
-                            <div class="envoyerContact">
-                                <input type="submit" value="Envoyer">
-                            </div>
-                        </form>
-                    </div>
                     <?php
                 } else {
                     ?>
@@ -115,7 +94,7 @@ ob_start();
                                 <input type="text" name="achatNom" id="achatNom">
                             </div>
                             <div class="labelEtInput">
-                                <label for="achatNom">Votre adresse e-mail :</label>
+                                <label for="achatMail">Votre adresse e-mail :</label>
                                 <input type="text" name="achatMail" id="achatMail">
                             </div>
                             <div class="labelEtInput">
