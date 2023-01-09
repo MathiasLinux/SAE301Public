@@ -260,7 +260,12 @@ function ajoutBien()
 {
     $objGestBien = new gestBien();
     $objChateau = new chateau();
-    $objGestBien->addBien($_POST["titre"], $_POST["visible"], $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
+    if (!isset($_POST["visible"])) {
+        $visible = "no";
+    } else {
+        $visible = $_POST["visible"];
+    }
+    $objGestBien->addBien($_POST["titre"], $visible, $_POST["prix"], $_POST["adresse"], $_POST["region"], $_POST["x"], $_POST["y"], $_POST["chambres"], $_POST["sdb"], $_POST["superficie"], $_POST["pieces"], $_POST["epoque"], $_POST["statut"], $_POST["etat"], $_POST["desc"], $_POST["lienVisite"]);
     $id = $objChateau->getChateauIdFromName($_POST["titre"]);
     $objGestBien->addFiles("imgChateau", "biens", $id);
     header("Location: index.php?action=gestBien");

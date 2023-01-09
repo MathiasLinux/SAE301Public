@@ -118,7 +118,7 @@ ob_start();
                     </div>
                     <div>
                         <label class="labelAdmin">
-                            <p>Confirmer votre nouveau mot de passe</p>
+                            <p>Confirmer votre mot de passe</p>
                             <input type="password" name="newPassword1" id="newPassword1">
                         </label>
                     </div>

@@ -102,7 +102,7 @@ ob_start();
                     if (isset($bien["nom"])) {
                         echo "value=\"" . $bien["nom"] . "\"";
                     }
-                    ?>>
+                    ?> required>
                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
                         <g id="Edit" transform="translate(-0.5 -0.5)">
                             <path id="Tracé_29" data-name="Tracé 29"
@@ -195,7 +195,7 @@ ob_start();
                                 if (isset($bien["prix"])) {
                                     echo "value='" . $bien["prix"] . "'";
                                 }
-                                ?>>
+                                ?> required>
                             </label>
                         </div>
                         <div>
@@ -205,7 +205,7 @@ ob_start();
                                 if (isset($bien["adresse"])) {
                                     echo "value=\"" . $bien["adresse"] . "\"";
                                 }
-                                ?>></label>
+                                ?> required></label>
                         </div>
                     </div>
                     <div class="coordoneesInputRow">
@@ -219,7 +219,7 @@ ob_start();
                                         if (isset($bien["x"])) {
                                             echo "value='" . $bien["x"] . "'";
                                         }
-                                        ?>>
+                                        ?> required>
                                     </label>
                                 </div>
                                 <div>
@@ -229,7 +229,7 @@ ob_start();
                                         if (isset($bien["y"])) {
                                             echo "value='" . $bien["y"] . "'";
                                         }
-                                        ?>>
+                                        ?> required>
                                     </label>
                                 </div>
                             </div>
@@ -243,7 +243,7 @@ ob_start();
                                 if (isset($bien["chambres"])) {
                                     echo "value='" . $bien["chambres"] . "'";
                                 }
-                                ?>>
+                                ?> required>
                             </label>
                         </div>
                         <div>
@@ -253,7 +253,7 @@ ob_start();
                                 if (isset($bien["sdb"])) {
                                     echo "value='" . $bien["sdb"] . "'";
                                 }
-                                ?>>
+                                ?> required>
                             </label>
                         </div>
                     </div>
@@ -265,7 +265,7 @@ ob_start();
                                 if (isset($bien["superficie"])) {
                                     echo "value='" . $bien["superficie"] . "'";
                                 }
-                                ?>>
+                                ?> required>
                             </label>
                         </div>
                         <div>
@@ -275,7 +275,7 @@ ob_start();
                                 if (isset($bien["pieces"])) {
                                     echo "value='" . $bien["pieces"] . "'";
                                 }
-                                ?>>
+                                ?> required>
                             </label>
                         </div>
                     </div>
@@ -485,7 +485,7 @@ ob_start();
                             if (isset($bien['urlVisite'])) {
                                 echo "value='" . $bien['urlVisite'] . "'";
                             }
-                            ?>>
+                            ?> required>
                         </label>
                     </div>
                 </div>
@@ -505,7 +505,7 @@ ob_start();
         ?>
             <form class="formBien" action="index.php?action=ajoutBien" method="post" enctype="multipart/form-data">
                 <div class="titreBiensAdmin">
-                    <input type="text" id="titre" name="titre" placeholder="Nom du bien" class="">
+                    <input type="text" id="titre" name="titre" placeholder="Nom du bien" class="" required>
                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
                         <g id="Edit" transform="translate(-0.5 -0.5)">
                             <path id="Tracé_29" data-name="Tracé 29"
@@ -559,13 +559,13 @@ ob_start();
                         <div class="prixGestBien">
                             <label class="labelAdmin">
                                 <p>Prix</p>
-                                <input type="number" name="prix" id="prix">
+                                <input type="number" name="prix" id="prix" required>
                             </label>
                         </div>
                         <div>
                             <label class="labelAdmin">
                                 <p>Adresse</p>
-                                <input type="text" name="adresse" id="adresse">
+                                <input type="text" name="adresse" id="adresse" required>
                             </label>
                         </div>
                     </div>
@@ -576,13 +576,13 @@ ob_start();
                                 <div>
                                     <label class="labelAdmin">
                                         <p>X</p>
-                                        <input type="text" name="x" id="x">
+                                        <input type="text" name="x" id="x" required>
                                     </label>
                                 </div>
                                 <div>
                                     <label class="labelAdmin">
                                         <p>Y</p>
-                                        <input type="text" name="y" id="y">
+                                        <input type="text" name="y" id="y" required>
                                     </label>
                                 </div>
                             </div>
@@ -592,13 +592,13 @@ ob_start();
                         <div>
                             <label class="labelAdmin">
                                 <p>Chambres</p>
-                                <input type="number" name="chambres" id="chambres">
+                                <input type="number" name="chambres" id="chambres" required>
                             </label>
                         </div>
                         <div>
                             <label class="labelAdmin">
                                 <p>Salles de bain</p>
-                                <input type="number" name="sdb" id="sdb">
+                                <input type="number" name="sdb" id="sdb" required>
                             </label>
                         </div>
                     </div>
@@ -606,13 +606,13 @@ ob_start();
                         <div>
                             <label class="labelAdmin">
                                 <p>Superficie</p>
-                                <input type="number" name="superficie" id="superficie">
+                                <input type="number" name="superficie" id="superficie" required>
                             </label>
                         </div>
                         <div>
                             <label class="labelAdmin">
                                 <p>Pieces</p>
-                                <input type="number" name="pieces" id="pieces">
+                                <input type="number" name="pieces" id="pieces" required>
                             </label>
                         </div>
                     </div>
@@ -666,7 +666,7 @@ ob_start();
                             <p>Liens vers la visite</p>
                             <input type="url" name="lienVisite" id="lienVisite"
                                    placeholder="https://www.youtube.com/watch?v=Nlk9hoHP_kk"
-                                   pattern="https://.*" size="20">
+                                   pattern="https://.*" size="20" required>
                         </label>
                     </div>
                 </div>
