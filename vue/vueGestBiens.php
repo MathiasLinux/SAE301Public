@@ -155,8 +155,8 @@ ob_start();
                             </label>
                             <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
                             <input type="file"
-                                   id="imgChateau" name="imgChateau"
-                                   accept="image/png, image/jpeg">
+                                   id="imgChateau" name="imgChateau[]"
+                                   accept="image/png, image/jpeg" multiple="multiple">
                         </div>
                     </div>
                 </div>

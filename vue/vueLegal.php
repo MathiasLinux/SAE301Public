@@ -256,8 +256,7 @@ ob_start();
                 <p><strong>Pas de transfert en dehors de l'Union européenne</strong><br>L'Éditeur s'engage à ne pas
                     transférer
                     les données personnelles de ses Utilisateurs en dehors de l'Union européenne.
-                    <a href="https://www.cnil.fr/fr/la-protection-des-donnees-dans-le-mondehttps://www.cnil.fr/fr/la-protection- des-donnees-dans-le-monde">https://www.cnil.fr/fr/la-protection-des-donnees-dans-le-mondehttps://www.cnil.fr/fr/la-protection-
-                        des-donnees-dans-le-monde
+                    <a href="https://www.cnil.fr/fr/la-protection-des-donnees-dans-le-monde">https://www.cnil.fr/fr/la-protection-des-donnees-dans-le-monde
                     </a>
                 </p>
                 <h4>14. Modification de la politique de confidentialité</h4>

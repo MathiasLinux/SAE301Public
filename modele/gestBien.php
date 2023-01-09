@@ -20,7 +20,7 @@ class gestBien extends database
             $path = $path . "/";
             $total = count($_FILES[$name]['name']);
             for ($j = 0; $j < $total; $j++) {
-                var_dump($_FILES[$name]['name'][$j]);
+                //var_dump($_FILES[$name]['name'][$j]);
                 if (isset($_FILES[$name]['name'][$j])) {
                     // Test s'il n'y a pas d'erreur
                     if ($_FILES[$name]['error'][$j] == 0) {
@@ -36,26 +36,30 @@ class gestBien extends database
                                     //move_uploaded_file($_FILES[$name]['tmp_name'][$j], "img/" . $path . $_FILES[$name]['name'][$j]);
                                     //+++++++++++++++++++++++++++++++++++++++++++
                                     //775
-                                    echo $_FILES[$name]['tmp_name'][$j] . "<br>" . "<br>";
-                                    echo "img/" . $path . $_FILES[$name]['name'][$j] . "<br>" . "<br>";
-                                    var_dump($_FILES[$name]['name']);
+                                    //echo $_FILES[$name]['tmp_name'][$j] . "<br>" . "<br>";
+                                    //echo "img/" . $path . $_FILES[$name]['name'][$j] . "<br>" . "<br>";
+                                    //var_dump($_FILES[$name]['name']);
                                     //see content of a folder
-                                    $dirun = "img/" . $path;
-                                    $filesun = scandir($dirun);
-                                    var_dump($filesun);
+                                    //$dirun = "img/" . $path;
+                                    //$filesun = scandir($dirun);
+                                    //var_dump($filesun);
                                     //++++++++++++++
-                                    echo "Transfert du fichier " . $_FILES[$name]['name'][$j] . " effectué !";
-                                    if (!(file_exists("img/" . $path . $id . "-1.jpg") or file_exists("img/" . $path . $id . "-1.jpeg") or file_exists("img/" . $path . $id . "-1.png"))) {
-                                        move_uploaded_file($_FILES[$name]['tmp_name'][$j], "img/" . $path . $id . '-1.' . $extension_upload);
-                                        //rename('img/' . $path . $_FILES[$name]['name'][$j], 'img/' . $path . $id . '-1.' . $extension_upload);
-                                    } else {
+                                    //echo "Transfert du fichier " . $_FILES[$name]['name'][$j] . " effectué !";
+                                    if (((file_exists("img/" . $path . $id . "-1.jpg")) || (file_exists("img/" . $path . $id . "-1.jpeg")) || (file_exists("img/" . $path . $id . "-1.png")))) {
+                                        echo "files non = -1";
+                                        var_dump($_FILES[$name]['name'][$j]);
                                         $i = 1;
-                                        while (file_exists("img/" . $path . $id . "-" . $i . "." . $extension_upload)) {
+                                        while (file_exists("img/" . $path . $id . "-" . $i . ".jpg") || file_exists("img/" . $path . $id . "-" . $i . ".jpeg") || file_exists("img/" . $path . $id . "-" . $i . ".png")) {
                                             $i++;
 
                                             //rename("img/" . $path . $_FILES[$name]['name'][$j], "img/" . $path . $id . "-" . $i . "." . $extension_upload);
                                         }
                                         move_uploaded_file($_FILES[$name]['tmp_name'][$j], "img/" . $path . $id . '-' . $i . '.' . $extension_upload);
+                                        //rename('img/' . $path . $_FILES[$name]['name'][$j], 'img/' . $path . $id . '-1.' . $extension_upload);
+                                    } else {
+                                        echo "files = 1";
+                                        var_dump($_FILES[$name]['name'][$j]);
+                                        move_uploaded_file($_FILES[$name]['tmp_name'][$j], "img/" . $path . $id . '-1.' . $extension_upload);
                                     }
                                     /*if (!file_exists("img/" . $path . $id . "-1.jpg") or !file_exists("img/" . $path . $id . "-1.jpeg") or !file_exists("img/" . $path . $id . "-1.png")) {
                                         move_uploaded_file($_FILES[$name]['tmp_name'][$j], "img/" . $path . $id . '-1.' . $extension_upload);

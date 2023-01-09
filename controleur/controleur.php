@@ -329,6 +329,9 @@ function modifBien()
     if ($_POST["lienVisite"] != $bien["urlVisite"]) {
         $objBien->updateBien("urlVisite", $_POST["lienVisite"], $bien["id"]);
     }
+    if (isset($_FILES["imgChateau"])) {
+        $objBien->addFiles("imgChateau", "biens", $bien["id"]);
+    }
     header("Location: index.php?action=gestBien");
 
 }
