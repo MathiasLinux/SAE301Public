@@ -74,7 +74,7 @@ ob_start();
                                 if ($file !== $chateauId["id"] . "-1.jpg" and $file !== $chateauId["id"] . "-1.jpeg" and $file !== $chateauId["id"] . "-1.png") {
                                     ?>
                                     <div class="carousel-item">
-                                        <img src="img/biens/<?= $file ?>" class="d-block w-100">
+                                        <img src="img/biens/<?= $file ?>" class="d-block w-100" loading="lazy">
                                     </div>
                                     <?php
                                 }
